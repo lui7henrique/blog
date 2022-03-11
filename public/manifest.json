@@ -1,0 +1,21 @@
+{
+  "name": "Future Trips",
+  "short_name": "Future Trips",
+  "icons": [
+    {
+      "src": "/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "img/png"
+    },
+    {
+      "src": "/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "img/png"
+    }
+  ],
+  "theme_color": "#8257E6",
+  "background_color": "#8257E6",
+  "description": "A simple project to show you the places I'm going to travel",
+  "start_url": "/",
+  "display": "fullscreen"
+}
