@@ -1,3 +1,5 @@
+import { HomeTemplate } from "templates/HomeTemplate"
+
 export default function Home() {
-  return <h1>Almost before we knew it, we had left the ground.</h1>
+  return <HomeTemplate />
 }
