@@ -6,12 +6,10 @@ export const HeroSection = () => {
   return (
     <S.Container>
       <S.Article>
-        <S.ArticleTitle>
-          Luiz <br /> Henrique
-        </S.ArticleTitle>
+        <S.ArticleTitle>Hello 🌍!</S.ArticleTitle>
         <S.ArticleDescription>
-          🧑‍💻 Front-end developer in love with making beautiful and useful
-          things! <span>(sometimes)</span>
+          🧑‍💻 I'm a Front-end developer in love with making beautiful and
+          useful things! <span>(sometimes)</span>
         </S.ArticleDescription>
         <S.ArticleActions>
           <Button label="Know more" />

@@ -14,11 +14,20 @@ export const Container = styled.div`
 
 export const Article = styled.article`
   width: 50%;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 100%;
+  }
 `
 
 export const ArticleTitle = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes["8xl"]};
   line-height: ${({ theme }) => theme.fontSizes["8xl"]};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    font-size: ${({ theme }) => theme.fontSizes["6xl"]};
+    line-height: ${({ theme }) => theme.fontSizes["6xl"]};
+  }
 `
 
 export const ArticleDescription = styled.p`

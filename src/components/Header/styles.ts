@@ -15,6 +15,7 @@ export const Header = styled.header`
 export const Logo = styled.h1`
   font-size: 1.5rem;
   padding: ${({ theme }) => theme.space["16"]} 0;
+  display: flex;
 `
 
 export const Nav = styled.nav`
