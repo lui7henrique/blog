@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components"
-import theme from "styles/theme"
 
 export const Header = styled.header`
   display: flex;
@@ -10,6 +9,7 @@ export const Header = styled.header`
   padding: 0 ${({ theme }) => theme.space["4"]};
   margin: 0 auto;
   width: 100%;
+  height: ${({ theme }) => theme.sizes.headerHeight};
 `
 
 export const Logo = styled.h1`

@@ -1,3 +1,4 @@
+import { Button } from "components/Button"
 import { useRouter } from "next/dist/client/router"
 import Link from "next/link"
 import { useCallback } from "react"
@@ -27,10 +28,11 @@ export const Header = () => {
 
   return (
     <S.Header>
-      <S.Logo>lui7henrique</S.Logo>
+      <S.Logo>⚡️ lui7henrique</S.Logo>
       <S.Nav>
         <NavLink href="/" label="Ínicio" />
         <NavLink href="/blog" label="Blog" />
+        {/* <Button label="Contact-me" borderRadius="25px" /> */}
       </S.Nav>
     </S.Header>
   )

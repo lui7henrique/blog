@@ -3,13 +3,18 @@ export default {
   colors: {
     primary: "#6232EA",
     primary_dark: "#2D166B",
+
+    secondary: "#04D361",
+    secondary_dark: "#03934B",
+
     background: "#121212",
 
     title: "#FCFDFF",
     text: "#C9CDD4"
   },
   sizes: {
-    maxWidth: "1132px"
+    maxWidth: "1132px",
+    headerHeight: "8rem"
   },
   fontSizes: {
     xs: "0.75rem",
