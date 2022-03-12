@@ -20,22 +20,22 @@ export const Skills = () => {
       {
         name: "HTML5",
         icon: SiHtml5,
-        score: 9
+        score: 8
       },
       {
         name: "CSS3",
         icon: SiCss3,
-        score: 9
+        score: 8
       },
       {
         name: "Javascript",
         icon: SiJavascript,
-        score: 9
+        score: 8
       },
       {
         name: "ReactJS",
         icon: SiReact,
-        score: 9,
+        score: 8,
         content: (
           <div>
             <p>
@@ -189,7 +189,7 @@ export const Skills = () => {
       {
         name: "ReactNative",
         icon: SiReact,
-        score: 8
+        score: 7
       },
       {
         name: "GraphQL",

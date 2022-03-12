@@ -147,6 +147,11 @@ export const SkillsStuff = styled.div<{
 
       a {
         color: ${({ theme }) => theme.colors.secondary};
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: ${({ theme }) => theme.colors.secondary_dark};
+        }
       }
     }
   }
