@@ -4,8 +4,8 @@ export default {
     primary: "#6232EA",
     primary_dark: "#2D166B",
 
-    secondary: "#04D361",
-    secondary_dark: "#03934B",
+    secondary: "#F8E058",
+    secondary_dark: "#786C2A",
 
     background: "#000000",
     shape: "#121212",

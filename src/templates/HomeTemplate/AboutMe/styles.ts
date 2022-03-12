@@ -13,6 +13,7 @@ export const Content = styled.div`
   margin: 0 auto;
 
   display: flex;
+  gap: ${({ theme }) => theme.space["4"]};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-direction: column;
@@ -47,7 +48,7 @@ export const ContentSections = styled.article`
   display: flex;
   flex-direction: column;
 
-  gap: ${({ theme }) => theme.space["10"]};
+  gap: ${({ theme }) => theme.space["12"]};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 100%;
@@ -60,6 +61,16 @@ export const ContentSectionTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes["2xl"]};
 `
 
-export const ContentSectionDescription = styled.p`
+export const ContentSectionDescription = styled.div`
   line-height: 30px;
+  margin-top: ${({ theme }) => theme.space["4"]};
+
+  a {
+    transition: all 0.2s ease-in-out;
+    color: ${({ theme }) => theme.colors.secondary};
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.secondary_dark};
+    }
+  }
 `

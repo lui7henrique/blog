@@ -1,8 +1,11 @@
 import { Button } from "components/Button"
+import { useDownload } from "hooks/useDownload"
 
 import * as S from "./styles"
 
 export const HeroSection = () => {
+  const { handleNavigate } = useDownload()
+
   return (
     <S.Container>
       <S.Article>
@@ -12,7 +15,10 @@ export const HeroSection = () => {
           useful things! <span>(sometimes)</span>
         </S.ArticleDescription>
         <S.ArticleActions>
-          <Button label="Know more" />
+          <Button
+            label="Know more"
+            onClick={() => handleNavigate("#about-me")}
+          />
           <Button
             label="Read my posts"
             backgroundColor="transparent"

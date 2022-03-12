@@ -18,6 +18,8 @@ export const GlobalStyles = createGlobalStyle`
 
   html, body, #__next {
     height: 100%;
+    scroll-behavior: smooth;
+
   }
 
   body {
@@ -39,6 +41,7 @@ export const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.colors.text};
+
   }
 
 

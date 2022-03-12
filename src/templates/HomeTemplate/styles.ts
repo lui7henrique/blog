@@ -11,7 +11,7 @@ export const BannerWrapper = styled.div`
   width: 50%;
   height: 100%;
 
-  background-image: url("/banner.jpg");
+  background-image: url("/rocket.jpg");
   background-size: contain;
   background-position: 80%;
   background-repeat: no-repeat;

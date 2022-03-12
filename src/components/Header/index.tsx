@@ -30,7 +30,7 @@ export const Header = () => {
       <S.Logo>lui⚡️henrique</S.Logo>
       <S.Nav>
         <NavLink href="/" label="Home" />
-        <NavLink href="/blog" label="Blog" />
+        <NavLink href="/posts" label="Posts" />
         {/* <Button label="Contact-me" borderRadius="25px" /> */}
       </S.Nav>
     </S.Header>
