@@ -8,6 +8,7 @@ export default {
     secondary_dark: "#03934B",
 
     background: "#000000",
+    shape: "#121212",
 
     title: "#FCFDFF",
     text: "#C9CDD4"

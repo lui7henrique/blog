@@ -6,9 +6,9 @@ export const HeroSection = () => {
   return (
     <S.Container>
       <S.Article>
-        <S.ArticleTitle>Hello 🌍!</S.ArticleTitle>
+        <S.ArticleTitle>Hello World!</S.ArticleTitle>
         <S.ArticleDescription>
-          🧑‍💻 I'm a Front-end developer in love with making beautiful and
+          🧑‍💻 I&apos;m a Front-end developer in love with making beautiful and
           useful things! <span>(sometimes)</span>
         </S.ArticleDescription>
         <S.ArticleActions>

@@ -29,7 +29,7 @@ export const Header = () => {
     <S.Header>
       <S.Logo>lui⚡️henrique</S.Logo>
       <S.Nav>
-        <NavLink href="/" label="Ínicio" />
+        <NavLink href="/" label="Home" />
         <NavLink href="/blog" label="Blog" />
         {/* <Button label="Contact-me" borderRadius="25px" /> */}
       </S.Nav>
