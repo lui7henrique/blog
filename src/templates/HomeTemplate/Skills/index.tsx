@@ -39,8 +39,8 @@ export const Skills = () => {
         content: (
           <div>
             <p>
-              Develop modern and responsive web interfaces using a modular and
-              scalable library.
+              Development of modern and responsive web interfaces using a
+              modular and scalable library.
             </p>
             <ul>
               <li>
@@ -175,6 +175,14 @@ export const Skills = () => {
                 </p>
               </li>
             </ul>
+            <p style={{ textAlign: "end" }}>
+              <a
+                href="https://github.com/lui7henrique?tab=repositories&q=reactjs&type=&language=&sort="
+                target="blank"
+              >
+                And others...
+              </a>
+            </p>
           </div>
         )
       },
@@ -186,12 +194,12 @@ export const Skills = () => {
       {
         name: "GraphQL",
         icon: SiGraphql,
-        score: 7
+        score: 4
       },
       {
         name: "NodeJS",
         icon: SiNodedotjs,
-        score: 7
+        score: 4
       }
     ],
     []
