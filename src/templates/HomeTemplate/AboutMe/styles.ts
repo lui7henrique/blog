@@ -21,6 +21,11 @@ export const Container = styled.section`
     rgba(20, 9, 48, 1) 100%
   ); */
   /* background: ${({ theme }) => theme.colors.shape}; */
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    padding-top: ${({ theme }) => theme.space["10"]};
+    padding-bottom: ${({ theme }) => theme.space["10"]};
+  }
 `
 
 export const Content = styled.div`
