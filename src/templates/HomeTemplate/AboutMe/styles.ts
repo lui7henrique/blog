@@ -54,6 +54,11 @@ export const ContentInfo = styled.div`
 export const ContentTitles = styled.aside`
   display: flex;
   flex-direction: column;
+
+  div {
+    position: sticky;
+    top: ${({ theme }) => theme.space["4"]};
+  }
 `
 
 export const ContentSubTitle = styled.sub`

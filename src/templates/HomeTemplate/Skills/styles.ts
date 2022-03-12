@@ -29,7 +29,7 @@ export const Content = styled.div`
   }
 `
 
-export const ContentInfo = styled.div`
+export const Aside = styled.aside`
   display: flex;
   width: 50%;
   gap: ${({ theme }) => theme.space["2"]};
@@ -39,9 +39,14 @@ export const ContentInfo = styled.div`
   }
 `
 
-export const ContentTitles = styled.aside`
+export const ContentTitles = styled.div`
   display: flex;
   flex-direction: column;
+
+  div {
+    position: sticky;
+    top: ${({ theme }) => theme.space["4"]};
+  }
 `
 
 export const ContentSubTitle = styled.sub`
@@ -125,14 +130,31 @@ export const SkillButtonIcon = styled(FaChevronDown)<{
 export const SkillsStuff = styled.div<{
   isOpen?: boolean
 }>`
-  height: 0;
-  transition: height 0.3s ease-in-out;
+  height: 0px;
+  transition: all 0.3s ease-in-out;
   margin-top: 4px;
   border-radius: 5px;
+  padding: ${({ theme }) => theme.space[4]};
+  display: none;
+
+  ul {
+    padding: 0;
+    margin: ${({ theme }) => theme.space[4]};
+
+    li {
+      font-size: ${({ theme }) => theme.fontSizes["lg"]};
+      margin-bottom: ${({ theme }) => theme.space[4]};
+
+      a {
+        color: ${({ theme }) => theme.colors.secondary};
+      }
+    }
+  }
 
   ${({ isOpen }) =>
     isOpen &&
     css`
-      height: 5rem;
+      display: block;
+      height: auto;
     `}
 `

@@ -8,12 +8,12 @@ export const AboutMe = () => {
       {
         title: "🤔 Who am I?",
         content:
-          "I'm a software developer focused on front-end and mobile, but studying back-end. I really enjoy sharing knowledge, so I often make <a href='/posts'>posts</a> here reporting something new that I learned or that I find interesting. Apart from software development, I really like playing games (mainly League of Legends), as well as really enjoying cinema."
+          "I'm 19y brazilian software developer focused on front-end and mobile. I really enjoy sharing knowledge, so I often make <a href='/posts'>posts</a> here reporting something new that I learned or that I find interesting. Apart from software development, I really like playing games (mainly League of Legends), as well as really enjoying cinema."
       },
       {
         title: "🔥 What am I currently doing? ",
         content:
-          "I'm currently working as a front end and mobile developer in a software house from São paulo, Brazil. I develop amazing projects using wonderful technologies, such as <a href='https://reactjs.org/' target='_blank'>ReactJS</a>, <a href='https://reactnative.dev/' target='_blank'>ReactNative</a>, <a href='https://www.typescriptlang.org/' target='_blank'>Typescript</a>, <a href='https://graphql.org/' target='_blank'>GraphQL</a> and others tech's of this ecosystem!"
+          "I'm currently working as a front-end and mobile developer in a <a href='https://www.linkedin.com/company/hubxp/' target='blank'>software house</a> from São paulo, Brazil. I develop amazing projects using wonderful technologies, such as <a href='https://reactjs.org/' target='_blank'>ReactJS</a>, <a href='https://reactnative.dev/' target='_blank'>ReactNative</a>, <a href='https://www.typescriptlang.org/' target='_blank'>Typescript</a>, <a href='https://graphql.org/' target='_blank'>GraphQL</a> and others tech's of this ecosystem!"
       },
       {
         title: "🤝 How to contact me?",
@@ -29,12 +29,14 @@ export const AboutMe = () => {
       <S.Content>
         <S.ContentInfo>
           <S.ContentTitles>
-            <S.ContentSubTitle data-aos="fade-right" data-aos-delay="200">
-              My name&apos;s{" "}
-            </S.ContentSubTitle>
-            <S.ContentTitle data-aos="fade-right" data-aos-delay="100">
-              Luiz Henrique
-            </S.ContentTitle>
+            <div>
+              <S.ContentSubTitle data-aos="fade-right" data-aos-delay="200">
+                My name&apos;s{" "}
+              </S.ContentSubTitle>
+              <S.ContentTitle data-aos="fade-right" data-aos-delay="100">
+                Luiz Henrique
+              </S.ContentTitle>
+            </div>
           </S.ContentTitles>
         </S.ContentInfo>
 
