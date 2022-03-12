@@ -144,15 +144,15 @@ export const SkillsStuff = styled.div<{
     li {
       font-size: ${({ theme }) => theme.fontSizes["lg"]};
       margin-bottom: ${({ theme }) => theme.space[4]};
+    }
+  }
 
-      a {
-        color: ${({ theme }) => theme.colors.secondary};
-        transition: color 0.2s ease-in-out;
+  a {
+    color: ${({ theme }) => theme.colors.secondary};
+    transition: color 0.2s ease-in-out;
 
-        &:hover {
-          color: ${({ theme }) => theme.colors.secondary_dark};
-        }
-      }
+    &:hover {
+      color: ${({ theme }) => theme.colors.secondary_dark};
     }
   }
 
