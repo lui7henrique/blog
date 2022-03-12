@@ -5,6 +5,7 @@ import {
   SiCss3,
   SiHtml5,
   SiJavascript,
+  SiTypescript,
   SiNodedotjs,
   SiGraphql
 } from "react-icons/si"
@@ -31,6 +32,11 @@ export const Skills = () => {
         name: "Javascript",
         icon: SiJavascript,
         score: 8
+      },
+      {
+        name: "Typescript",
+        icon: SiTypescript,
+        score: 6
       },
       {
         name: "ReactJS",
