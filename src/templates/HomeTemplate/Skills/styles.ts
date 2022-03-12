@@ -16,8 +16,8 @@ export const Content = styled.div`
   padding-top: ${({ theme }) => theme.space["20"]};
   padding-bottom: ${({ theme }) => theme.space["20"]};
 
-  padding-right: ${({ theme }) => theme.space["4"]};
-  padding-left: ${({ theme }) => theme.space["4"]};
+  padding-right: ${({ theme }) => theme.space["10"]};
+  padding-left: ${({ theme }) => theme.space["10"]};
 
   border-top: 1px solid ${({ theme }) => theme.colors.shape};
 

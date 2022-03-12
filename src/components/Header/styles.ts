@@ -6,10 +6,12 @@ export const Header = styled.header`
   align-items: center;
 
   max-width: ${({ theme }) => theme.sizes.maxWidth};
-  padding: 0 ${({ theme }) => theme.space["4"]};
   margin: 0 auto;
   width: 100%;
   height: ${({ theme }) => theme.sizes.headerHeight};
+
+  padding-right: ${({ theme }) => theme.space["10"]};
+  padding-left: ${({ theme }) => theme.space["10"]};
 `
 
 export const Logo = styled.h1`

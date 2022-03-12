@@ -2,7 +2,8 @@ import styled from "styled-components"
 
 export const Container = styled.section`
   max-width: ${({ theme }) => theme.sizes.maxWidth};
-  padding: 0 ${({ theme }) => theme.space["4"]};
+  padding-right: ${({ theme }) => theme.space["10"]};
+  padding-left: ${({ theme }) => theme.space["10"]};
   margin: 0 auto;
 
   width: 100%;
@@ -21,8 +22,8 @@ export const Article = styled.article`
 `
 
 export const ArticleTitle = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes["8xl"]};
-  line-height: ${({ theme }) => theme.fontSizes["8xl"]};
+  font-size: ${({ theme }) => theme.fontSizes["7xl"]};
+  line-height: ${({ theme }) => theme.fontSizes["7xl"]};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: ${({ theme }) => theme.fontSizes["6xl"]};

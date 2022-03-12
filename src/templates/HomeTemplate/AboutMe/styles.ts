@@ -5,9 +5,6 @@ export const Container = styled.section`
   padding-top: ${({ theme }) => theme.space["20"]};
   padding-bottom: ${({ theme }) => theme.space["20"]};
 
-  padding-right: ${({ theme }) => theme.space["4"]};
-  padding-left: ${({ theme }) => theme.space["4"]};
-
   background: linear-gradient(
     90deg,
     rgba(20, 9, 48, 1) 0%,
@@ -35,6 +32,9 @@ export const Content = styled.div`
 
   display: flex;
   gap: ${({ theme }) => theme.space["4"]};
+
+  padding-right: ${({ theme }) => theme.space["10"]};
+  padding-left: ${({ theme }) => theme.space["10"]};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-direction: column;
