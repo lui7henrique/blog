@@ -2,13 +2,29 @@ import styled from "styled-components"
 
 export const Container = styled.section`
   width: 100vw;
-  padding: ${({ theme }) => theme.space["8"]} 0;
+  padding-top: ${({ theme }) => theme.space["20"]};
+  padding-bottom: ${({ theme }) => theme.space["20"]};
+
+  padding-right: ${({ theme }) => theme.space["4"]};
+  padding-left: ${({ theme }) => theme.space["4"]};
+
+  background: linear-gradient(
+    90deg,
+    rgba(20, 9, 48, 1) 0%,
+    rgba(45, 22, 107, 1) 100%
+  );
+
+  /* background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 45%,
+    rgba(20, 9, 48, 1) 100%
+  ); */
+  /* background: ${({ theme }) => theme.colors.shape}; */
 `
 
 export const Content = styled.div`
   width: 100%;
-  padding: 0 ${({ theme }) => theme.space["4"]};
-
   max-width: ${({ theme }) => theme.sizes.maxWidth};
   margin: 0 auto;
 

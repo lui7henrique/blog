@@ -27,7 +27,12 @@ export const Header = () => {
 
   return (
     <S.Header>
-      <S.Logo>lui⚡️henrique</S.Logo>
+      <Link href="/" passHref>
+        <a>
+          <S.Logo>lui⚡️henrique</S.Logo>
+        </a>
+      </Link>
+
       <S.Nav>
         <NavLink href="/" label="Home" />
         <NavLink href="/posts" label="Posts" />

@@ -3,6 +3,7 @@ import { Header } from "components/Header"
 
 import { AboutMe } from "./AboutMe"
 import { HeroSection } from "./HeroSection"
+import { Skills } from "./Skills"
 import * as S from "./styles"
 
 export const HomeTemplate = () => {
@@ -14,6 +15,7 @@ export const HomeTemplate = () => {
         <HeroSection />
       </S.HeroContainer>
       <AboutMe />
+      <Skills />
     </>
   )
 }
