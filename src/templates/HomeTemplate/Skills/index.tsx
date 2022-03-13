@@ -375,7 +375,67 @@ export const Skills = () => {
       {
         name: "NodeJS",
         icon: SiNodedotjs,
-        score: 4
+        score: 4,
+        content: (
+          <div>
+            <p>
+              Building scalable and simple architectures for the web using a
+              flexible and popular language
+            </p>
+            <ul>
+              <li>
+                <a
+                  href="https://github.com/lui7henrique/ignite-nodejs-primeira-aplicacao"
+                  target="blank"
+                >
+                  Node.js Fundamentals:
+                </a>
+                <p>
+                  In these modules I learned about the concepts of Node.js, how
+                  it works and the reasons why it was created. I studied about
+                  the concepts and rules behind a Rest API, the HTTPs methods,
+                  the main return codes and types of parameters of a request
+                </p>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/lui7henrique/ignite-nodejs-primeira-aplicacao"
+                  target="blank"
+                >
+                  First project with Node.js:
+                </a>
+                <p>
+                  In this module I developed the first project with Node.js from
+                  scratch, putting into practice all the concepts studied in the
+                  initial module.
+                </p>
+              </li>
+              <li>
+                <a
+                  href="https://github.com/lui7henrique/ignite-nodejs-primeira-aplicacao"
+                  target="blank"
+                >
+                  Starting the API:
+                </a>
+                <p>
+                  Here I learned to create applications using TypeScript
+                  following code patterns and SOLID principles. I learned
+                  important concepts like use cases, repositories, models,
+                  Node.js streams and API documentation with Swagger.
+                </p>
+              </li>
+            </ul>
+
+            <p style={{ textAlign: "end" }}>
+              <a
+                href="https://github.com/lui7henrique?tab=repositories&q=ignite-nodejs&type=&language=&sort="
+                target="blank"
+              >
+                And others...
+              </a>
+            </p>
+          </div>
+        )
       }
     ],
     []
