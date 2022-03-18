@@ -16,7 +16,7 @@ export const aboutMeContent = {
       {
         title: "🤝 Como posso me conectar?",
         description:
-          "<a href='https://www.linkedin.com/in/luiz-henrique7/' target='_blank'>Linkedin</a>, <a href='https://github.com/lui7henrique' target ='_blank'>Github</a> ou <a href='mailto:7henrique18@gmail.com' target='_blank'>E-mail</a>. Estou sempre aberto a novas ideias e colaborações (odios também são bem-vindos). Se você quiser entrar em contato comigo, sinta-se à vontade para me enviar um e-mail em <a href='mailto:7henrique18@gmail.com'>7henrique18@gmail.com</a>."
+          "<a href='https://www.linkedin.com/in/luiz-henrique7/' target='_blank'>Linkedin</a>, <a href='https://github.com/lui7henrique' target ='_blank'>Github</a> ou <a href='mailto:7henrique18@gmail.com' target='_blank'>E-mail</a>. Estou sempre aberto a novas ideias e colaborações (haters também são bem-vindos). Se você quiser entrar em contato comigo, sinta-se à vontade para me enviar um e-mail em <a href='mailto:7henrique18@gmail.com'>7henrique18@gmail.com</a>."
       }
     ]
   },

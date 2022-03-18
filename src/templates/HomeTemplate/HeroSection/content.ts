@@ -8,7 +8,7 @@ export const heroContent = {
       buttons: [
         {
           label: "Saiba mais",
-          link: "/about-me"
+          link: "#about-me"
         },
         {
           label: "Leia meus posts 🤗"
