@@ -10,7 +10,7 @@ type NavLinkProps = {
 }
 
 export const Header = () => {
-  const { asPath, locale, locales, defaultLocale, push } = useRouter()
+  const { asPath, push } = useRouter()
 
   const NavLink = useCallback(
     ({ href, label }: NavLinkProps) => {
