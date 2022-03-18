@@ -1,11 +1,10 @@
-import { GetStaticProps } from "next"
 import { useRouter } from "next/router"
 
 import { aboutMeContent } from "./content"
 import * as S from "./styles"
 
 export const AboutMe = () => {
-  const { locale, locales, defaultLocale } = useRouter()
+  const { locale } = useRouter()
   const content = aboutMeContent[locale as "pt-BR" | "en-US"]
 
   return (
@@ -45,10 +44,4 @@ export const AboutMe = () => {
       </S.Content>
     </S.Container>
   )
-}
-
-export const getStaticProps: GetStaticProps = async (context) => {
-  return {
-    props: { context }
-  }
 }

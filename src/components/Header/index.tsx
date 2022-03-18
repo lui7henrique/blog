@@ -10,7 +10,7 @@ type NavLinkProps = {
 }
 
 export const Header = () => {
-  const { asPath } = useRouter()
+  const { asPath, locale, locales, defaultLocale, push } = useRouter()
 
   const NavLink = useCallback(
     ({ href, label }: NavLinkProps) => {
@@ -25,6 +25,13 @@ export const Header = () => {
     [asPath]
   )
 
+  const handleChangeLocale = useCallback(
+    (locale) => {
+      push(asPath, asPath, { locale: locale })
+    },
+    [asPath, push]
+  )
+
   return (
     <S.Header>
       <Link href="/" passHref>
@@ -36,6 +43,9 @@ export const Header = () => {
       <S.Nav>
         <NavLink href="/" label="Home" />
         <NavLink href="/posts" label="Posts" />
+
+        <button onClick={() => handleChangeLocale("en-US")}>en-US</button>
+        <button onClick={() => handleChangeLocale("pt-BR")}>pt-BR</button>
         {/* <Button label="Contact-me" borderRadius="25px" /> */}
       </S.Nav>
     </S.Header>

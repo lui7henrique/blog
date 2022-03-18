@@ -14,7 +14,6 @@ export const HomeTemplate = () => {
         <Header />
         <HeroSection />
       </S.HeroContainer>
-      <h1>oi</h1>
       <AboutMe />
       <Skills />
     </>

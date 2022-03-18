@@ -22,7 +22,7 @@ export const aboutMeContent = {
   },
   "en-US": {
     title: "Luiz Henrique",
-    subtitle: " My name&apos;s{' '}",
+    subtitle: " My name's",
     sections: [
       {
         title: "🤔 Who am I?",
