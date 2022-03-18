@@ -1,6 +1,7 @@
 import { Button } from "components/Button"
 import { useDownload } from "hooks/useDownload"
 import { useRouter } from "next/router"
+import { useTheme } from "styled-components"
 
 import { heroContent } from "./content"
 import * as S from "./styles"
@@ -9,6 +10,7 @@ export const HeroSection = () => {
   const { handleNavigate } = useDownload()
   const { locale } = useRouter()
   const content = heroContent[locale as "pt-BR" | "en-US"]
+  const theme = useTheme()
 
   return (
     <S.Container>
@@ -30,7 +32,7 @@ export const HeroSection = () => {
           <Button
             label={content.article.buttons[1].label}
             backgroundColor="transparent"
-            fontSize="lg"
+            fontSize="md"
             data-aos="fade-right"
             data-aos-delay="400"
           />

@@ -42,6 +42,6 @@ export const ArticleDescription = styled.p`
 
 export const ArticleActions = styled.div`
   display: flex;
-  gap: ${({ theme }) => theme.space["8"]};
-  margin-top: ${({ theme }) => theme.space["8"]};
+  gap: ${({ theme }) => theme.space["4"]};
+  margin-top: ${({ theme }) => theme.space["4"]};
 `
