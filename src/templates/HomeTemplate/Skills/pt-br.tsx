@@ -380,7 +380,111 @@ export default [
   {
     title: "GraphQL",
     icon: SiGraphql,
-    score: 4
+    score: 4,
+    content: (
+      <div>
+        <a
+          href="https://www.howtographql.com/typescript-helix/0-introduction/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          howtographql • node-typescript-helix
+        </a>
+        <p>
+          GraphQL é a estrela em ascensão das tecnologias de back-end. É uma
+          alternativa popular para REST como paradigma de design de API e está
+          se tornando o novo padrão para expor os dados e a funcionalidade de um
+          servidor web.
+        </p>
+        <p>
+          Neste tutorial, aprendi como construir um servidor GraphQL
+          inteiramente do zero. Usando as seguintes tecnologias:
+        </p>
+        <ul>
+          <li>
+            <a href="https://nodejs.org/en/" target="blank">
+              Node.js{" "}
+            </a>
+            - Como mecanismo de execução para nosso servidor.
+          </li>
+
+          <li>
+            <a href="https://nodejs.org/en/" target="blank">
+              TypeScript{" "}
+            </a>
+            - uma linguagem de programação fortemente tipada que se baseia em
+            JavaScript dando-lhe melhores ferramentas em qualquer escala.
+          </li>
+
+          <li>
+            <a href="https://www.fastify.io/" target="blank">
+              fastify{" "}
+            </a>
+            - Uma estrela em ascensão no ecossistema de servidores HTTP, muito
+            rápido e eficiente.
+          </li>
+
+          <li>
+            <a href="https://github.com/graphql/graphql-js" target="blank">
+              graphql-js{" "}
+            </a>
+            - Usamos a biblioteca principal do graphql como mecanismo de
+            execução para nosso servidor.
+          </li>
+
+          <li>
+            <a href="https://github.com/contra/graphql-helix" target="blank">
+              graphql-helix{" "}
+            </a>
+            - Coleção de funções utilitárias para construir seu próprio servidor
+            HTTP GraphQL.
+          </li>
+          <li>
+            <a href="https://www.prisma.io/" target="blank">
+              Prisma{" "}
+            </a>
+            - Substitui os ORMs tradicionais. Usamos o cliente Prisma para
+            acessar seu banco de dados dentro dos resolvers GraphQL.
+          </li>
+          <li>
+            <a href="https://github.com/graphql/graphiql" target="blank">
+              GraphiQL{" "}
+            </a>
+            - Substitui os ORMs tradicionais. Usamos o cliente Prisma para
+            acessar seu banco de dados dentro dos resolvers GraphQL.
+          </li>
+          <li>
+            <a href="https://github.com/graphql/graphiql" target="blank">
+              GraphiQL{" "}
+            </a>
+            - Uma “IDE GraphQL” que permite explorar interativamente a
+            funcionalidade de uma API GraphQL enviando queries e mutations para
+            ela. É um pouco semelhante ao Postman, que oferece funcionalidade
+            comparável para APIs REST. Entre outras coisas:
+            <ul>
+              <li>
+                Gera automaticamente documentação abrangente para todas as APIs
+                disponíveis operações.
+              </li>
+              <li>
+                Fornece um editor onde você pode escrever queries, mutations e
+                subscriptions, com preenchimento automático (!) e syntax
+                highlighting.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <p style={{ textAlign: "end" }}>
+          <a
+            href="https://github.com/lui7henrique?tab=repositories&q=graphql&type=&language=&sort="
+            target="blank"
+          >
+            E outros...
+          </a>
+        </p>
+      </div>
+    )
   },
   {
     title: "NodeJS",
