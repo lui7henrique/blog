@@ -13,10 +13,10 @@ export const VideoBanner = styled.video`
   filter: brightness(0.3);
 
   object-fit: cover;
-  object-position: 40% 0;
+  object-position: 30% 0;
 
   z-index: -1;
-  position: fixed;
+  position: absolute;
   right: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
