@@ -1,4 +1,5 @@
 import { GetProjectsQuery } from "graphql/generated/graphql"
+import { useRouter } from "next/router"
 import { FaGithub } from "react-icons/fa"
 import { useTheme } from "styled-components"
 import { Pagination } from "swiper"
@@ -9,7 +10,6 @@ import * as S from "./styles"
 
 import "swiper/css"
 import "swiper/css/pagination"
-import { useRouter } from "next/router"
 
 type ProjectsProps = {
   projects: GetProjectsQuery["projects"]

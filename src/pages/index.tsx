@@ -24,6 +24,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   return {
     props: {
       projects
-    }
+    },
+    revalidate: 60 * 60 * 24 // 1 day
   }
 }
