@@ -412,7 +412,7 @@ export default [
             <a href="https://nodejs.org/en/" target="blank">
               TypeScript{" "}
             </a>
-            - uma linguagem de programação fortemente tipada que se baseia em
+            - Uma linguagem de programação fortemente tipada que se baseia em
             JavaScript dando-lhe melhores ferramentas em qualquer escala.
           </li>
 
@@ -439,6 +439,7 @@ export default [
             - Coleção de funções utilitárias para construir seu próprio servidor
             HTTP GraphQL.
           </li>
+
           <li>
             <a href="https://www.prisma.io/" target="blank">
               Prisma{" "}
@@ -446,13 +447,7 @@ export default [
             - Substitui os ORMs tradicionais. Usamos o cliente Prisma para
             acessar seu banco de dados dentro dos resolvers GraphQL.
           </li>
-          <li>
-            <a href="https://github.com/graphql/graphiql" target="blank">
-              GraphiQL{" "}
-            </a>
-            - Substitui os ORMs tradicionais. Usamos o cliente Prisma para
-            acessar seu banco de dados dentro dos resolvers GraphQL.
-          </li>
+
           <li>
             <a href="https://github.com/graphql/graphiql" target="blank">
               GraphiQL{" "}
