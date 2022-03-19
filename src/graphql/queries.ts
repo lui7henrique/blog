@@ -1,8 +1,8 @@
 import { gql } from "graphql-request"
 
 export const GET_PROJECTS = gql`
-  query getProjects($first: Int) {
-    projects(first: $first) {
+  query getProjects() {
+    projects() {
       id
       heading
       abstract

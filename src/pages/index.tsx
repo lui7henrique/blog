@@ -1,4 +1,4 @@
-import client from "graphql/client"
+import localeClient from "graphql/client"
 import { GetProjectsQuery } from "graphql/generated/graphql"
 import { GET_PROJECTS } from "graphql/queries"
 import { GetStaticProps } from "next"
@@ -14,8 +14,12 @@ export default function Home(props: HomeProps) {
   return <HomeTemplate projects={projects} />
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const { projects } = await client.request<GetProjectsQuery>(GET_PROJECTS)
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const formattedLocale = locale!.replace("-", "_") as "pt_BR" | "en_US"
+
+  const { projects } = await localeClient(
+    formattedLocale
+  ).request<GetProjectsQuery>(GET_PROJECTS)
 
   return {
     props: {

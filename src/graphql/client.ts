@@ -2,10 +2,13 @@ import { GraphQLClient } from "graphql-request"
 
 const endpoint = process.env.GRAPHQL_HOST || ""
 
-const client = new GraphQLClient(endpoint, {
-  headers: {
-    authorization: `Bearer ${process.env.GRAPHQL_TOKEN}`
-  }
-})
+const localeClient = (locale: "pt_BR" | "en_US") => {
+  return new GraphQLClient(endpoint, {
+    headers: {
+      authorization: `Bearer ${process.env.GRAPHQL_TOKEN}`,
+      "gcms-locales": locale
+    }
+  })
+}
 
-export default client
+export default localeClient
