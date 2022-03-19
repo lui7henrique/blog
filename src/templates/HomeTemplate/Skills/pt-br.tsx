@@ -493,8 +493,8 @@ export default [
     content: (
       <div>
         <p>
-          Building scalable and simple architectures for the web using a
-          flexible and popular language
+          Construção de arquiteturas escaláveis e simples para a web utilizando
+          uma linguagem flexível e popular
         </p>
         <ul>
           <li>
@@ -502,50 +502,53 @@ export default [
               href="https://github.com/lui7henrique/ignite-nodejs-primeira-aplicacao"
               target="blank"
             >
-              Node.js Fundamentals:
+              Fundamentos
             </a>
             <p>
-              In these modules I learned about the concepts of Node.js, how it
-              works and the reasons why it was created. I studied about the
-              concepts and rules behind a Rest API, the HTTPs methods, the main
-              return codes and types of parameters of a request
+              Nesse módulo, conheci conceitos do Node.js, como é o seu
+              funcionamento e os motivos pelo qual ele foi criado. Estudei sobre
+              os conceitos e regras por trás de uma API Rest, os métodos HTTPs,
+              os principais códigos de retornos e tipos de parâmetros de uma
+              requisição.
             </p>
           </li>
+
           <li>
             <a
               href="https://github.com/lui7henrique/ignite-nodejs-primeira-aplicacao"
               target="blank"
             >
-              First project with Node.js:
+              Primeiro projeto
             </a>
             <p>
-              In this module I developed the first project with Node.js from
-              scratch, putting into practice all the concepts studied in the
-              initial module.
+              Nesse módulo, criei meu primeiro projeto com Node.js do total
+              zero, colocando em prática todos os conceitos estudados no módulo
+              inicial.
             </p>
           </li>
+
           <li>
             <a
               href="https://github.com/lui7henrique/ignite-nodejs-primeira-aplicacao"
               target="blank"
             >
-              Starting the API:
+              Iniciando a API
             </a>
             <p>
-              Here I learned to create applications using TypeScript following
-              code patterns and SOLID principles. I learned important concepts
-              like use cases, repositories, models, Node.js streams and API
-              documentation with Swagger.
+              Aprendi a criar aplicações utilizando TypeScript seguindo padrões
+              de código,princípios do SOLID, e conceitos importantes como casos
+              de uso, repositórios, models, streams do Node.js e documentação de
+              APIs com Swagger.
             </p>
           </li>
         </ul>
 
         <p style={{ textAlign: "end" }}>
           <a
-            href="https://github.com/lui7henrique?tab=repositories&q=ignite-nodejs&type=&language=&sort="
+            href="https://github.com/lui7henrique?tab=repositories&q=nodejs&type=&language=&sort="
             target="blank"
           >
-            And others...
+            E outros...
           </a>
         </p>
       </div>
