@@ -1,13 +1,13 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   colors: {
-    primary: "#009c8c",
-    primary_dark: "#042940",
-    primary_super_dark: "#02131f",
+    primary: "#1F26A6",
+    primary_dark: "#14268C",
+    primary_super_dark: "#08124a",
 
-    secondary: "#DBF227",
-    secondary_dark: "#9FC131",
-    secondary_super_dark: "#4c540e",
+    secondary: "#F26F63",
+    secondary_dark: "#b05148",
+    secondary_super_dark: "#632b26",
 
     background: "#000000",
     shape: "#121212",
