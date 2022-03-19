@@ -1,3 +1,4 @@
+import { IconType } from "react-icons"
 import { useTheme } from "styled-components"
 import theme from "styles/theme"
 
@@ -9,6 +10,7 @@ type ButtonProps = {
   textColor?: string
   fontSize?: keyof typeof theme["fontSizes"]
   borderRadius?: string
+  rightIcon?: IconType
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
 
 export const Button = (props: ButtonProps) => {
@@ -19,6 +21,7 @@ export const Button = (props: ButtonProps) => {
     textColor = theme.colors.title,
     fontSize = "md",
     borderRadius = "5px",
+    rightIcon: RightIcon,
     ...rest
   } = props
 
@@ -30,6 +33,7 @@ export const Button = (props: ButtonProps) => {
       borderRadius={borderRadius}
       {...rest}
     >
+      {RightIcon && <RightIcon size={20} />}
       {label}
     </S.Button>
   )

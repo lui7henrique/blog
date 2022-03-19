@@ -1,7 +1,10 @@
+import { Button } from "components/Button"
 import { useRouter } from "next/dist/client/router"
 import Link from "next/link"
-import { useCallback } from "react"
+import { useCallback, useEffect } from "react"
+import { FaLanguage } from "react-icons/fa"
 
+import { headerContent } from "./content"
 import * as S from "./styles"
 
 type NavLinkProps = {
@@ -10,7 +13,8 @@ type NavLinkProps = {
 }
 
 export const Header = () => {
-  const { asPath, push } = useRouter()
+  const { asPath, push, locale } = useRouter()
+  const content = headerContent[locale as "pt-BR" | "en-US"]
 
   const NavLink = useCallback(
     ({ href, label }: NavLinkProps) => {
@@ -27,8 +31,10 @@ export const Header = () => {
 
   const handleChangeLocale = useCallback(
     (locale) => {
+      // replace("/", undefined, { shallow: true })
       push(asPath, asPath, { locale: locale })
     },
+
     [asPath, push]
   )
 
@@ -37,15 +43,30 @@ export const Header = () => {
       <Link href="/" passHref>
         <a>
           <S.Logo>lui⚡️henrique</S.Logo>
+          <S.LogoMobile>⚡️</S.LogoMobile>
         </a>
       </Link>
 
       <S.Nav>
-        <NavLink href="/" label="Home" />
-        <NavLink href="/posts" label="Posts" />
+        {content.nav.map((item) => {
+          return (
+            <NavLink
+              key={JSON.stringify(item)}
+              href={item.href}
+              label={item.label}
+            />
+          )
+        })}
 
-        <button onClick={() => handleChangeLocale("en-US")}>en-US</button>
-        <button onClick={() => handleChangeLocale("pt-BR")}>pt-BR</button>
+        <Button
+          label={locale! === "en-US" ? "English" : "Português"}
+          onClick={() =>
+            handleChangeLocale(locale === "pt-BR" ? "en-US" : "pt-BR")
+          }
+          fontSize="sm"
+          rightIcon={FaLanguage}
+        />
+
         {/* <Button label="Contact-me" borderRadius="25px" /> */}
       </S.Nav>
     </S.Header>

@@ -18,18 +18,43 @@ export const Logo = styled.h1`
   font-size: 1.5rem;
   padding: ${({ theme }) => theme.space["16"]} 0;
   display: flex;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    & {
+      display: none;
+    }
+  }
+`
+
+export const LogoMobile = styled.h1`
+  font-size: ${({ theme }) => theme.fontSizes["5xl"]};
+  padding: ${({ theme }) => theme.space["16"]} 0;
+  display: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    & {
+      display: flex;
+    }
+  }
 `
 
 export const Nav = styled.nav`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.space["8"]};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    a {
+      display: none;
+    }
+  }
 `
 
 export const NavItem = styled.a<{
   isActive: boolean
 }>`
   transition: border 0.2s ease-in-out;
+  margin-top: 5px;
 
   &::after {
     content: "";

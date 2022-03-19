@@ -8,12 +8,16 @@ export const Button = styled.button<{
   borderRadius: string
 }>`
   background-color: ${(props) => props.backgroundColor};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
 
   color: ${(props) => props.textColor};
   font-size: ${(props) => props.theme.fontSizes[props.fontSize]};
   font-weight: bold;
 
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   border: none;
 
   cursor: pointer;
