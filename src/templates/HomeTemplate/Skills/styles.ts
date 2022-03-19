@@ -107,7 +107,7 @@ export const SkillBasicInfos = styled.div`
   flex-direction: column;
 `
 
-export const SkillName = styled.h4`
+export const SkillTitle = styled.h4`
   font-size: ${({ theme }) => theme.fontSizes["xl"]};
   color: ${({ theme }) => theme.colors.text};
   font-weight: normal;
@@ -142,7 +142,7 @@ export const SkillsStuff = styled.div<{
     margin: ${({ theme }) => theme.space[4]};
 
     li {
-      font-size: ${({ theme }) => theme.fontSizes["lg"]};
+      font-size: ${({ theme }) => theme.fontSizes["md"]};
       margin-bottom: ${({ theme }) => theme.space[4]};
     }
   }

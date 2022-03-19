@@ -89,7 +89,7 @@ export const ContentSectionTitle = styled.h3`
 
 export const ContentSectionDescription = styled.div`
   line-height: 30px;
-  margin-top: ${({ theme }) => theme.space["4"]};
+  margin-top: ${({ theme }) => theme.space["2"]};
 
   a {
     transition: all 0.2s ease-in-out;
