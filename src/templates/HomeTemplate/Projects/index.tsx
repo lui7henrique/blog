@@ -1,13 +1,15 @@
 import { GetProjectsQuery } from "graphql/generated/graphql"
 import { FaGithub } from "react-icons/fa"
+import { useTheme } from "styled-components"
 import { Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
+import { projectsContent } from "./content"
 import * as S from "./styles"
 
 import "swiper/css"
 import "swiper/css/pagination"
-import { useTheme } from "styled-components"
+import { useRouter } from "next/router"
 
 type ProjectsProps = {
   projects: GetProjectsQuery["projects"]
@@ -17,13 +19,16 @@ export const Projects = (props: ProjectsProps) => {
   const { projects } = props
 
   const theme = useTheme()
+  const { locale } = useRouter()
+
+  const { title, subtitle } = projectsContent[locale as "pt-BR" | "en-US"]
 
   return (
     <S.ProjectsContainer>
       <S.ProjectsContent>
         <S.ProjectTitles>
-          <S.ProjectsSubtitle>Alguns íncriveis</S.ProjectsSubtitle>
-          <S.ProjectsTitle>Projetos</S.ProjectsTitle>
+          <S.ProjectsSubtitle>{subtitle}</S.ProjectsSubtitle>
+          <S.ProjectsTitle>{title}</S.ProjectsTitle>
         </S.ProjectTitles>
 
         <Swiper
