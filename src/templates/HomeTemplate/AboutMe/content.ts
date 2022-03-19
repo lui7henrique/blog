@@ -6,7 +6,7 @@ export const aboutMeContent = {
       {
         title: "🤔 Quem sou eu?",
         description:
-          "Sou desenvolvedor de software brasileiro de 19 anos focado em front-end e mobile. Eu gosto muito de compartilhar conhecimento, por isso muitas vezes faço <a href='/posts'>postagens</a> aqui relatando algo novo que aprendi ou que acho interessante. Além do desenvolvimento de software, gosto muito de jogar (principalmente League of Legends), além de gostar muito de cinema."
+          "Tenho 19 anos, atualmente sou desenvolvedor de software, focado em front-end e mobile. Por gostar muito de compartilhar conhecimento, recorrentemente farei <a href='/posts'>postagens</a> aqui, relatando algo novo que aprendi ou que acho interessante. Além do desenvolvimento de software, gosto muito de jogar (infelizmente League of Legends na maior parte do tempo)."
       },
       {
         title: "🔥 O que eu estou fazendo atualmente? ",
@@ -27,7 +27,7 @@ export const aboutMeContent = {
       {
         title: "🤔 Who am I?",
         description:
-          "I'm 19y brazilian software developer focused on front-end and mobile. I really enjoy sharing knowledge, so I often make <a href='/posts'>posts</a> here reporting something new that I learned or that I find interesting. Apart from software development, I really like playing games (mainly League of Legends), as well as really enjoying cinema."
+          "I'm 19 years old, currently I'm a software developer, focused on front-end and mobile. Because I really enjoy sharing knowledge, I'll regularly make <a href='/posts'>posts</a> here, reporting something new that I learned or that I find interesting. In addition to software development, I really enjoy playing games (unfortunately League of Legends most of the time"
       },
       {
         title: "🔥 What am I currently doing? ",
