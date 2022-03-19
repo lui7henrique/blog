@@ -12,13 +12,15 @@ export const HomeTemplate = () => {
 
   return (
     <>
+      <S.VideoBanner muted autoPlay loop ref={videoRef}>
+        <source src="/videos/rocket.mp4" type="video/mp4" />
+      </S.VideoBanner>
+
       <S.HeroContainer>
-        <S.VideoBanner autoPlay ref={videoRef} loop>
-          <source src="/rocket.mp4" type="video/mp4" />
-        </S.VideoBanner>
         <Header />
         <HeroSection />
       </S.HeroContainer>
+
       <AboutMe />
       <Skills />
     </>

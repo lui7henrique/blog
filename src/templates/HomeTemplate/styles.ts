@@ -16,7 +16,7 @@ export const VideoBanner = styled.video`
   object-position: 40% 0;
 
   z-index: -1;
-  position: absolute;
+  position: fixed;
   right: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
