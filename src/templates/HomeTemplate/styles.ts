@@ -7,6 +7,24 @@ export const HeroContainer = styled.div`
 
 export const FakeBox = styled.div``
 
+export const VideoBanner = styled.video`
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.3);
+
+  object-fit: cover;
+  object-position: 40% 0;
+
+  z-index: -1;
+  position: absolute;
+  right: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    width: 100%;
+    object-position: 70% 0;
+  }
+`
+
 export const BannerWrapper = styled.div`
   width: 50%;
   height: 100%;
