@@ -1,7 +1,7 @@
 import { Button } from "components/Button"
 import { useRouter } from "next/dist/client/router"
 import Link from "next/link"
-import { useCallback, useEffect } from "react"
+import { useCallback } from "react"
 import { FaLanguage } from "react-icons/fa"
 
 import { headerContent } from "./content"
