@@ -215,7 +215,7 @@ export default [
 
         <ul>
           <li>
-            <p>Fundamentos</p>
+            <p>Fundamentos:</p>
             <p>
               Aprendi sobre o ecossistema do desenvolvimento mobile com React
               Native, criar e compreender a estrutura de projetos com a CLI,
@@ -224,6 +224,7 @@ export default [
               estilização e utilização do TypeScript.
             </p>
           </li>
+
           <li>
             <a
               href="https://github.com/lui7henrique/ignite-reactnative-gofinance"
@@ -232,29 +233,30 @@ export default [
               Expo e Styled Components:
             </a>
             <p>
-              In this module you will learn about Expo, a Framework that offers
-              us a set of tools and services created around React Native
-              platforms that will boost our development. And you will also learn
-              how to use Styled Components to create interfaces with the concept
-              of CSS-in-JS, that is, which allows us to write CSS codes inside
-              Javascript. And why should I use Styled Components? The answer is
-              simple: practicality.
+              Tive meu primeiro contato com o Expo, um Framework que nos oferece
+              um conjunto de ferramentas e serviços criados em torno de
+              plataformas React Native que irão turbinar o nosso
+              desenvolvimento, e também aprendi a utilizar o Styled Components
+              para criar interfaces com o conceito de CSS-in-JS, ou seja, que
+              permite escrever códigos CSS dentro do Javascript.
             </p>
           </li>
+
           <li>
             <a
               href="https://github.com/lui7henrique/ignite-reactnative-gofinance"
               target="blank"
             >
-              Forms and Navigation:
+              Formulários e Navegação:
             </a>
             <p>
-              In this module you will learn how to use React Hooks Forms with
-              the purpose of creating flexible forms, with simple ways to
-              validate and without unnecessary rendering. You will also learn to
-              create navigation between mobile screens.
+              Utilizei o React Hooks Forms com a proposta de criar formulários
+              flexíveis, com formas simples de fazer validação e sem
+              renderizações desnecessárias.Além de aprender a criar a navegação
+              entre telas mobile.
             </p>
           </li>
+
           <li>
             <a
               href="https://github.com/lui7henrique/ignite-reactnative-gofinance"
@@ -263,104 +265,104 @@ export default [
               Async Storage:
             </a>
             <p>
-              In this module you will learn how to use Async Storage to store
-              data on the user&apos;s device. Async Storage is a great storage
-              strategy when there are not many rules and relationships involved,
-              as the storage system is simple and key-value-based, asynchronous
-              and persistent. And as a break, let&apos;s create the graph of our
-              application.
+              Aprendi a utilizar o Async Storage para armazenar dados no
+              dispositivo do usuário, sendo uma ótima estratégia de
+              armazenamento quando não há muitas regras e relacionamento
+              envolvido, pois o sistema de armazenamento é simples e baseado em
+              chave e valor (key-value), assíncrono e persistente.
             </p>
           </li>
+
           <li>
             <a
               href="https://github.com/lui7henrique/ignite-reactnative-gofinance"
               target="blank"
             >
-              Contexts and Authentication:
+              Contextos e Autenticação
             </a>
             <p>
-              In this module you will learn how to use Social Login with OAuth
-              Authentication, which is an incredible strategy that allows you to
-              use user data from an existing account, such as a Google account.
-              Authentication with Social Login brings comfort to the user who
-              does not need to create a new account from scratch and can go
-              straight to what really matters, which is to use our App.
-              What&apos;s more, in this module you will also learn how to use
-              the Context API to share data with your entire application (or
-              part of it). And to top it off, you&apos;ll learn how to create
-              your own Hook. We will use this perfect combination to store and
-              access user data in one place.
+              Aprendi a utilizar Login Social com OAuth Authentication, uma
+              estratégia incrível que permite utilizar os dados do usuário de
+              uma conta já existente, como por exemplo, uma conta Google. A
+              autenticação com Login Social trouxe conforto para o usuário que
+              não precisa criar uma nova conta do zero e pode ir direto para o
+              que realmente interessa que é utilizar o o App. Além de aprender a
+              utilizar a Context API para compartilhar dados com toda a sua
+              aplicação (ou parte dela).
             </p>
           </li>
+
           <li>
             <a
               href="https://github.com/lui7henrique/ignite-reactnative-rentx"
               target="blank"
             >
-              Consuming API:
+              Consumindo API:
             </a>
             <p>
-              In this module you will learn how to integrate your React Native
-              application with an API. You will understand the methods of the
-              HTTP protocol, handle requests and responses made to an API. To
-              integrate and consume API we will use Axios.
+              Integrei a aplicação React Native com uma API. Compreendi os
+              métodos do protocolo HTTP, lidar com requisições e respostas
+              realizadas a uma API, tudo isso utilizando a biblioteca Axios.
             </p>
           </li>
+
           <li>
             <a
               href="https://github.com/lui7henrique/ignite-reactnative-rentx"
               target="blank"
             >
-              Animations:
+              Animações:
             </a>
             <p>
-              Time to take our knowledge of interface development to the next
-              level by knowing and applying in practice tools and techniques
-              that will be present in your applications in the future applying
-              good UX and Animation practices.
+              Elevei meus conhecimentos sobre o desenvolvimento de interfaces
+              para o próximo nível conhecendo e aplicando na prática ferramentas
+              e técnicas que estarão presentes nas sua aplicações no futuro
+              aplicando boas práticas de UX e Animações.
             </p>
           </li>
+
           <li>
             <p>Offline First:</p>
             <p>
-              It&apos;s time to implement the Offline First strategy so that
-              some features of our application work without an internet
-              connection using a more robust local database.
+              Implementei a estratégia de Offline First para que algumas
+              funcionalidades da a aplicação funcione sem conexão com internet
+              utilizando um banco de dados local mais robusto.
+            </p>
+          </li>
+
+          <li>
+            <p>Testes no React Native:</p>
+            <p>
+              Testes automatizados é uma excelente estratégia para garantir que
+              componentes e funcionalidades continuem funcionando independente
+              de novas manutenções.
+            </p>
+          </li>
+
+          <li>
+            <p>Performando Apps:</p>
+            <p>
+              Entendi como performar aplicações no React Native entendendo como
+              funcionam os algoritmos internos da biblioteca e todo fluxo de
+              renderização de componentes.
+            </p>
+          </li>
+
+          <li>
+            <p>Publicação de Apps:</p>
+            <p>
+              Aprendi a enviar a aplicação para Android à Google Play Store e o
+              app iOS para Apple Store para disponibilizarmos nossa aplicação
+              para o mundo.
             </p>
           </li>
           <li>
-            <p>Tests on React Native:</p>
+            <p>Fluxo de CI/CD:</p>
             <p>
-              Automated testing is an excellent strategy to ensure that
-              components and functionality continue to work regardless of new
-              maintenance.
-            </p>
-          </li>
-          <li>
-            <p>Performing Apps</p>
-            <p>
-              In mobile applications, you may be concerned about performance
-              and, therefore, in this module we will understand how to perform
-              applications in React Native, understanding how the library&apos;s
-              internal algorithms and the entire component rendering flow work.
-            </p>
-          </li>
-          <li>
-            <p>App Publishing:</p>
-            <p>
-              In this module we will learn how to send the Android application
-              to the Google Play Store and the iOS app to the Apple Store to
-              make our application available to the world.
-            </p>
-          </li>
-          <li>
-            <p>CI/CD Flow:</p>
-            <p>
-              In this module we will seek to automate the process of creating
-              the next builds for our applications as soon as a new version is
-              sent to the repository. And for that, we are going to implement
-              the CI/CD strategy, that is, Continuous Integration and Continuous
-              Delivery.
+              Busquei automatizar o processo de criação das próximas builds para
+              as nossas aplicações assim que uma nova versão for enviada para o
+              repositório. E para isso, implementei a estratégia de CI/CD, isto
+              é, Continuous Integration e Continuous Delivery.
             </p>
           </li>
         </ul>
@@ -369,7 +371,7 @@ export default [
             href="https://github.com/lui7henrique?tab=repositories&q=reactnative&type=&language=&sort="
             target="blank"
           >
-            And others...
+            E outros...
           </a>
         </p>
       </div>

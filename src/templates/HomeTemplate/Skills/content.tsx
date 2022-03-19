@@ -1,3 +1,4 @@
+import enUS from "./en-US"
 import ptBR from "./pt-br"
 
 export const skillsContent = {
@@ -7,7 +8,7 @@ export const skillsContent = {
     title: "Habilidades"
   },
   "en-US": {
-    skills: ptBR,
+    skills: enUS,
     subtitle: "My current",
     title: "Skills"
   }
