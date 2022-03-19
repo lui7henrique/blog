@@ -56,11 +56,12 @@ export default [
               Fundamentos:
             </a>
             <p>
-              Aprendi sobre a estrutura base de uma aplicação React utilizando
-              ferramentas como Webpack, Babel, Webpack Dev server, SASS, Source
-              Maps, Fast Refresh e descobri conceitos importantes do React como
-              componentes, propriedades, estados e hooks além de aplicar o
-              TypeScript no projeto para adicionar tipagem estática à aplicação.
+              Nesse módulo do curso, aprendi sobre a estrutura base de uma
+              aplicação React utilizando ferramentas como Webpack, Babel,
+              Webpack Dev server, SASS, Source Maps, Fast Refresh e descobri
+              conceitos importantes do React como componentes, propriedades,
+              estados e hooks além de aplicar o TypeScript no projeto para
+              adicionar tipagem estática à aplicação.
             </p>
           </li>
 

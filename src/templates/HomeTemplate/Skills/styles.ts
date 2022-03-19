@@ -19,8 +19,6 @@ export const Content = styled.div`
   padding-right: ${({ theme }) => theme.space["10"]};
   padding-left: ${({ theme }) => theme.space["10"]};
 
-  border-top: 1px solid ${({ theme }) => theme.colors.shape};
-
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-direction: column-reverse;
 

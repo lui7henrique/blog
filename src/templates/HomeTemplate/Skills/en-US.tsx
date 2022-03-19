@@ -44,8 +44,8 @@ export default [
         </a>
 
         <p>
-          Desenvolvimento de interfaces web modernas e responsivas usando uma
-          biblioteca modular e escalável.
+          Development of modern and responsive web interfaces using a modular
+          and scalable library.
         </p>
         <ul>
           <li>
@@ -53,14 +53,15 @@ export default [
               href="https://github.com/lui7henrique/ignite-reactjs-fundamentos"
               target="blank"
             >
-              Fundamentos:
+              Fundamentals:
             </a>
             <p>
-              Aprendi sobre a estrutura base de uma aplicação React utilizando
-              ferramentas como Webpack, Babel, Webpack Dev server, SASS, Source
-              Maps, Fast Refresh e descobri conceitos importantes do React como
-              componentes, propriedades, estados e hooks além de aplicar o
-              TypeScript no projeto para adicionar tipagem estática à aplicação.
+              In this module, I learned about the basic structure of a React
+              application using tools like Webpack, Babel, Webpack Dev server,
+              SASS, Source Maps, Fast Refresh and discovered important concepts
+              like components, props, states and hooks in addition to applying
+              the TypeScript in the project to add static typing to the
+              application.
             </p>
           </li>
 

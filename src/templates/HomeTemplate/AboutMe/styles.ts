@@ -5,21 +5,22 @@ export const Container = styled.section`
   padding-top: ${({ theme }) => theme.space["20"]};
   padding-bottom: ${({ theme }) => theme.space["20"]};
 
-  background: linear-gradient(
-    90deg,
-    rgba(20, 9, 48, 1) 0%,
-    rgba(45, 22, 107, 1) 100%
-  );
+  border-top: 1px solid ${({ theme }) => theme.colors.shape};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.shape};
 
-  /* background: rgb(0, 0, 0);
+  background: ${({ theme }) => ` linear-gradient(
+    320deg,
+    ${theme.colors.background} 50%,
+    ${theme.colors.primary_dark} 120%
+  );`}
+    /* background: rgb(0, 0, 0);
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 1) 45%,
     rgba(20, 9, 48, 1) 100%
   ); */
-  /* background: ${({ theme }) => theme.colors.shape}; */
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    /* background: ${({ theme }) => theme.colors.shape}; */ @media
+    (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     padding-top: ${({ theme }) => theme.space["10"]};
     padding-bottom: ${({ theme }) => theme.space["10"]};
   }

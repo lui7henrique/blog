@@ -55,10 +55,10 @@ export const Skills = () => {
         <S.Aside>
           <S.ContentTitles>
             <div>
-              <S.ContentSubTitle data-aos="fade-left" data-aos-delay="200">
+              <S.ContentSubTitle data-aos="fade-right" data-aos-delay="200">
                 {content.subtitle}
               </S.ContentSubTitle>
-              <S.ContentTitle data-aos="fade-left" data-aos-delay="100">
+              <S.ContentTitle data-aos="fade-right" data-aos-delay="100">
                 {content.title}
               </S.ContentTitle>
             </div>

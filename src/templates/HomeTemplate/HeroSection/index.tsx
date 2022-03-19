@@ -1,7 +1,6 @@
 import { Button } from "components/Button"
 import { useDownload } from "hooks/useDownload"
 import { useRouter } from "next/router"
-import { useTheme } from "styled-components"
 
 import { heroContent } from "./content"
 import * as S from "./styles"
@@ -10,7 +9,6 @@ export const HeroSection = () => {
   const { handleNavigate } = useDownload()
   const { locale } = useRouter()
   const content = heroContent[locale as "pt-BR" | "en-US"]
-  const theme = useTheme()
 
   return (
     <S.Container>
