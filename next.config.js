@@ -11,7 +11,7 @@ module.exports = withPWA({
     domains: ["media.graphcms.com", "github.com"]
   },
   i18n: {
-    locales: ["en_US", "pt_BR"],
-    defaultLocale: "pt_BR"
+    locales: ["en-US", "pt-BR"],
+    defaultLocale: "pt-BR"
   }
 })

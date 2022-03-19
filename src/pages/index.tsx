@@ -15,11 +15,7 @@ export default function Home(props: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { projects } = await client.request<GetProjectsQuery>(GET_PROJECTS, {
-    variables: {
-      "gcms-locales": "pt_BR"
-    }
-  })
+  const { projects } = await client.request<GetProjectsQuery>(GET_PROJECTS)
 
   return {
     props: {
