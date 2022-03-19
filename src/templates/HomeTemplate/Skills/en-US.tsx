@@ -42,7 +42,6 @@ export default [
         >
           Ignite • ReactJS
         </a>
-
         <p>
           Development of modern and responsive web interfaces using a modular
           and scalable library.
@@ -56,12 +55,11 @@ export default [
               Fundamentals:
             </a>
             <p>
-              In this module, I learned about the basic structure of a React
-              application using tools like Webpack, Babel, Webpack Dev server,
-              SASS, Source Maps, Fast Refresh and discovered important concepts
-              like components, props, states and hooks in addition to applying
-              the TypeScript in the project to add static typing to the
-              application.
+              I learned about the basic structure of a React application using
+              tools like Webpack, Babel, Webpack Dev server, SASS, Source Maps,
+              Fast Refresh and discovered important concepts like components,
+              props, states and hooks in addition to applying the TypeScript in
+              the project to add static typing to the application.
             </p>
           </li>
 
@@ -70,46 +68,45 @@ export default [
               href="https://github.com/lui7henrique/ignite-reactjs-primeira-aplicacao"
               target="blank"
             >
-              Primeira aplicação web com ReactJS:
+              First web application:
             </a>
             <p>
-              Construí uma aplicação front-end web completa utilizando conceitos
-              e ferramentas importantes do ecossistema como Styled Components,
-              MirageJS, Context API, hooks, Axios e muito mais.
+              I built a complete front-end web application using concepts and
+              tools from the ecosystem like as Styled Components, MirageJS,
+              Context API, hooks, Axios and more.
             </p>
           </li>
 
           <li>
             <a href="https://github.com/lui7henrique/ignews" target="blank">
-              Fundamentos do Next.js:
+              Next.js Fundamentals:
             </a>
             <p>
-              Aprendi como o Next.js transforma a maneira de desenvolver
-              aplicações front-end e descobri conceitos importantes como SSR e
+              I learned how Next.js transforms the way to develop front-end
+              applications and discovered important concepts such as SSR and
               SSG.
             </p>
           </li>
 
           <li>
             <a href="https://github.com/lui7henrique/ignews" target="blank">
-              Back-end no front-end:
+              Backend on frontend:
             </a>
             <p>
-              Como o front-end se transformou nos últimos anos com a
-              possibilidade de termos funções back-end (serverless) executando
-              em um ambiente front-end.
+              I learned how the front-end has transformed in recent years with
+              the possibility of having back-end (serverless) functions running
+              in a front-end environment.
             </p>
           </li>
 
           <li>
             <a href="https://github.com/lui7henrique/ignews" target="blank">
-              Front-end JAMStack:
+              JAMStack Front-end:
             </a>
             <p>
-              É muito comum o desenvolvimento de aplicações front-end que não
-              estão conectadas a um único back-end hoje em dia, por isso, aqui
-              entendi o conceito de JAMStack e como conectar o front-end com um
-              CMS.
+              It is very common to develop front-end applications that are not
+              connected to a single back-end, so here I learned the concept of
+              JAMStack and how to connect the front-end with a CMS.
             </p>
           </li>
 
@@ -118,12 +115,12 @@ export default [
               href="https://github.com/lui7henrique/ignite-reactjs-criando-interfaces-do-futuro"
               target="blank"
             >
-              Construindo interfaces do futuro:
+              Building interfaces of the future:
             </a>
             <p>
-              Criei interface de um painel administrativo contendo fluxo de
-              autenticação, dashboard, listagem e cadastro usando Chakra UI no
-              Next.js.
+              I developed an interface of an administrative panel containing
+              authentication flow, dashboard, listing and registration using
+              Chakra UI with Next.js.
             </p>
           </li>
 
@@ -135,9 +132,8 @@ export default [
               Data fetching e cache local:
             </a>
             <p>
-              Utilizei React Query para melhorar a experiência de uso da
-              aplicação criando uma camada de cache de dados entre o front-end e
-              back-end.
+              I used React Query to improve experience by creating a data cache
+              layer between the front-end and back-end.
             </p>
           </li>
 
@@ -146,41 +142,46 @@ export default [
               href="https://github.com/lui7henrique/ignite-reactjs-criando-interfaces-do-futuro"
               target="blank"
             >
-              Autenticação e autorização:
+              Authentication and authorization:
             </a>
             <p>
-              Aprendi como criar um processo completo de autenticação,
-              autorização e refresh token dentro do React com Next.js permitindo
-              controlar o acesso à rotas e componentes tanto no client-side
-              quando server-side.
+              I learned how to create a complete authentication process,
+              authorization and refresh token inside React with Next.js allowing
+              control access to routes and components both on the client-side
+              when server-side.
             </p>
           </li>
 
           <li>
-            <p>Performando apps com ReactJS:</p>
+            <a
+              href="https://github.com/lui7henrique/ignite-reactjs-criando-interfaces-do-futuro"
+              target="blank"
+            >
+              Performing apps:
+            </a>
             <p>
-              Como performar aplicações com React entendendo como funcionam os
-              algoritmos internos da biblioteca e todo fluxo de renderização de
-              componentes.
-            </p>
-          </li>
-          <li>
-            <p>Testes unitários no React:</p>
-            <p>
-              Como criar testes automatizados de unidade dentro do React
-              garantindo que os componentes e páginas continuem funcionando
-              independente de novas manutenções. Tudo isso usando Jest e Testing
-              Library.
+              I learned how to perform applications with React understanding how
+              the library&apos;s internal algorithms work and the entire
+              workflow component rendering.
             </p>
           </li>
 
           <li>
-            <p>Estratégias de deploy no ReactJS</p>
+            <p>Unit tests in React:</p>
             <p>
-              Conheci as principais estratégias de deploy de uma aplicação
-              ReactJS com e sem Next.js utilizando serviços como Netlify e
-              Vercel principalmente, mas também apresentando outras opções para
-              projetos mais complexos.
+              I learned how to create automated unit tests within React ensuring
+              components and pages keep working independent of new maintenance.
+              All this using Jest and Testing Library.
+            </p>
+          </li>
+
+          <li>
+            <p>Deployment Strategies in ReactJS</p>
+            <p>
+              I learned about the main deployment strategies of an application
+              ReactJS with and without Next.js using services like Netlify and
+              Vercel mainly, but also presenting other options for more complex
+              projects.
             </p>
           </li>
         </ul>
@@ -202,19 +203,26 @@ export default [
     score: 7,
     content: (
       <div>
+        <a
+          href="https://app.rocketseat.com.br/certificates/351acd25-3f30-437b-be75-e38e8d73902b"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Ignite • React Native
+        </a>
         <p>
-          Development of modern and responsive mobile apps for both iOS and
-          Android natively.
+          Development of modern and reactive mobile applications for both iOS
+          and Android.
         </p>
         <ul>
           <li>
-            <p>React Native Fundamentals:</p>
+            <p>Fundamentals:</p>
             <p>
-              We will learn the mobile development ecosystem with React Native,
-              create and understand the structure of React Native projects with
-              the CLI, as well as know the main concepts around the library such
-              as components, properties, state, immutability, hooks, styling and
-              use of TypeScript.
+              Learned about the mobile development ecosystem with React Native,
+              I learned the project structure with CLI, in addition to knowing
+              the main concepts around the library such as components,
+              properties, state, immutability, hooks, style and use of
+              TypeScript.
             </p>
           </li>
           <li>
@@ -222,16 +230,14 @@ export default [
               href="https://github.com/lui7henrique/ignite-reactnative-gofinance"
               target="blank"
             >
-              Expo e Styled Components:
+              Expo and Styled Components:
             </a>
             <p>
-              In this module you will learn about Expo, a Framework that offers
-              us a set of tools and services created around React Native
-              platforms that will boost our development. And you will also learn
-              how to use Styled Components to create interfaces with the concept
-              of CSS-in-JS, that is, which allows us to write CSS codes inside
-              Javascript. And why should I use Styled Components? The answer is
-              simple: practicality.
+              I had my first contact with Expo, a Framework that offers a set of
+              tools and services built around React Native platforms that
+              accelerate development, and also I learned to use Styled
+              Components to create interfaces with the concept of CSS-in-JS,
+              i.e. it allows writing CSS code inside Javascript.
             </p>
           </li>
           <li>
@@ -242,12 +248,13 @@ export default [
               Forms and Navigation:
             </a>
             <p>
-              In this module you will learn how to use React Hooks Forms with
-              the purpose of creating flexible forms, with simple ways to
-              validate and without unnecessary rendering. You will also learn to
-              create navigation between mobile screens.
+              I used React Hooks Forms with the proposal of creating flexible
+              forms, with simple ways to make validation and without unnecessary
+              rendering. In addition to creating navigation between mobile
+              screens.
             </p>
           </li>
+
           <li>
             <a
               href="https://github.com/lui7henrique/ignite-reactnative-gofinance"
@@ -256,12 +263,11 @@ export default [
               Async Storage:
             </a>
             <p>
-              In this module you will learn how to use Async Storage to store
-              data on the user&apos;s device. Async Storage is a great storage
-              strategy when there are not many rules and relationships involved,
-              as the storage system is simple and key-value-based, asynchronous
-              and persistent. And as a break, let&apos;s create the graph of our
-              application.
+              I learned how to use Async Storage to store data on the
+              user&apos;s device, which is a great storage strategy when there
+              are not many rules and relationships involved, as the storage
+              system is simple and based on key and value (key-value),
+              asynchronous and persistent.
             </p>
           </li>
           <li>
@@ -272,19 +278,17 @@ export default [
               Contexts and Authentication:
             </a>
             <p>
-              In this module you will learn how to use Social Login with OAuth
-              Authentication, which is an incredible strategy that allows you to
-              use user data from an existing account, such as a Google account.
-              Authentication with Social Login brings comfort to the user who
-              does not need to create a new account from scratch and can go
-              straight to what really matters, which is to use our App.
-              What&apos;s more, in this module you will also learn how to use
-              the Context API to share data with your entire application (or
-              part of it). And to top it off, you&apos;ll learn how to create
-              your own Hook. We will use this perfect combination to store and
-              access user data in one place.
+              I learned how to use Social Login with OAuth Authentication, an
+              incredible strategy that allows you to use user data from an
+              existing account, such as a Google account. Authentication with
+              Social Login brought comfort to the user who does not need to
+              create a new account from scratch and can go straight to what
+              really matters, which is to use the App. In addition to learning
+              how to use the Context API to share data with the entire
+              application (or part of it).
             </p>
           </li>
+
           <li>
             <a
               href="https://github.com/lui7henrique/ignite-reactnative-rentx"
@@ -293,12 +297,12 @@ export default [
               Consuming API:
             </a>
             <p>
-              In this module you will learn how to integrate your React Native
-              application with an API. You will understand the methods of the
-              HTTP protocol, handle requests and responses made to an API. To
-              integrate and consume API we will use Axios.
+              I integrated the React Native application with an API. I learned
+              the HTTP protocol methods, handle requests and responses performed
+              to an API, all using the Axios library.
             </p>
           </li>
+
           <li>
             <a
               href="https://github.com/lui7henrique/ignite-reactnative-rentx"
@@ -307,53 +311,55 @@ export default [
               Animations:
             </a>
             <p>
-              Time to take our knowledge of interface development to the next
-              level by knowing and applying in practice tools and techniques
-              that will be present in your applications in the future applying
-              good UX and Animation practices.
+              Improved my knowledge of interface development to the next level
+              knowing and applying in practice tools and techniques that will be
+              present in your applications in the future applying good UX and
+              Animation practices.
             </p>
           </li>
+
           <li>
             <p>Offline First:</p>
             <p>
-              It&apos;s time to implement the Offline First strategy so that
-              some features of our application work without an internet
-              connection using a more robust local database.
+              I implemented the Offline First strategy so that some features of
+              the application work without an internet connection using a more
+              robust local database.
+            </p>
+          </li>
+
+          <li>
+            <p>Tests:</p>
+            <p>
+              I learned how automated testing is an excellent strategy to ensure
+              that components and functionality continue to work regardless of
+              further maintenance.
             </p>
           </li>
           <li>
-            <p>Tests on React Native:</p>
+            <p>Performing Apps:</p>
             <p>
-              Automated testing is an excellent strategy to ensure that
-              components and functionality continue to work regardless of new
-              maintenance.
+              I learned how to perform applications in React Native by
+              understanding how the library&apos;s internal algorithms and the
+              entire component rendering flow work.
             </p>
           </li>
-          <li>
-            <p>Performing Apps</p>
-            <p>
-              In mobile applications, you may be concerned about performance
-              and, therefore, in this module we will understand how to perform
-              applications in React Native, understanding how the library&apos;s
-              internal algorithms and the entire component rendering flow work.
-            </p>
-          </li>
+
           <li>
             <p>App Publishing:</p>
             <p>
-              In this module we will learn how to send the Android application
-              to the Google Play Store and the iOS app to the Apple Store to
-              make our application available to the world.
+              I learned how to submit an Android app to the Google Play Store
+              and the iOS app to the Apple Store to make our app available to
+              the world.
             </p>
           </li>
+
           <li>
             <p>CI/CD Flow:</p>
             <p>
-              In this module we will seek to automate the process of creating
-              the next builds for our applications as soon as a new version is
-              sent to the repository. And for that, we are going to implement
-              the CI/CD strategy, that is, Continuous Integration and Continuous
-              Delivery.
+              I sought to automate the process of creating the next builds for
+              our applications as soon as a new version is sent to the
+              repository. And for that, I implemented the CI/CD strategy, this
+              that is, Continuous Integration and Continuous Delivery.
             </p>
           </li>
         </ul>

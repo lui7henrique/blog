@@ -56,12 +56,11 @@ export default [
               Fundamentos:
             </a>
             <p>
-              Nesse módulo do curso, aprendi sobre a estrutura base de uma
-              aplicação React utilizando ferramentas como Webpack, Babel,
-              Webpack Dev server, SASS, Source Maps, Fast Refresh e descobri
-              conceitos importantes do React como componentes, propriedades,
-              estados e hooks além de aplicar o TypeScript no projeto para
-              adicionar tipagem estática à aplicação.
+              Aprendi sobre a estrutura base de uma aplicação React utilizando
+              ferramentas como Webpack, Babel, Webpack Dev server, SASS, Source
+              Maps, Fast Refresh e descobri conceitos importantes do React como
+              componentes, propriedades, estados e hooks além de aplicar o
+              TypeScript no projeto para adicionar tipagem estática à aplicação.
             </p>
           </li>
 
@@ -70,7 +69,7 @@ export default [
               href="https://github.com/lui7henrique/ignite-reactjs-primeira-aplicacao"
               target="blank"
             >
-              Primeira aplicação web com ReactJS:
+              Primeira aplicação web:
             </a>
             <p>
               Construí uma aplicação front-end web completa utilizando conceitos
@@ -121,9 +120,9 @@ export default [
               Construindo interfaces do futuro:
             </a>
             <p>
-              Criei interface de um painel administrativo contendo fluxo de
-              autenticação, dashboard, listagem e cadastro usando Chakra UI no
-              Next.js.
+              Desenvolvi a interface de um painel administrativo contendo fluxo
+              de autenticação, dashboard, listagem e cadastro usando Chakra UI
+              no Next.js.
             </p>
           </li>
 
@@ -159,15 +158,15 @@ export default [
           <li>
             <p>Performando apps com ReactJS:</p>
             <p>
-              Como performar aplicações com React entendendo como funcionam os
-              algoritmos internos da biblioteca e todo fluxo de renderização de
-              componentes.
+              Aprendi como garantir a performance de aplicações com React
+              entendendo como funcionam os algoritmos internos da biblioteca e
+              todo fluxo de renderização de componentes.
             </p>
           </li>
           <li>
             <p>Testes unitários no React:</p>
             <p>
-              Como criar testes automatizados de unidade dentro do React
+              Aprendi como criar testes automatizados de unidade dentro do React
               garantindo que os componentes e páginas continuem funcionando
               independente de novas manutenções. Tudo isso usando Jest e Testing
               Library.
@@ -236,10 +235,10 @@ export default [
             <p>
               Tive meu primeiro contato com o Expo, um Framework que nos oferece
               um conjunto de ferramentas e serviços criados em torno de
-              plataformas React Native que irão turbinar o nosso
-              desenvolvimento, e também aprendi a utilizar o Styled Components
-              para criar interfaces com o conceito de CSS-in-JS, ou seja, que
-              permite escrever códigos CSS dentro do Javascript.
+              plataformas React Native que acelera o desenvolvimento, e também
+              aprendi a utilizar o Styled Components para criar interfaces com o
+              conceito de CSS-in-JS, ou seja, que permite escrever códigos CSS
+              dentro do Javascript.
             </p>
           </li>
 
@@ -288,7 +287,7 @@ export default [
               autenticação com Login Social trouxe conforto para o usuário que
               não precisa criar uma nova conta do zero e pode ir direto para o
               que realmente interessa que é utilizar o o App. Além de aprender a
-              utilizar a Context API para compartilhar dados com toda a sua
+              utilizar a Context API para ompartilhar dados com toda a a
               aplicação (ou parte dela).
             </p>
           </li>
