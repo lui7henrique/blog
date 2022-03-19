@@ -3,6 +3,7 @@ import AOS from "aos"
 import { DefaultSeo } from "next-seo"
 import { AppProps } from "next/app"
 import Head from "next/head"
+import { useRouter } from "next/router"
 import { useEffect } from "react"
 import { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "styles/global"
@@ -12,12 +13,18 @@ import SEO from "../../next-seo.config"
 // ..
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const { asPath, push } = useRouter()
+
   useEffect(() => {
     AOS.init({
       easing: "ease-out-cubic",
       once: true,
       duration: 250
     })
+
+    const locale = localStorage.getItem("locale")
+
+    if (locale) push(asPath, asPath, { locale: locale })
   }, [])
 
   return (

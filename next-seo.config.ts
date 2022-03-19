@@ -2,7 +2,7 @@
 export default {
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "pt_BR",
     url: "https://futuretrips.vercel.app/",
     site_name: "Future Trips"
   },

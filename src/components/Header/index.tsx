@@ -1,7 +1,7 @@
 import { Button } from "components/Button"
 import { useRouter } from "next/dist/client/router"
 import Link from "next/link"
-import { useCallback } from "react"
+import { useCallback, useEffect } from "react"
 import { FaLanguage } from "react-icons/fa"
 
 import { headerContent } from "./content"
@@ -31,7 +31,8 @@ export const Header = () => {
 
   const handleChangeLocale = useCallback(
     (locale) => {
-      // replace("/", undefined, { shallow: true })
+      localStorage.setItem("locale", locale)
+
       push(asPath, asPath, { locale: locale })
     },
 
