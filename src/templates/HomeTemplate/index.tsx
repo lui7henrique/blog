@@ -1,13 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 import { Header } from "components/Header"
+import { GetProjectsQuery } from "graphql/generated/graphql"
 import { useRef } from "react"
 
 import { AboutMe } from "./AboutMe"
 import { HeroSection } from "./HeroSection"
+import { Projects } from "./Projects"
 import { Skills } from "./Skills"
 import * as S from "./styles"
 
-export const HomeTemplate = () => {
+type HomeTemplateProps = {
+  projects: GetProjectsQuery["projects"]
+}
+
+export const HomeTemplate = (props: HomeTemplateProps) => {
+  const { projects } = props
+
   const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
@@ -23,6 +31,8 @@ export const HomeTemplate = () => {
 
       <AboutMe />
       <Skills />
+
+      <Projects projects={projects} />
     </>
   )
 }
