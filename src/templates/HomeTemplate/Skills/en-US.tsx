@@ -483,9 +483,10 @@ export default [
     score: 4,
     content: (
       <div>
+        <p>Ignite • NodeJS:</p>
         <p>
           Building scalable and simple architectures for the web using a
-          flexible and popular language
+          flexible and popular language.
         </p>
         <ul>
           <li>
@@ -493,28 +494,28 @@ export default [
               href="https://github.com/lui7henrique/ignite-nodejs-primeira-aplicacao"
               target="blank"
             >
-              Node.js Fundamentals:
+              Fundamentals:
             </a>
             <p>
-              In these modules I learned about the concepts of Node.js, how it
-              works and the reasons why it was created. I studied about the
-              concepts and rules behind a Rest API, the HTTPs methods, the main
-              return codes and types of parameters of a request
+              I learned concepts from Node.js, how it works and the reasons why
+              it was created. Study the concepts and rules behind a Rest API,
+              HTTP methods, main return codes and request parameter types.
             </p>
           </li>
+
           <li>
             <a
               href="https://github.com/lui7henrique/ignite-nodejs-primeira-aplicacao"
               target="blank"
             >
-              First project with Node.js:
+              First project:
             </a>
             <p>
-              In this module I developed the first project with Node.js from
-              scratch, putting into practice all the concepts studied in the
-              initial module.
+              I created my first project with Node.js from scratch, putting into
+              practice all the concepts studied in the initial module.
             </p>
           </li>
+
           <li>
             <a
               href="https://github.com/lui7henrique/ignite-nodejs-primeira-aplicacao"
@@ -523,9 +524,9 @@ export default [
               Starting the API:
             </a>
             <p>
-              Here I learned to create applications using TypeScript following
-              code patterns and SOLID principles. I learned important concepts
-              like use cases, repositories, models, Node.js streams and API
+              I learned how to create applications using TypeScript following
+              code patterns, SOLID principles, and important concepts such as
+              use cases, repositories, models, Node.js streams and API
               documentation with Swagger.
             </p>
           </li>

@@ -497,14 +497,13 @@ export default [
               href="https://github.com/lui7henrique/ignite-nodejs-primeira-aplicacao"
               target="blank"
             >
-              Fundamentos
+              Fundamentos:
             </a>
             <p>
-              Nesse módulo, conheci conceitos do Node.js, como é o seu
-              funcionamento e os motivos pelo qual ele foi criado. Estudei sobre
-              os conceitos e regras por trás de uma API Rest, os métodos HTTPs,
-              os principais códigos de retornos e tipos de parâmetros de uma
-              requisição.
+              Aprendi conceitos do Node.js, como é o seu funcionamento e os
+              motivos pelo qual ele foi criado. Estudei sobre os conceitos e
+              regras por trás de uma API Rest, os métodos HTTPs, os principais
+              códigos de retornos e tipos de parâmetros de uma requisição.
             </p>
           </li>
 
@@ -513,12 +512,11 @@ export default [
               href="https://github.com/lui7henrique/ignite-nodejs-primeira-aplicacao"
               target="blank"
             >
-              Primeiro projeto
+              Primeiro projeto:
             </a>
             <p>
-              Nesse módulo, criei meu primeiro projeto com Node.js do total
-              zero, colocando em prática todos os conceitos estudados no módulo
-              inicial.
+              Criei meu primeiro projeto com Node.js do total zero, colocando em
+              prática todos os conceitos estudados no módulo inicial.
             </p>
           </li>
 
@@ -527,7 +525,7 @@ export default [
               href="https://github.com/lui7henrique/ignite-nodejs-primeira-aplicacao"
               target="blank"
             >
-              Iniciando a API
+              Iniciando a API:
             </a>
             <p>
               Aprendi a criar aplicações utilizando TypeScript seguindo padrões
