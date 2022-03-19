@@ -8,10 +8,11 @@ module.exports = withPWA({
     disable: !isProd
   },
   images: {
-    domains: ["media.graphcms.com", "github.com"]
+    domains: ["media.graphcms.com", "github.com", "picsum.photos"]
   },
   i18n: {
     locales: ["en-US", "pt-BR"],
     defaultLocale: "pt-BR"
-  }
+  },
+  experimental: { esmExternals: true }
 })
