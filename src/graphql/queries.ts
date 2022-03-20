@@ -23,3 +23,21 @@ export const GET_PROJECTS = gql`
     }
   }
 `
+
+export const GET_POSTS = gql`
+  query getPosts() {
+    posts(locales: [pt_BR]) {
+      id
+      heading
+      abstract
+      createdAt
+      updatedAt
+      thumbnail {
+        id
+        width
+        height
+        url
+      }
+    }
+  }
+`
