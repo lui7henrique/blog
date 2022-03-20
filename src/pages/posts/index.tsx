@@ -17,7 +17,9 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const { posts } = await localeClient(formattedLocale).request(GET_POSTS)
 
   return {
-    props: {},
+    props: {
+      posts
+    },
     revalidate: 60 * 60 * 24 // 1 day
   }
 }
