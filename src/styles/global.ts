@@ -44,5 +44,19 @@ export const GlobalStyles = createGlobalStyle`
 
   }
 
+  body::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors.background};
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.primary};
+    border-radius: 20px;
+    border: 3px solid ${({ theme }) => theme.colors.background};
+  }
+
 
 `

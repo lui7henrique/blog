@@ -4,6 +4,7 @@ import { DefaultSeo } from "next-seo"
 import { AppProps } from "next/app"
 import Head from "next/head"
 import { useRouter } from "next/router"
+import NextNProgress from "nextjs-progressbar"
 import { useEffect } from "react"
 import { ThemeProvider } from "styled-components"
 import { GlobalStyles } from "styles/global"
@@ -40,13 +41,13 @@ function MyApp({ Component, pageProps }: AppProps) {
       <DefaultSeo {...SEO} />
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        {/* <NextNprogress
-        color="#8257E6"
-        startPosition={0.3}
-        stopDelayMs={200}
-        height={3}
-        showOnShallow={true}
-      /> */}
+        <NextNProgress
+          color="#1F26A6"
+          startPosition={0.3}
+          stopDelayMs={200}
+          height={3}
+          showOnShallow={true}
+        />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
