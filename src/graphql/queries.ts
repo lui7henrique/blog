@@ -1,8 +1,8 @@
 import { gql } from "graphql-request"
 
 export const GET_PROJECTS = gql`
-  query getProjects() {
-    projects() {
+  query getProjects($first: Int) {
+    projects(first: $first) {
       id
       heading
       abstract
@@ -25,18 +25,23 @@ export const GET_PROJECTS = gql`
 `
 
 export const GET_POSTS = gql`
-  query getPosts() {
-    posts(locales: [pt_BR]) {
+  query getPosts($first: Int) {
+    posts(first: $first) {
       id
       heading
+      slug
       abstract
-      createdAt
-      updatedAt
       thumbnail {
         id
         width
         height
         url
+      }
+      updatedAt
+      updatedBy {
+        id
+        name
+        picture
       }
     }
   }

@@ -1,10 +1,17 @@
 import { Header } from "components/Header"
+import { GetPostsQuery } from "graphql/generated/graphql"
 import { useRef } from "react"
 
 import { HeroSection } from "./HeroSection"
+import { PostsList } from "./PostsList"
 import * as S from "./styles"
 
-export const PostsTemplate = () => {
+type PostsTemplateProps = {
+  posts: GetPostsQuery["posts"]
+}
+
+export const PostsTemplate = (props: PostsTemplateProps) => {
+  const { posts } = props
   const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
@@ -18,6 +25,8 @@ export const PostsTemplate = () => {
         <Header />
         <HeroSection />
       </S.HeroContainer>
+
+      <PostsList posts={posts} />
     </>
   )
 }
