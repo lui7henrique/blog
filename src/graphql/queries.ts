@@ -46,3 +46,33 @@ export const GET_POSTS = gql`
     }
   }
 `
+
+export const GET_POST_BY_SLUG = gql`
+  query getPostBySlug($slug: String!) {
+    posts(where: { slug: $slug }) {
+      id
+      heading
+      updatedAt
+      updatedBy {
+        id
+        name
+        picture
+      }
+      banner {
+        width
+        height
+        url
+        id
+      }
+      thumbnail {
+        width
+        height
+        url
+        id
+      }
+      content {
+        html
+      }
+    }
+  }
+`

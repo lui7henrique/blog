@@ -68,7 +68,7 @@ export const PostsList = (props: PostsListsProps) => {
   )
 
   return (
-    <S.Container>
+    <S.Container id="posts">
       {!!posts.length &&
         posts.map((post) => {
           return <Post key={post.id} post={post} />
