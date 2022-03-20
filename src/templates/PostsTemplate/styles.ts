@@ -31,3 +31,8 @@ export const VideoBanner = styled.video`
     width: 100%;
   }
 `
+
+export const HeroContainer = styled.div`
+  height: 100vh;
+  position: relative;
+`
