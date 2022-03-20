@@ -191,7 +191,7 @@ export default [
             href="https://github.com/lui7henrique?tab=repositories&q=reactjs&type=&language=&sort="
             target="blank"
           >
-            E outros...
+            And others...
           </a>
         </p>
       </div>

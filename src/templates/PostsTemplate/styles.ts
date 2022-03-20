@@ -12,7 +12,8 @@ export const VideoOverlay = styled.div`
     rgba(255, 255, 255, 0) 0%,
     rgba(0, 0, 0, 1) 100%
   );
-  z-index: 25;
+
+  pointer-events: none;
 `
 
 export const VideoBanner = styled.video`
@@ -25,9 +26,6 @@ export const VideoBanner = styled.video`
 
   z-index: -1;
   position: absolute;
-  right: 0;
-
-  background: black;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     width: 100%;

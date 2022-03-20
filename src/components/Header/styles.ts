@@ -12,6 +12,8 @@ export const Header = styled.header`
 
   padding-right: ${({ theme }) => theme.space["10"]};
   padding-left: ${({ theme }) => theme.space["10"]};
+
+  z-index: 99;
 `
 
 export const Logo = styled.h1`

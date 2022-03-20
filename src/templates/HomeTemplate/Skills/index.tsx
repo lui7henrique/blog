@@ -23,7 +23,7 @@ export const Skills = () => {
               <>
                 <S.Skill
                   key={skill.title}
-                  data-aos="fade-up"
+                  data-aos="fade-right"
                   data-aos-delay={index * 100}
                   onClick={
                     skill === activeSkill
