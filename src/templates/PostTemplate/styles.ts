@@ -118,6 +118,10 @@ export const PostContent = styled.div`
     color: ${({ theme }) => theme.colors.secondary};
   }
 
+  p {
+    margin-bottom: ${({ theme }) => theme.space["4"]};
+  }
+
   h1,
   h2 {
     margin: ${({ theme }) => theme.space["2"]} 0;
@@ -133,6 +137,8 @@ export const PostContent = styled.div`
     background-color: ${({ theme }) => theme.colors.shape};
     padding: ${({ theme }) => theme.space["4"]};
     margin: ${({ theme }) => theme.space["4"]} 0;
+
+    white-space: break-spaces;
     overflow-x: auto;
   }
 
@@ -150,5 +156,14 @@ export const PostContent = styled.div`
     box-decoration-break: clone;
     padding: 0.1rem 0.3rem 0.2rem;
     border-radius: 0.2rem;
+  }
+
+  blockquote {
+    border-left: 3px solid ${({ theme }) => theme.colors.secondary};
+    padding: ${({ theme }) => theme.space["2"]}
+      ${({ theme }) => theme.space["4"]};
+    margin: ${({ theme }) => theme.space["4"]} 0;
+
+    font-style: italic;
   }
 `
