@@ -69,7 +69,7 @@ export const PostsList = (props: PostsListsProps) => {
         </S.Post>
       )
     },
-    [locale]
+    [authorImage, locale]
   )
 
   return (

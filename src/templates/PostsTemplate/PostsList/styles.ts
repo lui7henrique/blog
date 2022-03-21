@@ -49,6 +49,25 @@ export const PostThumbnail = styled(Image)`
 
   object-fit: cover;
   transition: transform 0.2s ease-in-out;
+
+  background: #121214;
+  background-image: linear-gradient(
+    to right,
+    #121214 0%,
+    #171719 20%,
+    #121214 40%,
+    #121214 100%
+  );
+  background-size: 80rem 14rem;
+  animation: placeholderShimmer 1s linear infinite forwards;
+  @keyframes placeholderShimmer {
+    0% {
+      background-position: -40rem 0;
+    }
+    100% {
+      background-position: 40rem 0;
+    }
+  }
 `
 
 export const PostHeading = styled.h2`
@@ -75,6 +94,25 @@ export const PostAuthorAvatar = styled(Image)`
   height: 100%;
 
   object-fit: cover;
+
+  background: #121214;
+  background-image: linear-gradient(
+    to right,
+    #121214 0%,
+    #171719 20%,
+    #121214 40%,
+    #121214 100%
+  );
+  background-size: 80rem 14rem;
+  animation: placeholderShimmer 1s linear infinite forwards;
+  @keyframes placeholderShimmer {
+    0% {
+      background-position: -40rem 0;
+    }
+    100% {
+      background-position: 40rem 0;
+    }
+  }
 `
 
 export const PostAuthorInfos = styled.div`

@@ -32,8 +32,6 @@ export const PostTemplate = (props: PostsTemplateProps) => {
     return format(new Date(post.updatedAt), "MMMM dd, yyyy")
   }, [locale, post.updatedAt])
 
-  console.log(post.updatedBy?.picture!)
-
   return (
     <>
       <Header isPost postSlug={post.other_slug} />
