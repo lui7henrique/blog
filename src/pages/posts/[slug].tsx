@@ -1,16 +1,27 @@
 import localeClient from "graphql/client"
-import { GetPostsQuery, GetPostBySlugQuery } from "graphql/generated/graphql"
-import { GET_POSTS, GET_POST_BY_SLUG } from "graphql/queries"
+import {
+  GetPostsQuery,
+  GetPostBySlugQuery,
+  GetPostSlugByIdQuery
+} from "graphql/generated/graphql"
+import {
+  GET_POSTS,
+  GET_POST_BY_SLUG,
+  GET_POST_SLUG_BY_ID
+} from "graphql/queries"
 import { GetStaticPaths, GetStaticProps } from "next"
+import { PostTemplate } from "templates/PostTemplate"
 
 type PostTemplate = {
-  post: GetPostBySlugQuery["posts"][0]
+  post: {
+    other_slug: string
+  } & GetPostBySlugQuery["posts"][0]
 }
 
 export default function Post(props: PostTemplate) {
   const { post } = props
 
-  return <h1>{post.heading}</h1>
+  return <PostTemplate post={post} />
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -34,9 +45,20 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
     slug: `${params?.slug}`
   })
 
+  const { posts: postSlugOtherLanguage } = await localeClient(
+    formattedLocale === "pt_BR" ? "en_US" : "pt_BR"
+  ).request<GetPostSlugByIdQuery>(GET_POST_SLUG_BY_ID, {
+    id: posts[0]?.id
+  })
+
+  const post = {
+    ...posts[0],
+    other_slug: postSlugOtherLanguage[0].slug
+  }
+
   return {
     props: {
-      post: posts[0]
+      post
     },
     revalidate: 60 * 60 * 24 // 1 day
   }

@@ -14,6 +14,11 @@ export const Header = styled.header`
   padding-left: ${({ theme }) => theme.space["10"]};
 
   z-index: 99;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
+    padding-right: ${({ theme }) => theme.space["6"]};
+    padding-left: ${({ theme }) => theme.space["6"]};
+  }
 `
 
 export const Logo = styled.h1`

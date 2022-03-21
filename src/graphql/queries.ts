@@ -76,3 +76,11 @@ export const GET_POST_BY_SLUG = gql`
     }
   }
 `
+
+export const GET_POST_SLUG_BY_ID = gql`
+  query getPostSlugById($id: ID!) {
+    posts(where: { id: $id }) {
+      slug
+    }
+  }
+`

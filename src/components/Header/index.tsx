@@ -7,12 +7,17 @@ import { FaLanguage } from "react-icons/fa"
 import { headerContent } from "./content"
 import * as S from "./styles"
 
+type HeaderProps = {
+  isPost?: boolean
+  postSlug?: string
+}
+
 type NavLinkProps = {
   href: string
   label: string
 }
 
-export const Header = () => {
+export const Header = ({ isPost, postSlug }: HeaderProps) => {
   const { asPath, push, locale } = useRouter()
   const content = headerContent[locale as "pt-BR" | "en-US"]
 
@@ -29,15 +34,17 @@ export const Header = () => {
     [asPath]
   )
 
-  const handleChangeLocale = useCallback(
-    (locale) => {
+  const handleChangeLocale = async (locale: "pt-BR" | "en-US") => {
+    if (isPost) {
+      push(`/posts/${postSlug}`, `/posts/${postSlug}`, { locale: locale })
       localStorage.setItem("locale", locale)
 
-      push(asPath, asPath, { locale: locale })
-    },
+      return
+    }
 
-    [asPath, push]
-  )
+    localStorage.setItem("locale", locale)
+    push(asPath, asPath, { locale: locale })
+  }
 
   return (
     <S.Header>
