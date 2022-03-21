@@ -2,7 +2,7 @@ import { formatDistance } from "date-fns"
 import pt from "date-fns/locale/pt"
 import { GetPostsQuery } from "graphql/generated/graphql"
 import { useRouter } from "next/router"
-import { useCallback } from "react"
+import { useCallback, useState } from "react"
 
 import * as S from "./styles"
 
@@ -19,7 +19,9 @@ export const PostsList = (props: PostsListsProps) => {
 
   const { posts } = props
 
-  console.log(locale)
+  const [authorImage, setAuthorImage] = useState(
+    posts[0].updatedBy?.picture as string
+  )
 
   const Post = useCallback(
     (props: PostProps) => {
@@ -45,8 +47,11 @@ export const PostsList = (props: PostsListsProps) => {
               <S.PostAuthor>
                 <S.PostAuthorAvatarWrapper>
                   <S.PostAuthorAvatar
-                    src={post.updatedBy.picture!}
+                    src={authorImage}
                     layout="fill"
+                    onError={() => {
+                      setAuthorImage("https://github.com/lui7henrique.png")
+                    }}
                   />
                 </S.PostAuthorAvatarWrapper>
                 <S.PostAuthorInfos>

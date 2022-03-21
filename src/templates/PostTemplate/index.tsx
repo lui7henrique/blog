@@ -3,7 +3,7 @@ import { format, formatDistance } from "date-fns"
 import pt from "date-fns/locale/pt"
 import { GetPostBySlugQuery } from "graphql/generated/graphql"
 import { useRouter } from "next/router"
-import { useCallback } from "react"
+import { useCallback, useState } from "react"
 import { FaCalendar, FaClock } from "react-icons/fa"
 
 import * as S from "./styles"
@@ -15,9 +15,12 @@ type PostsTemplateProps = {
 }
 
 export const PostTemplate = (props: PostsTemplateProps) => {
-  const { locale } = useRouter()
-
   const { post } = props
+
+  const { locale } = useRouter()
+  const [authorImage, setAuthorImage] = useState(
+    post.updatedBy?.picture as string
+  )
 
   const formatDateByLocale = useCallback(() => {
     if (locale === "pt-BR") {
@@ -28,6 +31,8 @@ export const PostTemplate = (props: PostsTemplateProps) => {
 
     return format(new Date(post.updatedAt), "MMMM dd, yyyy")
   }, [locale, post.updatedAt])
+
+  console.log(post.updatedBy?.picture!)
 
   return (
     <>
@@ -40,7 +45,13 @@ export const PostTemplate = (props: PostsTemplateProps) => {
           <S.BasicInfos>
             <S.AuthorContainer>
               <S.AuthorImageWrapper>
-                <S.AuthorImage src={post.updatedBy?.picture!} layout="fill" />
+                <S.AuthorImage
+                  src={authorImage}
+                  layout="fill"
+                  onError={() => {
+                    setAuthorImage("https://github.com/lui7henrique.png")
+                  }}
+                />
               </S.AuthorImageWrapper>
               <S.AuthorName>{post.updatedBy?.name}</S.AuthorName>
             </S.AuthorContainer>
