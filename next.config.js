@@ -12,7 +12,8 @@ module.exports = withPWA({
       "media.graphcms.com",
       "github.com",
       "picsum.photos",
-      "avatars.githubusercontent.com"
+      "avatars.githubusercontent.com",
+      "media.graphassets.com"
     ]
   },
   i18n: {
