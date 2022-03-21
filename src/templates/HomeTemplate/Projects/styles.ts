@@ -31,6 +31,9 @@ export const ProjectsContent = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     padding-top: ${({ theme }) => theme.space["10"]};
     padding-bottom: ${({ theme }) => theme.space["10"]};
+
+    padding-right: ${({ theme }) => theme.space["6"]};
+    padding-left: ${({ theme }) => theme.space["6"]};
   }
 `
 

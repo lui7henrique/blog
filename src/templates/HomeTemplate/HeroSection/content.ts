@@ -11,7 +11,8 @@ export const heroContent = {
           link: "#about-me"
         },
         {
-          label: "Leia meus posts 🤗"
+          label: "Leia meus posts 🤗",
+          link: "/posts"
         }
       ]
     }
@@ -28,7 +29,8 @@ export const heroContent = {
           link: "#about-me"
         },
         {
-          label: "Read my posts 🤗"
+          label: "Read my posts 🤗",
+          link: "/posts"
         }
       ]
     }

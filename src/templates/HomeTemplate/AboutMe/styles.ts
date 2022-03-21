@@ -39,6 +39,8 @@ export const Content = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     flex-direction: column;
+    padding-right: ${({ theme }) => theme.space["6"]};
+    padding-left: ${({ theme }) => theme.space["6"]};
   }
 `
 

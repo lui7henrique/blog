@@ -1,12 +1,12 @@
 import { Button } from "components/Button"
-import { useDownload } from "hooks/useDownload"
+import { useNavigate } from "hooks/useNavigate"
 import { useRouter } from "next/router"
 
 import { heroContent } from "./content"
 import * as S from "./styles"
 
 export const HeroSection = () => {
-  const { handleNavigate } = useDownload()
+  const { handleNavigate } = useNavigate()
   const { locale } = useRouter()
   const content = heroContent[locale as "pt-BR" | "en-US"]
 

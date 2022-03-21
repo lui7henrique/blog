@@ -1,12 +1,12 @@
 import { Button } from "components/Button"
-import { useDownload } from "hooks/useDownload"
+import { useNavigate } from "hooks/useNavigate"
 import { useRouter } from "next/router"
 
 import { heroContent } from "./content"
 import * as S from "./styles"
 
 export const HeroSection = () => {
-  const { handleNavigate } = useDownload()
+  const { handleNavigate } = useNavigate()
   const { locale } = useRouter()
   const content = heroContent[locale as "pt-BR" | "en-US"]
 
@@ -29,6 +29,7 @@ export const HeroSection = () => {
           />
           <Button
             label={content.article.buttons[1].label}
+            onClick={() => handleNavigate(content.article.buttons[1].link!)}
             backgroundColor="transparent"
             fontSize="md"
             data-aos="fade-right"
