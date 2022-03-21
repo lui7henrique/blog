@@ -23,7 +23,9 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
 
   const NavLink = useCallback(
     ({ href, label }: NavLinkProps) => {
-      let isActive = href === asPath
+      let isActive =
+        asPath.split("#")[0] === href ||
+        asPath.split("/")[1] === href.replace("/", "")
 
       return (
         <Link href={href} passHref>

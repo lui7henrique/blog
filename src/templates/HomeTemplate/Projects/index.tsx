@@ -35,8 +35,6 @@ export const Projects = (props: ProjectsProps) => {
           modules={[Pagination]}
           spaceBetween={0}
           slidesPerView={1}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
           style={{
             width: "100%",
             border: `1px solid ${theme.colors.shape}`,

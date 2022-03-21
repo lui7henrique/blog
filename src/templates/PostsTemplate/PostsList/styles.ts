@@ -17,6 +17,9 @@ export const Container = styled.section`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     grid-template-columns: repeat(2, 1fr);
+
+    padding-right: ${({ theme }) => theme.space["6"]};
+    padding-left: ${({ theme }) => theme.space["6"]};
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {

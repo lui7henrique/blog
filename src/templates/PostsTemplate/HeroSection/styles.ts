@@ -11,6 +11,11 @@ export const Container = styled.section`
 
   display: flex;
   align-items: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    padding-right: ${({ theme }) => theme.space["6"]};
+    padding-left: ${({ theme }) => theme.space["6"]};
+  }
 `
 
 export const Article = styled.article`
