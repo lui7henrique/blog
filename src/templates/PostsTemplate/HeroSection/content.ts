@@ -1,7 +1,7 @@
 export const heroContent = {
   "pt-BR": {
     article: {
-      title: "Bem vindo!",
+      title: "Bem-vindo!",
       description:
         "Aqui farei postagens sobre assuntos que acho relevantes pra mim e quem sabe até pra você também! 🤗",
       buttons: [
