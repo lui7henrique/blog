@@ -10,6 +10,8 @@ import {
   GET_POST_SLUG_BY_ID
 } from "graphql/queries"
 import { GetStaticPaths, GetStaticProps } from "next"
+import { NextSeo } from "next-seo"
+import { useRouter } from "next/router"
 import { PostTemplate } from "templates/PostTemplate"
 
 type PostTemplate = {
@@ -21,7 +23,35 @@ type PostTemplate = {
 export default function Post(props: PostTemplate) {
   const { post } = props
 
-  return <PostTemplate post={post} />
+  const { locale } = useRouter()
+
+  const postURL = `https://lui7henrique.vercel.app/${
+    locale === "en-US" ? "en-US/" : ""
+  }posts/${post.slug}`
+
+  return (
+    <>
+      <NextSeo
+        title={post.heading}
+        description={post.abstract!}
+        canonical={postURL}
+        openGraph={{
+          url: postURL,
+          title: post.heading,
+          description: post.abstract!,
+          images: [
+            {
+              url: post.thumbnail.url!,
+              width: post.thumbnail.width!,
+              height: post.thumbnail.height!,
+              alt: post.heading
+            }
+          ]
+        }}
+      />
+      <PostTemplate post={post} />
+    </>
+  )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {

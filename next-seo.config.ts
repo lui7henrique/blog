@@ -3,8 +3,8 @@ export default {
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://futuretrips.vercel.app/",
-    site_name: "Future Trips"
+    url: "https://lui7henrique.vercel.app",
+    site_name: "Luiz Henrique"
   },
   github: {
     handle: "lui7henrique",

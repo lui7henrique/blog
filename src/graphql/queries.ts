@@ -52,6 +52,8 @@ export const GET_POST_BY_SLUG = gql`
     posts(where: { slug: $slug }) {
       id
       heading
+      slug
+      abstract
       updatedAt
       updatedBy {
         id

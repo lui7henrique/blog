@@ -1,21 +1,16 @@
 {
-  "name": "Future Trips",
-  "short_name": "Future Trips",
+  "name": "Luiz Henrique",
+  "short_name": "luizhenrique",
   "icons": [
     {
-      "src": "/img/icon-192.png",
+      "src": "/favicon.svg",
       "sizes": "192x192",
-      "type": "img/png"
-    },
-    {
-      "src": "/img/icon-512.png",
-      "sizes": "512x512",
       "type": "img/png"
     }
   ],
-  "theme_color": "#8257E6",
-  "background_color": "#8257E6",
-  "description": "A simple project to show you the places I'm going to travel",
+  "theme_color": "#1F26A6",
+  "background_color": "#1F26A6",
+  "description": "👋 Bem vindo ao meu site, onde eu me apresento e conto mais um pouco sobre meu dia a dia como desenvolvedor de software!",
   "start_url": "/",
   "display": "fullscreen"
 }

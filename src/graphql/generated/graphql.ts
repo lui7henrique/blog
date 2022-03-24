@@ -4530,7 +4530,7 @@ export type GetPostBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetPostBySlugQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, heading: string, updatedAt: any, updatedBy?: { __typename?: 'User', id: string, name: string, picture?: string | null } | null, banner: { __typename?: 'Asset', width?: number | null, height?: number | null, url: string, id: string }, thumbnail: { __typename?: 'Asset', width?: number | null, height?: number | null, url: string, id: string }, content: { __typename?: 'RichText', html: string } }> };
+export type GetPostBySlugQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, heading: string, slug: string, abstract?: string | null, updatedAt: any, updatedBy?: { __typename?: 'User', id: string, name: string, picture?: string | null } | null, banner: { __typename?: 'Asset', width?: number | null, height?: number | null, url: string, id: string }, thumbnail: { __typename?: 'Asset', width?: number | null, height?: number | null, url: string, id: string }, content: { __typename?: 'RichText', html: string } }> };
 
 export type GetPostSlugByIdQueryVariables = Exact<{
   id: Scalars['ID'];

@@ -31,11 +31,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <link rel="shortcut icon" href="/icon.png" />
-        <link rel="apple-touch-icon" href="/icon.png" />
+        <link rel="shortcut icon" href="/icon.svg" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
         <link rel="manifest" href="/manifest.json" />
 
-        <meta name="theme-color" content="#8257E6" />
+        <meta name="theme-color" content="#1F26A6" />
       </Head>
 
       <DefaultSeo {...SEO} />
