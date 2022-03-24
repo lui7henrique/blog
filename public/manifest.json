@@ -8,8 +8,8 @@
       "type": "img/png"
     }
   ],
-  "theme_color": "#1F26A6",
-  "background_color": "#1F26A6",
+  "theme_color": "#000000",
+  "background_color": "#000000",
   "description": "👋 Bem vindo ao meu site, onde eu me apresento e conto mais um pouco sobre meu dia a dia como desenvolvedor de software!",
   "start_url": "/",
   "display": "fullscreen"

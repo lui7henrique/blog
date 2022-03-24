@@ -35,7 +35,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="apple-touch-icon" href="/icon.svg" />
         <link rel="manifest" href="/manifest.json" />
 
-        <meta name="theme-color" content="#1F26A6" />
+        <meta name="theme-color" content="#000000" />
       </Head>
 
       <DefaultSeo {...SEO} />

@@ -33,7 +33,7 @@ export default function Home(props: HomeProps) {
           description: content.article.description,
           images: [
             {
-              url: "/home.jpg",
+              url: "https://lui7henrique.vercel.app/home.png",
               width: 1280,
               height: 720,
               alt: "Home"

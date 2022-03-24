@@ -33,7 +33,7 @@ export default function Home(props: PostsTemplate) {
           description: content.article.description,
           images: [
             {
-              url: "/posts.jpg",
+              url: "https://lui7henrique.vercel.app/posts.png",
               width: 1280,
               height: 720,
               alt: "Posts"
