@@ -79,7 +79,7 @@ export const Project = styled.div<{
   position: relative;
 
   position: sticky;
-  top: ${({ theme, top }) => theme.space[top]};
+  /* top: ${({ theme, top }) => theme.space[top]}; */
 
   .NextJS {
     filter: invert(1);
@@ -100,6 +100,25 @@ export const ProjectThumbnailWrapper = styled.figure`
   overflow: hidden;
 
   aspect-ratio: 16 / 9;
+
+  background: #121214;
+  background-image: linear-gradient(
+    to right,
+    #121214 0%,
+    #171719 20%,
+    #121214 40%,
+    #121214 100%
+  );
+  background-size: 80rem 14rem;
+  animation: placeholderShimmer 1s linear infinite forwards;
+  @keyframes placeholderShimmer {
+    0% {
+      background-position: -40rem 0;
+    }
+    100% {
+      background-position: 40rem 0;
+    }
+  }
 `
 
 export const ProjectThumbnail = styled(Image)`
@@ -125,6 +144,7 @@ export const ProjectHeading = styled.h3`
 
 export const ProjectAbstract = styled.p`
   font-size: ${({ theme }) => theme.fontSizes.md};
+  line-height: 30px;
 `
 
 export const ProjectTechs = styled.ul`
@@ -132,6 +152,8 @@ export const ProjectTechs = styled.ul`
   flex-wrap: wrap;
   list-style: none;
   gap: ${({ theme }) => theme.space["2"]};
+
+  margin-top: ${({ theme }) => theme.space["2"]};
 `
 
 export const ProjectTech = styled.li`
@@ -143,6 +165,12 @@ export const ProjectTech = styled.li`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.space["2"]};
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
 `
 
 export const ProjectTechIcon = styled(Image)``
@@ -156,4 +184,12 @@ export const GithubLink = styled.a`
   top: ${({ theme }) => theme.space["4"]};
   right: ${({ theme }) => theme.space["4"]};
   z-index: 99;
+
+  svg {
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+      filter: brightness(0.8);
+    }
+  }
 `

@@ -38,7 +38,9 @@ export const Projects = (props: ProjectsProps) => {
       Javascript: "javascript",
       Typescript: "typescript",
       ChakraUI: "chakra-ui",
-      IMDb: "imbd"
+      IMDb: "imbd",
+      APOD: "nasa",
+      Firebase: "firebase"
     }
 
     return icons[tech] ? icons[tech] : "react-js"
@@ -85,6 +87,8 @@ export const Projects = (props: ProjectsProps) => {
                   }}
                   pagination={{ clickable: true }}
                   centeredSlides
+                  data-aos="fade-right"
+                  data-aos-delay="100"
                 >
                   {images.map((image) => {
                     return (
@@ -101,11 +105,21 @@ export const Projects = (props: ProjectsProps) => {
                   })}
                 </Swiper>
                 <S.ProjectInfos>
-                  <S.ProjectHeading>{project.heading}</S.ProjectHeading>
-                  <S.ProjectAbstract>{project.abstract}</S.ProjectAbstract>
+                  <S.ProjectHeading data-aos="fade-right" data-aos-delay="100">
+                    {project.heading}
+                  </S.ProjectHeading>
+
+                  <S.ProjectAbstract data-aos="fade-right" data-aos-delay="100">
+                    {project.abstract}
+                  </S.ProjectAbstract>
+
                   <S.ProjectTechs>
-                    {project.technologies.map((tech) => (
-                      <S.ProjectTech key={v4()}>
+                    {project.technologies.map((tech, index) => (
+                      <S.ProjectTech
+                        key={v4()}
+                        data-aos="fade-up"
+                        data-aos-delay={index * 150}
+                      >
                         <S.ProjectTechIcon
                           src={`/logos/${getIconByTech(tech)}.png`}
                           width={16}

@@ -36,10 +36,14 @@ export const HomeTemplate = (props: HomeTemplateProps) => {
 
       <footer
         style={{
-          height: "100vh"
+          height: "100vh",
+          width: "100vw",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center"
         }}
       >
-        <h2>footer</h2>
+        <h2>footer (in development...)</h2>
       </footer>
     </>
   )
