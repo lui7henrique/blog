@@ -2,7 +2,10 @@ import { Footer } from "components/Footer"
 import { Header } from "components/Header"
 import { format, formatDistance } from "date-fns"
 import pt from "date-fns/locale/pt"
-import { GetPostBySlugQuery } from "graphql/generated/graphql"
+import {
+  GetMinimalPostsQuery,
+  GetPostBySlugQuery
+} from "graphql/generated/graphql"
 import { useRouter } from "next/router"
 import { useCallback, useState } from "react"
 import { FaCalendar, FaClock } from "react-icons/fa"
@@ -13,10 +16,11 @@ type PostsTemplateProps = {
   post: {
     other_slug: string
   } & GetPostBySlugQuery["posts"][0]
+  minimalPosts: GetMinimalPostsQuery["posts"]
 }
 
 export const PostTemplate = (props: PostsTemplateProps) => {
-  const { post } = props
+  const { post, minimalPosts } = props
 
   const { locale } = useRouter()
   const [authorImage, setAuthorImage] = useState(
@@ -76,7 +80,7 @@ export const PostTemplate = (props: PostsTemplateProps) => {
         />
       </S.Post>
 
-      <Footer />
+      <Footer posts={minimalPosts} />
     </>
   )
 }

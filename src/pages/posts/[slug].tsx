@@ -2,9 +2,11 @@ import localeClient from "graphql/client"
 import {
   GetPostsQuery,
   GetPostBySlugQuery,
-  GetPostSlugByIdQuery
+  GetPostSlugByIdQuery,
+  GetMinimalPostsQuery
 } from "graphql/generated/graphql"
 import {
+  GET_MINIMAL_POSTS,
   GET_POSTS,
   GET_POST_BY_SLUG,
   GET_POST_SLUG_BY_ID
@@ -18,10 +20,11 @@ type PostTemplate = {
   post: {
     other_slug: string
   } & GetPostBySlugQuery["posts"][0]
+  minimalPosts: GetMinimalPostsQuery["posts"]
 }
 
 export default function Post(props: PostTemplate) {
-  const { post } = props
+  const { post, minimalPosts } = props
 
   const { locale } = useRouter()
 
@@ -49,7 +52,7 @@ export default function Post(props: PostTemplate) {
           ]
         }}
       />
-      <PostTemplate post={post} />
+      <PostTemplate post={post} minimalPosts={minimalPosts} />
     </>
   )
 }
@@ -86,9 +89,14 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
     other_slug: postSlugOtherLanguage[0].slug
   }
 
+  const { posts: minimalPosts } = await localeClient(
+    formattedLocale
+  ).request<GetMinimalPostsQuery>(GET_MINIMAL_POSTS)
+
   return {
     props: {
-      post
+      post,
+      minimalPosts
     },
     revalidate: 60 * 60 * 24 // 1 day
   }

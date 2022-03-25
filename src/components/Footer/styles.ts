@@ -142,5 +142,4 @@ export const SocialLinkLabel = styled.span``
 
 export const FooterCopyright = styled.div`
   opacity: 0.5;
-  user-select: none;
 `

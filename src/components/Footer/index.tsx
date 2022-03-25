@@ -55,7 +55,7 @@ export const Footer = (props: FooterProps) => {
     <S.Footer>
       <S.FooterContainer>
         <S.FooterSections>
-          <S.FooterBasicInfo>
+          <S.FooterBasicInfo data-aos="fade-up" data-aos-delay="100">
             <S.FooterTitle>{title}</S.FooterTitle>
             <S.FooterDescription>
               {description}{" "}
@@ -63,7 +63,7 @@ export const Footer = (props: FooterProps) => {
             </S.FooterDescription>
           </S.FooterBasicInfo>
 
-          <S.FooterHome>
+          <S.FooterHome data-aos="fade-up" data-aos-delay="200">
             <S.FooterHomeTitle>{home.title}</S.FooterHomeTitle>
             {home.links.map((link) => (
               <ExploreLink
@@ -75,7 +75,7 @@ export const Footer = (props: FooterProps) => {
           </S.FooterHome>
 
           {posts && !!posts.length && (
-            <S.FooterBlog>
+            <S.FooterBlog data-aos="fade-up" data-aos-delay="300">
               <S.FooterBlogTitle>Posts</S.FooterBlogTitle>
               {posts.map((post) => (
                 <ExploreLink
@@ -87,7 +87,7 @@ export const Footer = (props: FooterProps) => {
             </S.FooterBlog>
           )}
 
-          <S.FooterSocial>
+          <S.FooterSocial data-aos="fade-up" data-aos-delay="400">
             <S.FooterSocialTitle>{social.title}</S.FooterSocialTitle>
             {social.links.map((link) => (
               <SocialLink
@@ -99,7 +99,10 @@ export const Footer = (props: FooterProps) => {
             ))}
           </S.FooterSocial>
         </S.FooterSections>
-        <S.FooterCopyright>{copyright}</S.FooterCopyright>
+
+        <S.FooterCopyright data-aos="fade-up" data-aos-delay="500">
+          {copyright}
+        </S.FooterCopyright>
       </S.FooterContainer>
     </S.Footer>
   )
