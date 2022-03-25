@@ -1,5 +1,6 @@
+import { Footer } from "components/Footer"
 import { Header } from "components/Header"
-import { GetPostsQuery } from "graphql/generated/graphql"
+import { GetMinimalPostsQuery, GetPostsQuery } from "graphql/generated/graphql"
 import { useRef } from "react"
 
 import { HeroSection } from "./HeroSection"
@@ -8,10 +9,11 @@ import * as S from "./styles"
 
 type PostsTemplateProps = {
   posts: GetPostsQuery["posts"]
+  minimalPosts: GetMinimalPostsQuery["posts"]
 }
 
 export const PostsTemplate = (props: PostsTemplateProps) => {
-  const { posts } = props
+  const { posts, minimalPosts } = props
   const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
@@ -27,6 +29,8 @@ export const PostsTemplate = (props: PostsTemplateProps) => {
       </S.HeroContainer>
 
       <PostsList posts={posts} />
+
+      <Footer posts={minimalPosts} />
     </>
   )
 }

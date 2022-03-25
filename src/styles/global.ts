@@ -56,6 +56,4 @@ export const GlobalStyles = createGlobalStyle`
     border-radius: 20px;
     border: 3px solid ${({ theme }) => theme.colors.background};
   }
-
-
 `

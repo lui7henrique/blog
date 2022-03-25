@@ -12,6 +12,7 @@ type PostsListsProps = {
 
 type PostProps = {
   post: GetPostsQuery["posts"][number]
+  index: number
 }
 
 export const PostsList = (props: PostsListsProps) => {
@@ -25,7 +26,7 @@ export const PostsList = (props: PostsListsProps) => {
 
   const Post = useCallback(
     (props: PostProps) => {
-      const { post } = props
+      const { post, index } = props
 
       const updateAtTime = formatDistance(
         new Date(post.updatedAt),
@@ -37,41 +38,46 @@ export const PostsList = (props: PostsListsProps) => {
       )
 
       return (
-        <S.Post href={`/posts/${post.slug}`}>
-          <a>
-            <S.PostThumbnailWrapper>
-              <S.PostThumbnail
-                src={post.thumbnail.url}
-                layout="fill"
-                alt={post.heading}
-              />
-            </S.PostThumbnailWrapper>
+        <S.PostContainer
+          data-aos="fade-down"
+          data-aos-delay={index > 10 ? index * 10 : index * 100}
+        >
+          <S.Post href={`/posts/${post.slug}`}>
+            <a>
+              <S.PostThumbnailWrapper>
+                <S.PostThumbnail
+                  src={post.thumbnail.url}
+                  layout="fill"
+                  alt={post.heading}
+                />
+              </S.PostThumbnailWrapper>
 
-            {post.updatedBy && (
-              <S.PostAuthor>
-                <S.PostAuthorAvatarWrapper>
-                  <S.PostAuthorAvatar
-                    src={authorImage}
-                    layout="fill"
-                    onError={() => {
-                      setAuthorImage("https://github.com/lui7henrique.png")
-                    }}
-                    alt={post.updatedBy.name}
-                  />
-                </S.PostAuthorAvatarWrapper>
-                <S.PostAuthorInfos>
-                  <S.PostAuthorName>{post.updatedBy.name}</S.PostAuthorName>
-                  <S.PostUpdateAtTime>{updateAtTime}</S.PostUpdateAtTime>
-                </S.PostAuthorInfos>
-              </S.PostAuthor>
-            )}
+              {post.updatedBy && (
+                <S.PostAuthor>
+                  <S.PostAuthorAvatarWrapper>
+                    <S.PostAuthorAvatar
+                      src={authorImage}
+                      layout="fill"
+                      onError={() => {
+                        setAuthorImage("https://github.com/lui7henrique.png")
+                      }}
+                      alt={post.updatedBy.name}
+                    />
+                  </S.PostAuthorAvatarWrapper>
+                  <S.PostAuthorInfos>
+                    <S.PostAuthorName>{post.updatedBy.name}</S.PostAuthorName>
+                    <S.PostUpdateAtTime>{updateAtTime}</S.PostUpdateAtTime>
+                  </S.PostAuthorInfos>
+                </S.PostAuthor>
+              )}
 
-            <S.PostInfos>
-              <S.PostHeading>{post.heading}</S.PostHeading>
-              <S.PostAbstract>{post.abstract}</S.PostAbstract>
-            </S.PostInfos>
-          </a>
-        </S.Post>
+              <S.PostInfos>
+                <S.PostHeading>{post.heading}</S.PostHeading>
+                <S.PostAbstract>{post.abstract}</S.PostAbstract>
+              </S.PostInfos>
+            </a>
+          </S.Post>
+        </S.PostContainer>
       )
     },
     [authorImage, locale]
@@ -80,8 +86,8 @@ export const PostsList = (props: PostsListsProps) => {
   return (
     <S.Container id="posts">
       {!!posts.length &&
-        posts.map((post) => {
-          return <Post key={post.id} post={post} />
+        posts.map((post, index) => {
+          return <Post key={post.id} post={post} index={index} />
         })}
     </S.Container>
   )

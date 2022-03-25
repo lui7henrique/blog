@@ -3,8 +3,8 @@ export const heroContent = {
     article: {
       title: "Olá Mundo!",
       description:
-        "👨‍💻 Sou um desenvolvedor front-end apaixonado por fazer coisas belas e úteis",
-      subDescription: "(ás vezes 🤣)",
+        "👨‍💻 Apenas um desenvolvedor front-end apaixonado por fazer coisas belas e úteis ",
+      subDescription: "(ás vezes nem tanto 🤣).",
       buttons: [
         {
           label: "Saiba mais",
@@ -21,8 +21,8 @@ export const heroContent = {
     article: {
       title: "Hello World!",
       description:
-        "👨‍💻 I'm a Front-end developer in love with making beautiful and     useful things!",
-      subDescription: "(sometimes 🤣)",
+        "👨‍💻 A Front-end developer in love with making beautiful and     useful things ",
+      subDescription: "(sometimes 🤣)!",
       buttons: [
         {
           label: "Know more",

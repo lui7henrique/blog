@@ -1,6 +1,6 @@
 import localeClient from "graphql/client"
-import { GetPostsQuery } from "graphql/generated/graphql"
-import { GET_POSTS } from "graphql/queries"
+import { GetMinimalPostsQuery, GetPostsQuery } from "graphql/generated/graphql"
+import { GET_MINIMAL_POSTS, GET_POSTS } from "graphql/queries"
 import { GetStaticProps } from "next"
 import { NextSeo } from "next-seo"
 import { useRouter } from "next/router"
@@ -9,10 +9,11 @@ import { heroContent } from "templates/PostsTemplate/HeroSection/content"
 
 type PostsTemplate = {
   posts: GetPostsQuery["posts"]
+  minimalPosts: GetMinimalPostsQuery["posts"]
 }
 
 export default function Home(props: PostsTemplate) {
-  const { posts } = props
+  const { posts, minimalPosts } = props
 
   const { locale } = useRouter()
   const content = heroContent[locale as "pt-BR" | "en-US"]
@@ -41,7 +42,7 @@ export default function Home(props: PostsTemplate) {
           ]
         }}
       />
-      <PostsTemplate posts={posts} />
+      <PostsTemplate posts={posts} minimalPosts={minimalPosts} />
     </>
   )
 }
@@ -53,9 +54,14 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     GET_POSTS
   )
 
+  const { posts: minimalPosts } = await localeClient(
+    formattedLocale
+  ).request<GetMinimalPostsQuery>(GET_MINIMAL_POSTS)
+
   return {
     props: {
-      posts
+      posts,
+      minimalPosts
     },
     revalidate: 60 * 60 * 24 // 1 day
   }

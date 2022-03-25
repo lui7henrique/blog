@@ -5,10 +5,10 @@ export const Header = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  max-width: ${({ theme }) => theme.sizes.maxWidth};
-  margin: 0 auto;
   width: 100%;
   height: ${({ theme }) => theme.sizes.headerHeight};
+  max-width: ${({ theme }) => theme.sizes.maxWidth};
+  margin: 0 auto;
 
   padding-right: ${({ theme }) => theme.space["10"]};
   padding-left: ${({ theme }) => theme.space["10"]};

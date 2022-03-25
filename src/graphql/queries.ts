@@ -48,6 +48,15 @@ export const GET_POSTS = gql`
   }
 `
 
+export const GET_MINIMAL_POSTS = gql`
+  query getMinimalPosts($first: Int) {
+    posts(first: $first) {
+      heading
+      slug
+    }
+  }
+`
+
 export const GET_POST_BY_SLUG = gql`
   query getPostBySlug($slug: String!) {
     posts(where: { slug: $slug }) {

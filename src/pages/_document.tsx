@@ -45,6 +45,11 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="favicon" href="/favicon.svg" />
+          <link
+            rel="canonical"
+            hrefLang="pt-br"
+            href="https://lui7henrique.vercel.app/"
+          />
         </Head>
         <body>
           <Main />

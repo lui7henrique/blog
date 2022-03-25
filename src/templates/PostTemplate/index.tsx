@@ -1,3 +1,4 @@
+import { Footer } from "components/Footer"
 import { Header } from "components/Header"
 import { format, formatDistance } from "date-fns"
 import pt from "date-fns/locale/pt"
@@ -74,6 +75,8 @@ export const PostTemplate = (props: PostsTemplateProps) => {
           dangerouslySetInnerHTML={{ __html: post.content.html }}
         />
       </S.Post>
+
+      <Footer />
     </>
   )
 }

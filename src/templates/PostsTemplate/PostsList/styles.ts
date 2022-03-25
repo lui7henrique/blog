@@ -27,6 +27,8 @@ export const Container = styled.section`
   }
 `
 
+export const PostContainer = styled.div``
+
 export const Post = styled(Link)`
   display: flex;
   flex-direction: column;

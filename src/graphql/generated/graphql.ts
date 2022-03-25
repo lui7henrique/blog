@@ -4074,19 +4074,23 @@ export enum SystemDateTimeFieldVariation {
 }
 
 export enum Techs {
+  Apod = 'APOD',
   AntDesign = 'AntDesign',
   Css = 'CSS',
   ChakraUi = 'ChakraUI',
+  Firebase = 'Firebase',
   GraphCms = 'GraphCMS',
   GraphQl = 'GraphQL',
   Html = 'HTML',
+  ImDb = 'IMDb',
   Java = 'Java',
   Javascript = 'Javascript',
   NextJs = 'NextJS',
   NodeJs = 'NodeJS',
   ReactJs = 'ReactJS',
   ReactNative = 'ReactNative',
-  StyledComponents = 'StyledComponents'
+  StyledComponents = 'StyledComponents',
+  Typescript = 'Typescript'
 }
 
 export type UnpublishLocaleInput = {
@@ -4567,6 +4571,13 @@ export type GetPostsQueryVariables = Exact<{
 
 
 export type GetPostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, heading: string, slug: string, abstract?: string | null, updatedAt: any, thumbnail: { __typename?: 'Asset', id: string, width?: number | null, height?: number | null, url: string }, updatedBy?: { __typename?: 'User', id: string, name: string, picture?: string | null } | null }> };
+
+export type GetMinimalPostsQueryVariables = Exact<{
+  first?: InputMaybe<Scalars['Int']>;
+}>;
+
+
+export type GetMinimalPostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', heading: string, slug: string }> };
 
 export type GetPostBySlugQueryVariables = Exact<{
   slug: Scalars['String'];
