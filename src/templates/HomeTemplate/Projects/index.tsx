@@ -4,16 +4,20 @@ import { FaGithub } from "react-icons/fa"
 import { useTheme } from "styled-components"
 import { Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
+import { v4 } from "uuid"
 
 import { projectsContent } from "./content"
 import * as S from "./styles"
 
 import "swiper/css"
 import "swiper/css/pagination"
+import { useCallback } from "react"
 
 type ProjectsProps = {
   projects: GetProjectsQuery["projects"]
 }
+
+type Technologies = GetProjectsQuery["projects"][0]["technologies"][0]
 
 export const Projects = (props: ProjectsProps) => {
   const { projects } = props
@@ -23,48 +27,100 @@ export const Projects = (props: ProjectsProps) => {
 
   const { title, subtitle } = projectsContent[locale as "pt-BR" | "en-US"]
 
+  const getIconByTech = useCallback((tech: Technologies) => {
+    const icons: any = {
+      ReactJS: "react-js",
+      NodeJS: "node-js",
+      GraphQL: "graphql",
+      StyledComponents: "styled-components",
+      NextJS: "next-js",
+      GraphCMS: "graph-cms",
+      Javascript: "javascript",
+      Typescript: "typescript",
+      ChakraUI: "chakra-ui",
+      IMDb: "imbd"
+    }
+
+    return icons[tech] ? icons[tech] : "react-js"
+  }, [])
+
   return (
     <S.ProjectsContainer>
       <S.ProjectsContent>
-        <S.ProjectTitles>
-          <S.ProjectsSubtitle>{subtitle}</S.ProjectsSubtitle>
-          <S.ProjectsTitle>{title}</S.ProjectsTitle>
-        </S.ProjectTitles>
+        <S.Aside>
+          <div>
+            <S.Subtitle data-aos="fade-right" data-aos-delay="200">
+              {subtitle}
+            </S.Subtitle>
+            <S.Title data-aos="fade-right" data-aos-delay="100">
+              {title}
+            </S.Title>
+          </div>
+        </S.Aside>
 
-        <Swiper
-          modules={[Pagination]}
-          spaceBetween={0}
-          slidesPerView={1}
-          style={{
-            width: "100%",
-            border: `1px solid ${theme.colors.shape}`,
-            borderRadius: "5px"
-          }}
-          pagination={{ clickable: true }}
-          centeredSlides
-        >
-          {projects.map((project) => {
+        <S.Projects>
+          {projects.map((project, index) => {
+            const images = [project.thumbnail, ...project.images]
+
+            const top = (
+              index === 0 ? 4 : index * 4
+            ) as keyof typeof theme["space"]
+
             return (
-              <SwiperSlide key={project.id}>
-                <S.Project href={project.projectUrl!} target="blank">
-                  {project.repositoryUrl && (
-                    <S.GithubLink target="blank" href={project.repositoryUrl}>
-                      <FaGithub size={25} />
-                    </S.GithubLink>
-                  )}
-                  <S.ProjectThumbnailWrapper>
-                    <S.ProjectThumbnail
-                      src={project.thumbnail?.url ?? project.images[0].url}
-                      layout="fill"
-                      quality={100}
-                    />
-                  </S.ProjectThumbnailWrapper>
+              <S.Project key={project.id} index={index} top={top}>
+                {project.repositoryUrl && (
+                  <S.GithubLink target="blank" href={project.repositoryUrl}>
+                    <FaGithub size={25} />
+                  </S.GithubLink>
+                )}
+
+                <Swiper
+                  modules={[Pagination]}
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  style={{
+                    width: "100%",
+                    border: `1px solid ${theme.colors.shape}`,
+                    borderRadius: "5px"
+                  }}
+                  pagination={{ clickable: true }}
+                  centeredSlides
+                >
+                  {images.map((image) => {
+                    return (
+                      <SwiperSlide key={image.id}>
+                        <S.ProjectThumbnailWrapper>
+                          <S.ProjectThumbnail
+                            src={image.url}
+                            layout="fill"
+                            quality={100}
+                          />
+                        </S.ProjectThumbnailWrapper>
+                      </SwiperSlide>
+                    )
+                  })}
+                </Swiper>
+                <S.ProjectInfos>
+                  <S.ProjectHeading>{project.heading}</S.ProjectHeading>
                   <S.ProjectAbstract>{project.abstract}</S.ProjectAbstract>
-                </S.Project>
-              </SwiperSlide>
+                  <S.ProjectTechs>
+                    {project.technologies.map((tech) => (
+                      <S.ProjectTech key={v4()}>
+                        <S.ProjectTechIcon
+                          src={`/logos/${getIconByTech(tech)}.png`}
+                          width={16}
+                          height={16}
+                          className={tech}
+                        />
+                        <S.ProjectTechLabel>{tech}</S.ProjectTechLabel>
+                      </S.ProjectTech>
+                    ))}
+                  </S.ProjectTechs>
+                </S.ProjectInfos>
+              </S.Project>
             )
           })}
-        </Swiper>
+        </S.Projects>
       </S.ProjectsContent>
     </S.ProjectsContainer>
   )

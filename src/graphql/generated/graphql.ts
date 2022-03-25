@@ -2090,6 +2090,8 @@ export type Project = Node & {
   slug: Scalars['String'];
   /** System stage field */
   stage: Stage;
+  /** technologies used in the project */
+  technologies: Array<Techs>;
   thumbnail: Asset;
   /** The time the document was updated */
   updatedAt: Scalars['DateTime'];
@@ -2203,6 +2205,7 @@ export type ProjectCreateInput = {
   projectUrl?: InputMaybe<Scalars['String']>;
   repositoryUrl?: InputMaybe<Scalars['String']>;
   slug: Scalars['String'];
+  technologies?: InputMaybe<Array<Techs>>;
   thumbnail: AssetCreateOneInlineInput;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
 };
@@ -2390,6 +2393,16 @@ export type ProjectManyWhereInput = {
   slug_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   slug_starts_with?: InputMaybe<Scalars['String']>;
+  /** Matches if the field array contains *all* items provided to the filter and order does match */
+  technologies?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array contains *all* items provided to the filter */
+  technologies_contains_all?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array does not contain any of the items provided to the filter */
+  technologies_contains_none?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array contains at least one item provided to the filter */
+  technologies_contains_some?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+  technologies_not?: InputMaybe<Array<Techs>>;
   thumbnail?: InputMaybe<AssetWhereInput>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
@@ -2426,6 +2439,8 @@ export enum ProjectOrderByInput {
   RepositoryUrlDesc = 'repositoryUrl_DESC',
   SlugAsc = 'slug_ASC',
   SlugDesc = 'slug_DESC',
+  TechnologiesAsc = 'technologies_ASC',
+  TechnologiesDesc = 'technologies_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
   UpdatedAtDesc = 'updatedAt_DESC'
 }
@@ -2440,6 +2455,7 @@ export type ProjectUpdateInput = {
   projectUrl?: InputMaybe<Scalars['String']>;
   repositoryUrl?: InputMaybe<Scalars['String']>;
   slug?: InputMaybe<Scalars['String']>;
+  technologies?: InputMaybe<Array<Techs>>;
   thumbnail?: InputMaybe<AssetUpdateOneInlineInput>;
 };
 
@@ -2486,6 +2502,7 @@ export type ProjectUpdateManyInput = {
   localizations?: InputMaybe<ProjectUpdateManyLocalizationsInput>;
   projectUrl?: InputMaybe<Scalars['String']>;
   repositoryUrl?: InputMaybe<Scalars['String']>;
+  technologies?: InputMaybe<Array<Techs>>;
 };
 
 export type ProjectUpdateManyLocalizationDataInput = {
@@ -2713,6 +2730,16 @@ export type ProjectWhereInput = {
   slug_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   slug_starts_with?: InputMaybe<Scalars['String']>;
+  /** Matches if the field array contains *all* items provided to the filter and order does match */
+  technologies?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array contains *all* items provided to the filter */
+  technologies_contains_all?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array does not contain any of the items provided to the filter */
+  technologies_contains_none?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array contains at least one item provided to the filter */
+  technologies_contains_some?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+  technologies_not?: InputMaybe<Array<Techs>>;
   thumbnail?: InputMaybe<AssetWhereInput>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
@@ -4046,6 +4073,22 @@ export enum SystemDateTimeFieldVariation {
   Localization = 'LOCALIZATION'
 }
 
+export enum Techs {
+  AntDesign = 'AntDesign',
+  Css = 'CSS',
+  ChakraUi = 'ChakraUI',
+  GraphCms = 'GraphCMS',
+  GraphQl = 'GraphQL',
+  Html = 'HTML',
+  Java = 'Java',
+  Javascript = 'Javascript',
+  NextJs = 'NextJS',
+  NodeJs = 'NodeJS',
+  ReactJs = 'ReactJS',
+  ReactNative = 'ReactNative',
+  StyledComponents = 'StyledComponents'
+}
+
 export type UnpublishLocaleInput = {
   /** Locales to unpublish */
   locale: Locale;
@@ -4516,7 +4559,7 @@ export type GetProjectsQueryVariables = Exact<{
 }>;
 
 
-export type GetProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', id: string, heading: string, abstract: string, projectUrl?: string | null, repositoryUrl?: string | null, thumbnail: { __typename?: 'Asset', id: string, width?: number | null, height?: number | null, url: string }, images: Array<{ __typename?: 'Asset', id: string, width?: number | null, height?: number | null, url: string }> }> };
+export type GetProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', id: string, heading: string, abstract: string, projectUrl?: string | null, repositoryUrl?: string | null, technologies: Array<Techs>, thumbnail: { __typename?: 'Asset', id: string, width?: number | null, height?: number | null, url: string }, images: Array<{ __typename?: 'Asset', id: string, width?: number | null, height?: number | null, url: string }> }> };
 
 export type GetPostsQueryVariables = Exact<{
   first?: InputMaybe<Scalars['Int']>;

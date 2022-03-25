@@ -20,6 +20,7 @@ export const GET_PROJECTS = gql`
       }
       projectUrl
       repositoryUrl
+      technologies
     }
   }
 `

@@ -33,6 +33,14 @@ export const HomeTemplate = (props: HomeTemplateProps) => {
       <Skills />
 
       <Projects projects={projects} />
+
+      <footer
+        style={{
+          height: "100vh"
+        }}
+      >
+        <h2>footer</h2>
+      </footer>
     </>
   )
 }
