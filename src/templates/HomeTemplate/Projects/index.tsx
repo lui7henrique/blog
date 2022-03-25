@@ -98,6 +98,7 @@ export const Projects = (props: ProjectsProps) => {
                             src={image.url}
                             layout="fill"
                             quality={100}
+                            alt={project.heading}
                           />
                         </S.ProjectThumbnailWrapper>
                       </SwiperSlide>
@@ -125,6 +126,7 @@ export const Projects = (props: ProjectsProps) => {
                           width={16}
                           height={16}
                           className={tech}
+                          alt={tech}
                         />
                         <S.ProjectTechLabel>{tech}</S.ProjectTechLabel>
                       </S.ProjectTech>

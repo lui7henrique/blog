@@ -40,7 +40,11 @@ export const PostsList = (props: PostsListsProps) => {
         <S.Post href={`/posts/${post.slug}`}>
           <a>
             <S.PostThumbnailWrapper>
-              <S.PostThumbnail src={post.thumbnail.url} layout="fill" />
+              <S.PostThumbnail
+                src={post.thumbnail.url}
+                layout="fill"
+                alt={post.heading}
+              />
             </S.PostThumbnailWrapper>
 
             {post.updatedBy && (
@@ -52,6 +56,7 @@ export const PostsList = (props: PostsListsProps) => {
                     onError={() => {
                       setAuthorImage("https://github.com/lui7henrique.png")
                     }}
+                    alt={post.updatedBy.name}
                   />
                 </S.PostAuthorAvatarWrapper>
                 <S.PostAuthorInfos>

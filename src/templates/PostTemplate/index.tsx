@@ -49,6 +49,7 @@ export const PostTemplate = (props: PostsTemplateProps) => {
                   onError={() => {
                     setAuthorImage("https://github.com/lui7henrique.png")
                   }}
+                  alt={post.updatedBy!.name || "author"}
                 />
               </S.AuthorImageWrapper>
               <S.AuthorName>{post.updatedBy?.name}</S.AuthorName>
