@@ -29,7 +29,6 @@ export const SpotifyStatus = () => {
       const data = await spotifyApi.getMyCurrentPlaybackState()
 
       const body: Body = data.body as any
-      console.log(body)
 
       setActiveStatus({
         name: body.item!.name,

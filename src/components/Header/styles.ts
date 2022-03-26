@@ -71,7 +71,9 @@ export const Nav = styled.nav`
   gap: ${({ theme }) => theme.space["8"]};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    display: none;
+    a {
+      display: none;
+    }
   }
 `
 
