@@ -1,10 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Footer } from "components/Footer"
 import { Header } from "components/Header"
-import {
-  GetProjectsQuery,
-  GetMinimalPostsQuery
-} from "graphql/generated/graphql"
+import { GetProjectsQuery } from "graphql/generated/graphql"
 import { useRef } from "react"
 
 import { AboutMe } from "./AboutMe"
@@ -15,11 +12,10 @@ import * as S from "./styles"
 
 type HomeTemplateProps = {
   projects: GetProjectsQuery["projects"]
-  posts: GetMinimalPostsQuery["posts"]
 }
 
 export const HomeTemplate = (props: HomeTemplateProps) => {
-  const { projects, posts } = props
+  const { projects } = props
 
   const videoRef = useRef<HTMLVideoElement>(null)
 
@@ -39,7 +35,7 @@ export const HomeTemplate = (props: HomeTemplateProps) => {
 
       <Projects projects={projects} />
 
-      <Footer posts={posts} />
+      <Footer />
     </>
   )
 }

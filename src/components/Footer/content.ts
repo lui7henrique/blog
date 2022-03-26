@@ -24,7 +24,7 @@ export const footerContent = {
       ]
     },
     social: {
-      title: "Me siga",
+      title: "Redes sociais",
       links: [
         {
           label: "Instagram",
@@ -72,7 +72,7 @@ export const footerContent = {
       ]
     },
     social: {
-      title: "Follow me",
+      title: "Social networks",
       links: [
         {
           label: "Instagram",
