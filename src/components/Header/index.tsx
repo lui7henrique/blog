@@ -70,8 +70,8 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
               />
             )
           })}
+          <ButtonLanguage isPost={isPost} postSlug={postSlug} />
         </S.Nav>
-        <ButtonLanguage isPost={isPost} postSlug={postSlug} />
       </S.Header>
 
       <MobileMenu
