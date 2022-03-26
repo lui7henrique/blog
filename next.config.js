@@ -22,11 +22,12 @@ module.exports = withPWA({
     defaultLocale: "pt-BR"
   },
   experimental: { esmExternals: true },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback.fs = false
-    }
-
-    return config
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "https://lui7henrique.vercel.app/api/:path*"
+      }
+    ]
   }
 })
