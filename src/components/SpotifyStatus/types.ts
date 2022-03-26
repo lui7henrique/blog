@@ -5,20 +5,20 @@ export type Body = {
     type: string
     uri: string
   }
-  artists: Array<{
-    external_urls: {
-      spotify: string
-    }
-    href: string
-    id: string
-    name: string
-    type: string
-    uri: string
-  }>
   item: {
     name: string
     duration_ms: string
     preview_url: string
+    artists: Array<{
+      external_urls: {
+        spotify: string
+      }
+      href: string
+      id: string
+      name: string
+      type: string
+      uri: string
+    }>
   }
   is_playing: boolean
   progress_ms: number
