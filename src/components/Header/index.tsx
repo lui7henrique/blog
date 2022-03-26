@@ -1,5 +1,4 @@
 import { Button } from "components/Button"
-import { SpotifyStatus } from "components/SpotifyStatus"
 import { useRouter } from "next/dist/client/router"
 import Link from "next/link"
 import { useCallback } from "react"
@@ -58,7 +57,9 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
             <S.LogoMobile>⚡️</S.LogoMobile>
           </a>
         </Link>
-        <SpotifyStatus />
+
+        {/* TODO */}
+        {/* <SpotifyStatus /> */}
       </S.Principal>
 
       <S.Nav>
