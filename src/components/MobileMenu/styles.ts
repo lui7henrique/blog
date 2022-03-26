@@ -25,7 +25,7 @@ export const Container = styled.div<{
   z-index: 999;
 
   transform: translateX(${({ isOpen }) => (isOpen ? "0" : "-100%")});
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@ export const Header = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.colors.shape};
 `
 
-export const Profile = styled.div`
+export const Profile = styled.a`
   display: flex;
   gap: ${({ theme }) => theme.space["2"]};
   align-items: center;
@@ -91,7 +91,7 @@ export const CloseButton = styled(MdClose).attrs({
 export const Nav = styled.nav`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.space[8]};
+  gap: ${({ theme }) => theme.space[4]};
 
   padding: ${({ theme }) => theme.space[4]} 0;
 `
@@ -119,4 +119,20 @@ export const ActiveLinkLabel = styled.span`
 export const ButtonContainer = styled.div`
   padding: ${({ theme }) => theme.space[4]};
   width: 100%;
+`
+
+export const SubLinks = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.space[4]};
+`
+
+export const SubLink = styled(Link)``
+
+export const SubLinkLink = styled.a`
+  padding: 0 ${({ theme }) => theme.space[10]};
+`
+
+export const SubLinkLabel = styled.span`
+  font-size: ${({ theme }) => theme.fontSizes["lg"]};
 `

@@ -3,7 +3,21 @@ export const headerContent = {
     nav: [
       {
         label: "Ínicio",
-        href: "/"
+        href: "/",
+        subLinks: [
+          {
+            href: "/#about-me",
+            label: "Sobre mim"
+          },
+          {
+            href: "/#skills",
+            label: "Minhas habilidades atuais"
+          },
+          {
+            href: "/#projects",
+            label: "Incríveis projetos"
+          }
+        ]
       },
       {
         label: "Posts",
@@ -15,7 +29,21 @@ export const headerContent = {
     nav: [
       {
         label: "Home",
-        href: "/"
+        href: "/",
+        subLinks: [
+          {
+            href: "/#about-me",
+            label: "About me"
+          },
+          {
+            href: "/#skills",
+            label: "My current skills"
+          },
+          {
+            href: "/#projects",
+            label: "Some projects"
+          }
+        ]
       },
       {
         label: "Posts",
