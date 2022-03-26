@@ -2,19 +2,27 @@ import { FiMenu } from "react-icons/fi"
 import styled, { css } from "styled-components"
 
 export const Header = styled.header`
+  z-index: 99;
+
+  position: fixed;
+  width: 100vw;
+
+  background: ${({ theme }) => theme.colors.background}80;
+  backdrop-filter: blur(10px);
+`
+
+export const Content = styled.div`
+  max-width: ${({ theme }) => theme.sizes.maxWidth};
+  margin: 0 auto;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  width: 100%;
-  height: ${({ theme }) => theme.sizes.headerHeight};
-  max-width: ${({ theme }) => theme.sizes.maxWidth};
-  margin: 0 auto;
-
   padding-right: ${({ theme }) => theme.space["10"]};
   padding-left: ${({ theme }) => theme.space["10"]};
 
-  z-index: 99;
+  height: ${({ theme }) => theme.sizes.headerHeight};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     padding-right: ${({ theme }) => theme.space["6"]};
@@ -46,8 +54,6 @@ export const Logo = styled.h1`
   font-size: 1.5rem;
   display: flex;
 
-  padding: ${({ theme }) => theme.space[4]};
-
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     display: none;
   }
@@ -71,7 +77,9 @@ export const Nav = styled.nav`
   gap: ${({ theme }) => theme.space["8"]};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    display: none;
+    a {
+      display: none;
+    }
   }
 `
 

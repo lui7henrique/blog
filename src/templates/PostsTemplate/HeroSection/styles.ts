@@ -7,7 +7,7 @@ export const Container = styled.section`
   margin: 0 auto;
 
   width: 100%;
-  height: ${({ theme }) => `calc(100vh - ${theme.sizes.headerHeight})`};
+  height: 100vh;
 
   display: flex;
   align-items: center;

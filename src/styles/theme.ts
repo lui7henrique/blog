@@ -17,7 +17,7 @@ export default {
   },
   sizes: {
     maxWidth: "1132px",
-    headerHeight: "8rem"
+    headerHeight: "5rem"
   },
   fontSizes: {
     xs: "0.75rem",

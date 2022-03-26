@@ -44,34 +44,36 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
   return (
     <>
       <S.Header>
-        <S.Principal>
-          <Link href="/" passHref>
-            <a>
-              <S.Logo>lui⚡️henrique</S.Logo>
-            </a>
-          </Link>
+        <S.Content>
+          <S.Principal>
+            <Link href="/" passHref>
+              <a>
+                <S.Logo>lui⚡️henrique</S.Logo>
+              </a>
+            </Link>
 
-          {/* TODO */}
-          {/* <SpotifyStatus /> */}
-          <S.Menu
-            onClick={() =>
-              setIsMobileMenuOpen((isMobileMenuOpen) => !isMobileMenuOpen)
-            }
-          />
-        </S.Principal>
+            {/* TODO */}
+            {/* <SpotifyStatus /> */}
+            <S.Menu
+              onClick={() =>
+                setIsMobileMenuOpen((isMobileMenuOpen) => !isMobileMenuOpen)
+              }
+            />
+          </S.Principal>
 
-        <S.Nav>
-          {content.nav.map((item) => {
-            return (
-              <NavLink
-                key={JSON.stringify(item)}
-                href={item.href}
-                label={item.label}
-              />
-            )
-          })}
-        </S.Nav>
-        <ButtonLanguage isPost={isPost} postSlug={postSlug} />
+          <S.Nav>
+            {content.nav.map((item) => {
+              return (
+                <NavLink
+                  key={JSON.stringify(item)}
+                  href={item.href}
+                  label={item.label}
+                />
+              )
+            })}
+            <ButtonLanguage isPost={isPost} postSlug={postSlug} />
+          </S.Nav>
+        </S.Content>
       </S.Header>
 
       <MobileMenu

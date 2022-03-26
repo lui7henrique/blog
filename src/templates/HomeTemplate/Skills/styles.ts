@@ -46,7 +46,8 @@ export const ContentTitles = styled.div`
 
   div {
     position: sticky;
-    top: ${({ theme }) => theme.space["4"]};
+    top: ${({ theme }) =>
+      ` calc(${theme.sizes.headerHeight} + ${theme.space["4"]})`};
   }
 `
 

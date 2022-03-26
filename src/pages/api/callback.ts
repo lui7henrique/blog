@@ -18,8 +18,6 @@ export default async function handler(
 
     spotifyApi.setAccessToken(auth.body["access_token"])
 
-    console.log(auth.body["access_token"])
-
     res.redirect("/")
   } catch (error) {
     console.error(error)
