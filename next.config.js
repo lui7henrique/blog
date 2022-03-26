@@ -7,6 +7,7 @@ module.exports = withPWA({
     dest: "public",
     disable: !isProd
   },
+
   images: {
     domains: [
       "media.graphcms.com",
@@ -20,5 +21,12 @@ module.exports = withPWA({
     locales: ["en-US", "pt-BR"],
     defaultLocale: "pt-BR"
   },
-  experimental: { esmExternals: true }
+  experimental: { esmExternals: true },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback.fs = false
+    }
+
+    return config
+  }
 })

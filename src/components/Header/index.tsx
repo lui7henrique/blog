@@ -1,4 +1,5 @@
 import { Button } from "components/Button"
+import { SpotifyStatus } from "components/SpotifyStatus"
 import { useRouter } from "next/dist/client/router"
 import Link from "next/link"
 import { useCallback } from "react"
@@ -50,12 +51,15 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
 
   return (
     <S.Header>
-      <Link href="/" passHref>
-        <a>
-          <S.Logo>lui⚡️henrique</S.Logo>
-          <S.LogoMobile>⚡️</S.LogoMobile>
-        </a>
-      </Link>
+      <S.Principal>
+        <Link href="/" passHref>
+          <a>
+            <S.Logo>lui⚡️henrique</S.Logo>
+            <S.LogoMobile>⚡️</S.LogoMobile>
+          </a>
+        </Link>
+        <SpotifyStatus />
+      </S.Principal>
 
       <S.Nav>
         {content.nav.map((item) => {

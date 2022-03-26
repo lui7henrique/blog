@@ -21,10 +21,19 @@ export const Header = styled.header`
   }
 `
 
+export const Principal = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.space["4"]};
+`
+
 export const Logo = styled.h1`
   font-size: 1.5rem;
-  padding: ${({ theme }) => theme.space["16"]} 0;
   display: flex;
+
+  border-right: 1px solid ${({ theme }) => theme.colors.shape};
+
+  padding: ${({ theme }) => theme.space[4]};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     & {

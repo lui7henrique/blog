@@ -1,20 +1,17 @@
 import { NextApiRequest, NextApiResponse } from "next"
 
+import { spotifyApi } from "./callback"
+
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
-  const client_id = process.env.SPOTIFY_CLIENT_ID
+  const scopes = [
+    "user-read-private",
+    "user-read-currently-playing",
+    "user-read-playback-state"
+  ]
 
-  const scope = "user-read-currently-playing"
+  const state = "some-state-of-my-choice"
 
-  const redirect_uri = "http://localhost:3000/api/callback"
+  const authorizeURL = spotifyApi.createAuthorizeURL(scopes, state)
 
-  res.redirect(
-    "https://accounts.spotify.com/authorize" +
-      "?response_type=code" +
-      "&client_id=" +
-      client_id +
-      "&scope=" +
-      scope +
-      "&redirect_uri=" +
-      redirect_uri
-  )
+  res.redirect(authorizeURL)
 }
