@@ -1,8 +1,8 @@
-import { Button } from "components/Button"
+import { ButtonLanguage } from "components/ButtonLanguage"
+import { MobileMenu } from "components/MobileMenu"
 import { useRouter } from "next/dist/client/router"
 import Link from "next/link"
-import { useCallback } from "react"
-import { FaLanguage } from "react-icons/fa"
+import { useCallback, useState } from "react"
 
 import { headerContent } from "./content"
 import * as S from "./styles"
@@ -18,8 +18,9 @@ type NavLinkProps = {
 }
 
 export const Header = ({ isPost, postSlug }: HeaderProps) => {
-  const { asPath, push, locale } = useRouter()
+  const { asPath, locale } = useRouter()
   const content = headerContent[locale as "pt-BR" | "en-US"]
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
 
   const NavLink = useCallback(
     ({ href, label }: NavLinkProps) => {
@@ -36,54 +37,49 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
     [asPath]
   )
 
-  const handleChangeLocale = async (locale: "pt-BR" | "en-US") => {
-    if (isPost) {
-      push(`/posts/${postSlug}`, `/posts/${postSlug}`, { locale: locale })
-      localStorage.setItem("locale", locale)
-
-      return
-    }
-
-    localStorage.setItem("locale", locale)
-    push(asPath, asPath, { locale: locale })
-  }
+  const handleClose = useCallback(() => {
+    setIsMobileMenuOpen(false)
+  }, [])
 
   return (
-    <S.Header>
-      <S.Principal>
-        <Link href="/" passHref>
-          <a>
-            <S.Logo>lui⚡️henrique</S.Logo>
-            <S.LogoMobile>⚡️</S.LogoMobile>
-          </a>
-        </Link>
+    <>
+      <S.Header>
+        <S.Principal>
+          <Link href="/" passHref>
+            <a>
+              <S.Logo>lui⚡️henrique</S.Logo>
+            </a>
+          </Link>
 
-        {/* TODO */}
-        {/* <SpotifyStatus /> */}
-      </S.Principal>
+          {/* TODO */}
+          {/* <SpotifyStatus /> */}
+          <S.Menu
+            onClick={() =>
+              setIsMobileMenuOpen((isMobileMenuOpen) => !isMobileMenuOpen)
+            }
+          />
+        </S.Principal>
 
-      <S.Nav>
-        {content.nav.map((item) => {
-          return (
-            <NavLink
-              key={JSON.stringify(item)}
-              href={item.href}
-              label={item.label}
-            />
-          )
-        })}
+        <S.Nav>
+          {content.nav.map((item) => {
+            return (
+              <NavLink
+                key={JSON.stringify(item)}
+                href={item.href}
+                label={item.label}
+              />
+            )
+          })}
+        </S.Nav>
+        <ButtonLanguage isPost={isPost} postSlug={postSlug} />
+      </S.Header>
 
-        <Button
-          label={locale! === "en-US" ? "English" : "Português"}
-          onClick={() =>
-            handleChangeLocale(locale === "pt-BR" ? "en-US" : "pt-BR")
-          }
-          fontSize="sm"
-          rightIcon={FaLanguage}
-        />
-
-        {/* <Button label="Contact-me" borderRadius="25px" /> */}
-      </S.Nav>
-    </S.Header>
+      <MobileMenu
+        isOpen={isMobileMenuOpen}
+        handleClose={handleClose}
+        isPost={isPost}
+        postSlug={postSlug}
+      />
+    </>
   )
 }

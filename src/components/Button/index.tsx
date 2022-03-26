@@ -4,7 +4,7 @@ import theme from "styles/theme"
 
 import * as S from "./styles"
 
-type ButtonProps = {
+export type ButtonProps = {
   label: string
   backgroundColor?: string
   textColor?: string

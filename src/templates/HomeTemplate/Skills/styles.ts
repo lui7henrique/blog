@@ -79,12 +79,6 @@ export const Skill = styled.div`
   display: flex;
   align-items: center;
 
-  /* background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(18, 18, 18, 1) 100%
-  ); */
-
   background: ${({ theme }) => theme.colors.shape};
 
   border-radius: 5px;
