@@ -1,8 +1,7 @@
 import { ButtonLanguage } from "components/ButtonLanguage"
-import { MobileMenu } from "components/MobileMenu"
 import { useRouter } from "next/dist/client/router"
 import Link from "next/link"
-import { useCallback, useState } from "react"
+import { useCallback } from "react"
 
 import { headerContent } from "./content"
 import * as S from "./styles"
@@ -20,7 +19,6 @@ type NavLinkProps = {
 export const Header = ({ isPost, postSlug }: HeaderProps) => {
   const { asPath, locale } = useRouter()
   const content = headerContent[locale as "pt-BR" | "en-US"]
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false)
 
   const NavLink = useCallback(
     ({ href, label }: NavLinkProps) => {
@@ -37,10 +35,6 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
     [asPath]
   )
 
-  const handleClose = useCallback(() => {
-    setIsMobileMenuOpen(false)
-  }, [])
-
   return (
     <>
       <S.Header>
@@ -48,16 +42,9 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
           <Link href="/" passHref>
             <a>
               <S.Logo>lui⚡️henrique</S.Logo>
+              <S.LogoMobile>⚡️</S.LogoMobile>
             </a>
           </Link>
-
-          {/* TODO */}
-          {/* <SpotifyStatus /> */}
-          <S.Menu
-            onClick={() =>
-              setIsMobileMenuOpen((isMobileMenuOpen) => !isMobileMenuOpen)
-            }
-          />
         </S.Principal>
 
         <S.Nav>
@@ -73,13 +60,6 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
           <ButtonLanguage isPost={isPost} postSlug={postSlug} />
         </S.Nav>
       </S.Header>
-
-      <MobileMenu
-        isOpen={isMobileMenuOpen}
-        handleClose={handleClose}
-        isPost={isPost}
-        postSlug={postSlug}
-      />
     </>
   )
 }
