@@ -7,6 +7,7 @@ module.exports = withPWA({
     dest: "public",
     disable: !isProd
   },
+
   images: {
     domains: [
       "media.graphcms.com",
@@ -20,5 +21,13 @@ module.exports = withPWA({
     locales: ["en-US", "pt-BR"],
     defaultLocale: "pt-BR"
   },
-  experimental: { esmExternals: true }
+  experimental: { esmExternals: true },
+  async rewrites() {
+    return [
+      {
+        source: "/api/:path*",
+        destination: "https://lui7henrique.vercel.app/api/:path*"
+      }
+    ]
+  }
 })

@@ -1,3 +1,4 @@
+import { FiMenu } from "react-icons/fi"
 import styled, { css } from "styled-components"
 
 export const Header = styled.header`
@@ -21,15 +22,34 @@ export const Header = styled.header`
   }
 `
 
-export const Logo = styled.h1`
-  font-size: 1.5rem;
-  padding: ${({ theme }) => theme.space["16"]} 0;
+export const Principal = styled.div`
   display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.space["4"]};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    & {
-      display: none;
-    }
+    gap: 0;
+  }
+`
+
+export const Menu = styled(FiMenu).attrs({
+  size: 35
+})`
+  display: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    display: block;
+  }
+`
+
+export const Logo = styled.h1`
+  font-size: 1.5rem;
+  display: flex;
+
+  padding: ${({ theme }) => theme.space[4]};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
+    display: none;
   }
 `
 

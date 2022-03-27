@@ -3,16 +3,6 @@ import styled from "styled-components"
 
 export const Footer = styled.footer`
   border-top: 1px solid ${({ theme }) => theme.colors.shape};
-
-  opacity: 0.5;
-  filter: blur(1px);
-
-  transition: all 0.3s ease-in-out;
-
-  &:hover {
-    opacity: 1;
-    filter: blur(0);
-  }
 `
 
 export const FooterContainer = styled.div`
@@ -43,7 +33,7 @@ export const FooterContainer = styled.div`
 
 export const FooterSections = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 2fr 1fr 1fr;
   gap: ${({ theme }) => theme.space["16"]};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
@@ -132,6 +122,8 @@ export const SocialLink = styled.a`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.space["2"]};
+
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     color: ${({ theme }) => theme.colors.secondary};

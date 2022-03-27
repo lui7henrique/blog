@@ -1,7 +1,7 @@
 import "aos/dist/aos.css" // You can also use <link> for styles
 import AOS from "aos"
 import { DefaultSeo } from "next-seo"
-import { AppProps } from "next/app"
+import { AppProps as BasicAppProps } from "next/app"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import NextNProgress from "nextjs-progressbar"
@@ -12,6 +12,8 @@ import theme from "styles/theme"
 
 import SEO from "../../next-seo.config"
 // ..
+
+type AppProps = BasicAppProps
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { asPath, push } = useRouter()
@@ -48,6 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           height={3}
           showOnShallow={true}
         />
+
         <Component {...pageProps} />
       </ThemeProvider>
     </>

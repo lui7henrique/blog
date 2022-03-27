@@ -22,7 +22,7 @@ export const Skills = () => {
             return (
               <>
                 <S.Skill
-                  key={skill.title}
+                  key={JSON.stringify(skill)}
                   data-aos="fade-right"
                   data-aos-delay={index * 100}
                   onClick={
