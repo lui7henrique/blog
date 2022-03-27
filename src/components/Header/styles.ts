@@ -46,8 +46,6 @@ export const Logo = styled.h1`
   font-size: 1.5rem;
   display: flex;
 
-  padding: ${({ theme }) => theme.space[4]};
-
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     display: none;
   }
