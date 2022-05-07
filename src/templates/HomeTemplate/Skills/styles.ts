@@ -106,7 +106,7 @@ export const SkillTitle = styled.h4`
   font-size: ${({ theme }) => theme.fontSizes["xl"]};
   color: ${({ theme }) => theme.colors.text};
   font-weight: normal;
-  margin-bottom: ${({ theme }) => theme.space["2"]};
+  /* margin-bottom: ${({ theme }) => theme.space["2"]}; */
 `
 
 export const SkillButtonIcon = styled(FaChevronDown)<{

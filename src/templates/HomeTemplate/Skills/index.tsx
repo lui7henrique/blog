@@ -1,4 +1,3 @@
-import { ProgressBar } from "components/ProgressBar"
 import { useRouter } from "next/router"
 import { useState } from "react"
 import { useTheme } from "styled-components"
@@ -11,7 +10,6 @@ export const Skills = () => {
   const { locale } = useRouter()
 
   const content = skillsContent[locale as "pt-BR" | "en-US"]
-
   const [activeSkill, setActiveSkill] = useState<typeof content.skills[0]>()
 
   return (
@@ -35,7 +33,7 @@ export const Skills = () => {
                     <skill.icon size={25} color={theme.colors.title} />
                     <S.SkillBasicInfos>
                       <S.SkillTitle>{skill.title}</S.SkillTitle>
-                      <ProgressBar total={10} value={skill.score} />
+                      {/* <ProgressBar total={10} value={skill.score} /> */}
                     </S.SkillBasicInfos>
                   </S.SkillAllInfos>
                   {skill.content && (
