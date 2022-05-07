@@ -5,7 +5,7 @@ export const footerContent = {
     title: "lui⚡️henrique",
     description:
       "Apenas um desenvolvedor front-end apaixonado por fazer coisas belas e úteis ",
-    subDescription: "(ás vezes nem tanto 🤣).",
+    subDescription: "(ás vezes nem tanto).",
     home: {
       title: "Início",
       links: [

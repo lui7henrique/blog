@@ -4,7 +4,7 @@ export const heroContent = {
       title: "Olá Mundo!",
       description:
         "👨‍💻 Apenas um desenvolvedor front-end apaixonado por fazer coisas belas e úteis ",
-      subDescription: "(ás vezes nem tanto 🤣).",
+      subDescription: "(ás vezes nem tanto).",
       buttons: [
         {
           label: "Saiba mais",

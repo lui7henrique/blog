@@ -1,4 +1,3 @@
-import { FacebookPixel } from "components/Analytics"
 import Document, {
   DocumentContext,
   Head,
@@ -51,8 +50,6 @@ export default class MyDocument extends Document {
             hrefLang="pt-br"
             href="https://lui7henrique.vercel.app/"
           />
-
-          <FacebookPixel />
         </Head>
         <body>
           <Main />
