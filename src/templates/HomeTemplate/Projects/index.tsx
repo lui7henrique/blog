@@ -1,6 +1,8 @@
 import { GetProjectsQuery } from "graphql/generated/graphql"
 import { useRouter } from "next/router"
+import { useCallback } from "react"
 import { FaGithub } from "react-icons/fa"
+import { HiLink } from "react-icons/hi"
 import { useTheme } from "styled-components"
 import { Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
@@ -11,8 +13,6 @@ import * as S from "./styles"
 
 import "swiper/css"
 import "swiper/css/pagination"
-import { useCallback } from "react"
-import Link from "next/link"
 
 type ProjectsProps = {
   projects: GetProjectsQuery["projects"]
@@ -26,11 +26,7 @@ export const Projects = (props: ProjectsProps) => {
   const theme = useTheme()
   const { locale } = useRouter()
 
-  const {
-    title,
-    subtitle,
-    url: { label, link }
-  } = projectsContent[locale as "pt-BR" | "en-US"]
+  const { title, subtitle } = projectsContent[locale as "pt-BR" | "en-US"]
 
   const getIconByTech = useCallback((tech: Technologies) => {
     const icons: any = {
@@ -75,11 +71,19 @@ export const Projects = (props: ProjectsProps) => {
 
             return (
               <S.Project key={project.id} index={index} top={top}>
-                {project.repositoryUrl && (
-                  <S.GithubLink target="blank" href={project.repositoryUrl}>
-                    <FaGithub size={25} />
-                  </S.GithubLink>
-                )}
+                <S.ProjectLinks data-aos="fade-down" data-aos-delay="200">
+                  {project.projectUrl && (
+                    <S.ProjectLink href={project.projectUrl}>
+                      <HiLink size={25} />
+                    </S.ProjectLink>
+                  )}
+
+                  {project.repositoryUrl && (
+                    <S.GithubLink target="blank" href={project.repositoryUrl}>
+                      <FaGithub size={25} />
+                    </S.GithubLink>
+                  )}
+                </S.ProjectLinks>
 
                 <Swiper
                   modules={[Pagination]}
@@ -119,21 +123,6 @@ export const Projects = (props: ProjectsProps) => {
                   <S.ProjectAbstract data-aos="fade-right" data-aos-delay="100">
                     {project.abstract}
                   </S.ProjectAbstract>
-
-                  {project.projectUrl && (
-                    <S.ProjectUrl data-aos="fade-right" data-aos-delay="120">
-                      {label}
-                      <Link
-                        href={project.projectUrl}
-                        aria-label={project.heading}
-                      >
-                        <a target="_blank" aria-label={project.heading}>
-                          {" "}
-                          {link}
-                        </a>
-                      </Link>
-                    </S.ProjectUrl>
-                  )}
 
                   <S.ProjectTechs>
                     {project.technologies.map((tech, index) => (
