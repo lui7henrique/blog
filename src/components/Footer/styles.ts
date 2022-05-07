@@ -118,6 +118,18 @@ export const FooterSocialTitle = styled.h4`
   font-size: ${({ theme }) => theme.fontSizes["2xl"]};
 `
 
+export const Social = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.space["2"]};
+
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.secondary};
+  }
+`
+
 export const SocialLink = styled.a`
   display: flex;
   align-items: center;

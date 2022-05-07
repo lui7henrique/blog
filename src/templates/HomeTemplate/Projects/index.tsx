@@ -73,7 +73,7 @@ export const Projects = (props: ProjectsProps) => {
               <S.Project key={project.id} index={index} top={top}>
                 <S.ProjectLinks data-aos="fade-down" data-aos-delay="200">
                   {project.projectUrl && (
-                    <S.ProjectLink href={project.projectUrl}>
+                    <S.ProjectLink href={project.projectUrl} target="blank">
                       <HiLink size={25} />
                     </S.ProjectLink>
                   )}

@@ -35,11 +35,16 @@ export const Footer = () => {
   const SocialLink = useCallback((props: SocialLink) => {
     const { href, label, icon: Icon } = props
 
-    return (
+    return href ? (
       <S.SocialLink href={href} target="blank">
         <Icon size={16} />
         <S.SocialLinkLabel>{label}</S.SocialLinkLabel>
       </S.SocialLink>
+    ) : (
+      <S.Social>
+        <Icon size={16} />
+        <S.SocialLinkLabel>{label}</S.SocialLinkLabel>
+      </S.Social>
     )
   }, [])
 
