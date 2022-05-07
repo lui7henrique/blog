@@ -27,7 +27,7 @@ export const Footer = () => {
 
     return (
       <S.Link href={href}>
-        <S.LinkLabel>{label}</S.LinkLabel>
+        <S.LinkLabel href={href}>{label}</S.LinkLabel>
       </S.Link>
     )
   }, [])
