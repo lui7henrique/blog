@@ -123,7 +123,10 @@ export const Projects = (props: ProjectsProps) => {
                   {project.projectUrl && (
                     <S.ProjectUrl data-aos="fade-right" data-aos-delay="120">
                       {label}
-                      <Link href={project.projectUrl}>
+                      <Link
+                        href={project.projectUrl}
+                        aria-label={project.heading}
+                      >
                         <a target="_blank"> {link}</a>
                       </Link>
                     </S.ProjectUrl>
