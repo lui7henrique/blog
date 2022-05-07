@@ -12,6 +12,7 @@ import * as S from "./styles"
 import "swiper/css"
 import "swiper/css/pagination"
 import { useCallback } from "react"
+import Link from "next/link"
 
 type ProjectsProps = {
   projects: GetProjectsQuery["projects"]
@@ -25,7 +26,11 @@ export const Projects = (props: ProjectsProps) => {
   const theme = useTheme()
   const { locale } = useRouter()
 
-  const { title, subtitle } = projectsContent[locale as "pt-BR" | "en-US"]
+  const {
+    title,
+    subtitle,
+    url: { label, link }
+  } = projectsContent[locale as "pt-BR" | "en-US"]
 
   const getIconByTech = useCallback((tech: Technologies) => {
     const icons: any = {
@@ -105,6 +110,7 @@ export const Projects = (props: ProjectsProps) => {
                     )
                   })}
                 </Swiper>
+
                 <S.ProjectInfos>
                   <S.ProjectHeading data-aos="fade-right" data-aos-delay="100">
                     {project.heading}
@@ -113,6 +119,15 @@ export const Projects = (props: ProjectsProps) => {
                   <S.ProjectAbstract data-aos="fade-right" data-aos-delay="100">
                     {project.abstract}
                   </S.ProjectAbstract>
+
+                  {project.projectUrl && (
+                    <S.ProjectUrl data-aos="fade-right" data-aos-delay="120">
+                      {label}
+                      <Link href={project.projectUrl}>
+                        <a target="_blank"> {link}</a>
+                      </Link>
+                    </S.ProjectUrl>
+                  )}
 
                   <S.ProjectTechs>
                     {project.technologies.map((tech, index) => (

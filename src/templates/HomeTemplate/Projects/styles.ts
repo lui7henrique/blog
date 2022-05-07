@@ -167,16 +167,24 @@ export const ProjectTech = styled.li`
   gap: ${({ theme }) => theme.space["2"]};
 
   transition: all 0.2s ease-in-out;
-
-  &:hover {
-    filter: brightness(0.8);
-  }
 `
 
 export const ProjectTechIcon = styled(Image)``
 
 export const ProjectTechLabel = styled.span`
   font-size: ${({ theme }) => theme.fontSizes.sm};
+`
+
+export const ProjectUrl = styled.blockquote`
+  padding: 0 1em;
+  color: ${({ theme }) => theme.colors.support};
+  border-left: 0.25em solid ${({ theme }) => theme.colors.shape};
+  font-weight: normal;
+  font-size: ${({ theme }) => theme.fontSizes.sm};
+
+  a {
+    color: ${({ theme }) => theme.colors.secondary};
+  }
 `
 
 export const GithubLink = styled.a`
