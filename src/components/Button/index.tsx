@@ -20,7 +20,7 @@ export const Button = (props: ButtonProps) => {
     backgroundColor = theme.colors.primary,
     textColor = theme.colors.title,
     fontSize = "md",
-    borderRadius = "5px",
+    borderRadius = "0px",
     rightIcon: RightIcon,
     ...rest
   } = props
