@@ -127,7 +127,10 @@ export const Projects = (props: ProjectsProps) => {
                         href={project.projectUrl}
                         aria-label={project.heading}
                       >
-                        <a target="_blank"> {link}</a>
+                        <a target="_blank" aria-label={project.heading}>
+                          {" "}
+                          {link}
+                        </a>
                       </Link>
                     </S.ProjectUrl>
                   )}
