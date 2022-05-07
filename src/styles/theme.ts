@@ -13,7 +13,8 @@ export default {
     shape: "#121212",
 
     title: "#FCFDFF",
-    text: "#C9CDD4"
+    text: "#C9CDD4",
+    support: "#737380"
   },
   sizes: {
     maxWidth: "1132px",
