@@ -111,6 +111,8 @@ export const PostTimeContainer = styled.div`
 
 export const PostTime = styled.sup``
 
+export const PostContentContainer = styled.div``
+
 export const PostContent = styled.div`
   line-height: 1.8;
 
@@ -131,15 +133,6 @@ export const PostContent = styled.div`
   ol {
     padding: ${({ theme }) => theme.space["4"]}
       ${({ theme }) => theme.space["8"]};
-  }
-
-  pre {
-    background-color: ${({ theme }) => theme.colors.shape};
-    padding: ${({ theme }) => theme.space["4"]};
-    margin: ${({ theme }) => theme.space["4"]} 0;
-
-    white-space: break-spaces;
-    overflow-x: auto;
   }
 
   code {

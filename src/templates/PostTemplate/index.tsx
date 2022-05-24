@@ -4,8 +4,11 @@ import { format, formatDistance } from "date-fns"
 import pt from "date-fns/locale/pt"
 import { GetPostBySlugQuery } from "graphql/generated/graphql"
 import { useRouter } from "next/router"
-import { useCallback, useState } from "react"
+import { useCallback, useEffect, useRef, useState } from "react"
 import { FaCalendar, FaClock } from "react-icons/fa"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
+import dracula from "react-syntax-highlighter/dist/cjs/styles/prism/dracula"
+import { v4 } from "uuid"
 
 import * as S from "./styles"
 
@@ -15,6 +18,14 @@ type PostsTemplateProps = {
   } & GetPostBySlugQuery["posts"][0]
 }
 
+type Element = {
+  element: string
+  code: boolean
+  language?: string
+}
+
+type Content = Array<Element>
+
 export const PostTemplate = (props: PostsTemplateProps) => {
   const { post } = props
 
@@ -22,6 +33,9 @@ export const PostTemplate = (props: PostsTemplateProps) => {
   const [authorImage, setAuthorImage] = useState(
     post.updatedBy?.picture as string
   )
+
+  const [content, setContent] = useState([] as Content)
+  const contentRef = useRef<HTMLDivElement>(null)
 
   const formatDateByLocale = useCallback(() => {
     if (locale === "pt-BR") {
@@ -32,6 +46,33 @@ export const PostTemplate = (props: PostsTemplateProps) => {
 
     return format(new Date(post.updatedAt), "MMMM dd, yyyy")
   }, [locale, post.updatedAt])
+
+  useEffect(() => {
+    const formattedContent = () => {
+      const children = Array.from(contentRef.current?.children!)
+
+      const newChildren = children.map((c) => {
+        if (c.nodeName === "PRE") {
+          return {
+            element: (c as HTMLElement).innerText!,
+            code: true,
+            language: (c as HTMLElement).className! || "javascript"
+          }
+        }
+
+        if (c.nodeName !== "PRE") {
+          return {
+            element: c.outerHTML,
+            code: false
+          }
+        }
+      })
+
+      setContent(newChildren as Element[])
+    }
+
+    formattedContent()
+  }, [post.content.html])
 
   return (
     <>
@@ -71,9 +112,35 @@ export const PostTemplate = (props: PostsTemplateProps) => {
             </S.PostTimeContainer>
           </S.BasicInfos>
         </S.PostInfos>
-        <S.PostContent
+
+        <div
+          style={{
+            display: "none"
+          }}
           dangerouslySetInnerHTML={{ __html: post.content.html }}
+          ref={contentRef}
         />
+
+        <S.PostContentContainer>
+          {content.map(({ element, code, language }) => {
+            return code ? (
+              <SyntaxHighlighter
+                language={language}
+                style={dracula}
+                customStyle={{
+                  margin: "16px 0"
+                }}
+                key={v4()}
+                showInlineLineNumbers={true}
+                wrapLongLines={true}
+              >
+                {element}
+              </SyntaxHighlighter>
+            ) : (
+              <S.PostContent dangerouslySetInnerHTML={{ __html: element }} />
+            )
+          })}
+        </S.PostContentContainer>
       </S.Post>
 
       <Footer />

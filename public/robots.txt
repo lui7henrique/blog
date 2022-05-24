@@ -2,6 +2,8 @@
 User-agent: *
 Allow: /
 
+# Host
+Host: https://lui7henrique.com/
 
 # Sitemaps
-Sitemap: undefined/sitemap.xml
+Sitemap: https://lui7henrique.com/sitemap.xml
