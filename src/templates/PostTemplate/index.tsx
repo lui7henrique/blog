@@ -78,8 +78,6 @@ export const PostTemplate = (props: PostsTemplateProps) => {
         }
       })
 
-      console.log(newChildren)
-
       setContent(newChildren as Element[])
     }
 
