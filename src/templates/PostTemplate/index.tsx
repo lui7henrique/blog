@@ -11,6 +11,7 @@ import dracula from "react-syntax-highlighter/dist/cjs/styles/prism/dracula"
 import { v4 } from "uuid"
 
 import * as S from "./styles"
+import { languages } from "./types"
 
 type PostsTemplateProps = {
   post: {
@@ -56,7 +57,15 @@ export const PostTemplate = (props: PostsTemplateProps) => {
           return {
             element: (c as HTMLElement).innerText!,
             code: true,
-            language: (c as HTMLElement).className! || "javascript"
+            language: "javascript"
+          }
+        }
+
+        if (c.nodeName === "DIV" && languages.includes(c.className)) {
+          return {
+            element: (c.children[0] as HTMLElement).innerText,
+            code: true,
+            language: c.className
           }
         }
 
@@ -67,6 +76,8 @@ export const PostTemplate = (props: PostsTemplateProps) => {
           }
         }
       })
+
+      console.log(newChildren)
 
       setContent(newChildren as Element[])
     }
