@@ -32,8 +32,6 @@ export const Tech = (props: TechProps) => {
     return icons[tech] ? icons[tech] : "react-js"
   }, [])
 
-  console.log(getIconByTech(tech))
-
   return (
     <S.ProjectTech rounded={rounded}>
       <S.ProjectTechIcon
