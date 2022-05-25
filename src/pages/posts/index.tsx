@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   return {
     props: {
-      posts
+      posts: posts.reverse()
     },
     revalidate: 60 * 60 * 24 // 1 day
   }

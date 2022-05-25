@@ -1527,6 +1527,8 @@ export type Post = Node & {
   slug: Scalars['String'];
   /** System stage field */
   stage: Stage;
+  /** technologies about content in post */
+  technologies: Array<Techs>;
   thumbnail: Asset;
   /** The time the document was updated */
   updatedAt: Scalars['DateTime'];
@@ -1635,6 +1637,7 @@ export type PostCreateInput = {
   localizations?: InputMaybe<PostCreateLocalizationsInput>;
   /** slug input for default locale (en_US) */
   slug: Scalars['String'];
+  technologies?: InputMaybe<Array<Techs>>;
   thumbnail: AssetCreateOneInlineInput;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
 };
@@ -1747,6 +1750,16 @@ export type PostManyWhereInput = {
   scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  /** Matches if the field array contains *all* items provided to the filter and order does match */
+  technologies?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array contains *all* items provided to the filter */
+  technologies_contains_all?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array does not contain any of the items provided to the filter */
+  technologies_contains_none?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array contains at least one item provided to the filter */
+  technologies_contains_some?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+  technologies_not?: InputMaybe<Array<Techs>>;
   thumbnail?: InputMaybe<AssetWhereInput>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
@@ -1779,6 +1792,8 @@ export enum PostOrderByInput {
   PublishedAtDesc = 'publishedAt_DESC',
   SlugAsc = 'slug_ASC',
   SlugDesc = 'slug_DESC',
+  TechnologiesAsc = 'technologies_ASC',
+  TechnologiesDesc = 'technologies_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
   UpdatedAtDesc = 'updatedAt_DESC'
 }
@@ -1795,6 +1810,7 @@ export type PostUpdateInput = {
   localizations?: InputMaybe<PostUpdateLocalizationsInput>;
   /** slug input for default locale (en_US) */
   slug?: InputMaybe<Scalars['String']>;
+  technologies?: InputMaybe<Array<Techs>>;
   thumbnail?: InputMaybe<AssetUpdateOneInlineInput>;
 };
 
@@ -1844,6 +1860,7 @@ export type PostUpdateManyInput = {
   content?: InputMaybe<Scalars['RichTextAST']>;
   /** Optional updates to localizations */
   localizations?: InputMaybe<PostUpdateManyLocalizationsInput>;
+  technologies?: InputMaybe<Array<Techs>>;
 };
 
 export type PostUpdateManyLocalizationDataInput = {
@@ -2032,6 +2049,16 @@ export type PostWhereInput = {
   slug_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   slug_starts_with?: InputMaybe<Scalars['String']>;
+  /** Matches if the field array contains *all* items provided to the filter and order does match */
+  technologies?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array contains *all* items provided to the filter */
+  technologies_contains_all?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array does not contain any of the items provided to the filter */
+  technologies_contains_none?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array contains at least one item provided to the filter */
+  technologies_contains_some?: InputMaybe<Array<Techs>>;
+  /** Matches if the field array does not contains *all* items provided to the filter or order does not match */
+  technologies_not?: InputMaybe<Array<Techs>>;
   thumbnail?: InputMaybe<AssetWhereInput>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
@@ -4570,7 +4597,7 @@ export type GetPostsQueryVariables = Exact<{
 }>;
 
 
-export type GetPostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, heading: string, slug: string, abstract?: string | null, updatedAt: any, thumbnail: { __typename?: 'Asset', id: string, width?: number | null, height?: number | null, url: string }, updatedBy?: { __typename?: 'User', id: string, name: string, picture?: string | null } | null }> };
+export type GetPostsQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, heading: string, slug: string, abstract?: string | null, updatedAt: any, technologies: Array<Techs>, thumbnail: { __typename?: 'Asset', id: string, width?: number | null, height?: number | null, url: string }, updatedBy?: { __typename?: 'User', id: string, name: string, picture?: string | null } | null }> };
 
 export type GetMinimalPostsQueryVariables = Exact<{
   first?: InputMaybe<Scalars['Int']>;
@@ -4584,7 +4611,7 @@ export type GetPostBySlugQueryVariables = Exact<{
 }>;
 
 
-export type GetPostBySlugQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, heading: string, slug: string, abstract?: string | null, updatedAt: any, updatedBy?: { __typename?: 'User', id: string, name: string, picture?: string | null } | null, banner: { __typename?: 'Asset', width?: number | null, height?: number | null, url: string, id: string }, thumbnail: { __typename?: 'Asset', width?: number | null, height?: number | null, url: string, id: string }, content: { __typename?: 'RichText', html: string } }> };
+export type GetPostBySlugQuery = { __typename?: 'Query', posts: Array<{ __typename?: 'Post', id: string, heading: string, slug: string, abstract?: string | null, updatedAt: any, technologies: Array<Techs>, updatedBy?: { __typename?: 'User', id: string, name: string, picture?: string | null } | null, banner: { __typename?: 'Asset', width?: number | null, height?: number | null, url: string, id: string }, thumbnail: { __typename?: 'Asset', width?: number | null, height?: number | null, url: string, id: string }, content: { __typename?: 'RichText', html: string } }> };
 
 export type GetPostSlugByIdQueryVariables = Exact<{
   id: Scalars['ID'];

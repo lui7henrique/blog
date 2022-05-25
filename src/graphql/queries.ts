@@ -44,6 +44,7 @@ export const GET_POSTS = gql`
         name
         picture
       }
+      technologies
     }
   }
 `
@@ -70,6 +71,7 @@ export const GET_POST_BY_SLUG = gql`
         name
         picture
       }
+      technologies
       banner {
         width
         height

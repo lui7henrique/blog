@@ -43,6 +43,17 @@ export const PostInfos = styled.div`
   margin-top: ${({ theme }) => theme.space["10"]};
 `
 
+export const PostTechs = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: ${({ theme }) => theme.space["2"]};
+
+  margin-bottom: ${({ theme }) => theme.space["2"]};
+
+  z-index: 25px;
+`
+
 export const PostHeading = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes["5xl"]};
 

@@ -1,6 +1,5 @@
 import { GetProjectsQuery } from "graphql/generated/graphql"
 import { useRouter } from "next/router"
-import { useCallback } from "react"
 import { FaGithub } from "react-icons/fa"
 import { HiLink } from "react-icons/hi"
 import { useTheme } from "styled-components"
@@ -13,12 +12,11 @@ import * as S from "./styles"
 
 import "swiper/css"
 import "swiper/css/pagination"
+import { Tech } from "components/Tech"
 
 type ProjectsProps = {
   projects: GetProjectsQuery["projects"]
 }
-
-type Technologies = GetProjectsQuery["projects"][0]["technologies"][0]
 
 export const Projects = (props: ProjectsProps) => {
   const { projects } = props
@@ -27,25 +25,6 @@ export const Projects = (props: ProjectsProps) => {
   const { locale } = useRouter()
 
   const { title, subtitle } = projectsContent[locale as "pt-BR" | "en-US"]
-
-  const getIconByTech = useCallback((tech: Technologies) => {
-    const icons: any = {
-      ReactJS: "react-js",
-      NodeJS: "node-js",
-      GraphQL: "graphql",
-      StyledComponents: "styled-components",
-      NextJS: "next-js",
-      GraphCMS: "graph-cms",
-      Javascript: "javascript",
-      Typescript: "typescript",
-      ChakraUI: "chakra-ui",
-      IMDb: "imbd",
-      APOD: "nasa",
-      Firebase: "firebase"
-    }
-
-    return icons[tech] ? icons[tech] : "react-js"
-  }, [])
 
   return (
     <S.ProjectsContainer id="projects">
@@ -126,20 +105,13 @@ export const Projects = (props: ProjectsProps) => {
 
                   <S.ProjectTechs>
                     {project.technologies.map((tech, index) => (
-                      <S.ProjectTech
-                        key={v4()}
+                      <div
                         data-aos="fade-up"
-                        data-aos-delay={index * 150}
+                        data-aos-delay={150 * index}
+                        key={v4()}
                       >
-                        <S.ProjectTechIcon
-                          src={`/logos/${getIconByTech(tech)}.png`}
-                          width={16}
-                          height={16}
-                          className={tech}
-                          alt={tech}
-                        />
-                        <S.ProjectTechLabel>{tech}</S.ProjectTechLabel>
-                      </S.ProjectTech>
+                        <Tech tech={tech} />
+                      </div>
                     ))}
                   </S.ProjectTechs>
                 </S.ProjectInfos>

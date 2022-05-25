@@ -123,6 +123,7 @@ export const PostAuthorAvatar = styled(Image)`
 export const PostAuthorInfos = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 `
 
 export const PostAuthorName = styled.span``
@@ -138,4 +139,17 @@ export const PostAbstract = styled.p`
 
 export const PostInfos = styled.div`
   margin-top: ${({ theme }) => theme.space["3"]};
+`
+
+export const PostTechs = styled.div`
+  display: flex;
+
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: ${({ theme }) => theme.space["2"]};
+
+  margin-top: ${({ theme }) => theme.space["2"]};
+
+  z-index: 25px;
 `

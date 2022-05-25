@@ -1,5 +1,6 @@
 import { Footer } from "components/Footer"
 import { Header } from "components/Header"
+import { Tech } from "components/Tech"
 import { format, formatDistance } from "date-fns"
 import pt from "date-fns/locale/pt"
 import { GetPostBySlugQuery } from "graphql/generated/graphql"
@@ -92,7 +93,24 @@ export const PostTemplate = (props: PostsTemplateProps) => {
 
       <S.Post>
         <S.PostInfos>
+          <S.PostTechs>
+            {post.technologies.length ? (
+              post.technologies.map((tech, index) => (
+                <div data-aos="fade-up" data-aos-delay={index * 150} key={v4()}>
+                  <Tech tech={tech} rounded={false} />
+                </div>
+              ))
+            ) : (
+              <div data-aos="fade-up" data-aos-delay={150}>
+                <Tech
+                  tech={locale === "pt-BR" ? "Geral" : "General"}
+                  rounded={false}
+                />
+              </div>
+            )}
+          </S.PostTechs>
           <S.PostHeading>{post.heading}</S.PostHeading>
+
           <S.BasicInfos>
             <S.AuthorContainer>
               <S.AuthorImageWrapper>

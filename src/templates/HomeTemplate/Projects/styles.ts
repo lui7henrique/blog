@@ -155,25 +155,6 @@ export const ProjectTechs = styled.ul`
   margin-top: ${({ theme }) => theme.space["2"]};
 `
 
-export const ProjectTech = styled.li`
-  background: ${({ theme }) => theme.colors.shape};
-
-  padding: ${({ theme }) => theme.space["2"]} ${({ theme }) => theme.space["4"]};
-
-  border-radius: 15px;
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.space["2"]};
-
-  transition: all 0.2s ease-in-out;
-`
-
-export const ProjectTechIcon = styled(Image)``
-
-export const ProjectTechLabel = styled.span`
-  font-size: ${({ theme }) => theme.fontSizes.sm};
-`
-
 export const ProjectLinks = styled.div`
   z-index: 99;
   position: absolute;
