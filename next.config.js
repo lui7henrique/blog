@@ -18,7 +18,8 @@ module.exports = withPWA({
     ]
   },
   i18n: {
-    locales: ["en-US", "pt-BR"]
+    locales: ["en-US", "pt-BR"],
+    defaultLocale: "pt-BR"
   },
   experimental: { esmExternals: true },
   async rewrites() {
