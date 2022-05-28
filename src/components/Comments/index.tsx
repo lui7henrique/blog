@@ -10,7 +10,7 @@ export const Comments = () => {
     scriptEl.setAttribute("src", "https://utteranc.es/client.js")
     scriptEl.setAttribute("async", "true")
     scriptEl.setAttribute("repo", "lui7henrique/blog")
-    scriptEl.setAttribute("issue-term", "title")
+    scriptEl.setAttribute("issue-term", "pathname")
     scriptEl.setAttribute("theme", "github-dark")
     scriptEl.setAttribute("crossorigin", "anonymous")
 
