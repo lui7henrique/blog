@@ -94,8 +94,8 @@ export const PostTemplate = (props: PostsTemplateProps) => {
         <S.PostInfos>
           <S.PostTechs>
             {post.technologies.length ? (
-              post.technologies.map((tech, index) => (
-                <div data-aos="fade-up" data-aos-delay={index * 150} key={v4()}>
+              post.technologies.map((tech) => (
+                <div key={v4()}>
                   <Tech tech={tech} rounded={false} />
                 </div>
               ))
