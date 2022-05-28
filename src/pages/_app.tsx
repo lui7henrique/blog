@@ -26,7 +26,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     })
 
     const locale = localStorage.getItem("locale")
-
     if (locale) push(asPath, asPath, { locale: locale })
   }, [])
 

@@ -1,3 +1,4 @@
+import { Comments } from "components/Comments"
 import { Footer } from "components/Footer"
 import { Header } from "components/Header"
 import { Tech } from "components/Tech"
@@ -168,6 +169,8 @@ export const PostTemplate = (props: PostsTemplateProps) => {
             )
           })}
         </S.PostContentContainer>
+
+        <Comments />
       </S.Post>
 
       <Footer />
