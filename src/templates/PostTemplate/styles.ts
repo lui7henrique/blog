@@ -135,6 +135,11 @@ export const PostContent = styled.div`
     margin-bottom: ${({ theme }) => theme.space["4"]};
   }
 
+  code {
+    background-color: #282a36 !important;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  }
+
   h1,
   h2 {
     margin: ${({ theme }) => theme.space["2"]} 0;
