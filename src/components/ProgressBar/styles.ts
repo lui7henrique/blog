@@ -15,7 +15,7 @@ export const ProgressBar = styled.div<{
   background-color: ${({ theme }) => theme.colors.primary};
   width: 10px;
   height: 10px;
-  border-radius: 5px;
+  border-radius: 0px;
 
   ${({ empty }) =>
     empty &&

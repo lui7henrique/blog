@@ -71,7 +71,7 @@ export const Projects = (props: ProjectsProps) => {
                   style={{
                     width: "100%",
                     border: `1px solid ${theme.colors.shape}`,
-                    borderRadius: "5px"
+                    borderRadius: "0px"
                   }}
                   pagination={{ clickable: true }}
                   centeredSlides
@@ -110,7 +110,7 @@ export const Projects = (props: ProjectsProps) => {
                         data-aos-delay={150 * index}
                         key={v4()}
                       >
-                        <Tech tech={tech} />
+                        <Tech tech={tech} rounded={false} />
                       </div>
                     ))}
                   </S.ProjectTechs>

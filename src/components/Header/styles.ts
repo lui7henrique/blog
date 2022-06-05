@@ -87,7 +87,7 @@ export const NavItem = styled.a<{
     width: 0;
     height: 3px;
     transition: width 0.2s;
-    border-radius: 5px;
+    border-radius: 0px;
     margin-top: ${({ theme }) => theme.space["2"]};
     background: ${({ theme }) => theme.colors.primary_dark};
   }

@@ -81,7 +81,6 @@ export const Skill = styled.div`
 
   background: ${({ theme }) => theme.colors.shape};
 
-  border-radius: 5px;
   justify-content: space-between;
 
   cursor: pointer;
@@ -128,7 +127,6 @@ export const SkillsStuff = styled.div<{
   height: 0px;
   transition: all 0.3s ease-in-out;
   margin-top: 4px;
-  border-radius: 5px;
   padding: ${({ theme }) => theme.space[4]};
   display: none;
 
