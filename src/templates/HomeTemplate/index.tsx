@@ -21,7 +21,7 @@ export const HomeTemplate = (props: HomeTemplateProps) => {
 
   return (
     <>
-      <S.VideoBanner muted autoPlay loop ref={videoRef}>
+      <S.VideoBanner muted disablePictureInPicture autoPlay loop ref={videoRef}>
         <source src="/videos/rocket.mp4" type="video/mp4" />
       </S.VideoBanner>
 

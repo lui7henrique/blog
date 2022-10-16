@@ -32,6 +32,12 @@ export const PostContainer = styled.div``
 export const Post = styled(Link)`
   display: flex;
   flex-direction: column;
+
+  &:hover {
+    img:only-child {
+      transform: scale(1.1);
+    }
+  }
 `
 
 export const PostThumbnailWrapper = styled.figure`
@@ -40,12 +46,6 @@ export const PostThumbnailWrapper = styled.figure`
   position: relative;
 
   border: 1px solid ${({ theme }) => theme.colors.shape};
-
-  &:hover {
-    img {
-      transform: scale(1.1);
-    }
-  }
 `
 
 export const PostThumbnail = styled(Image)`
