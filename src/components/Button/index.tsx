@@ -15,6 +15,7 @@ export type ButtonProps = {
 
 export const Button = (props: ButtonProps) => {
   const theme = useTheme()
+
   const {
     label,
     backgroundColor = theme.colors.primary,
@@ -34,6 +35,7 @@ export const Button = (props: ButtonProps) => {
       {...rest}
     >
       {RightIcon && <RightIcon size={20} />}
+
       {label}
     </S.Button>
   )

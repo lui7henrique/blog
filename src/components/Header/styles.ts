@@ -1,5 +1,6 @@
 import { FiMenu } from "react-icons/fi"
 import styled, { css } from "styled-components"
+import Link from 'next/link'
 
 export const Header = styled.header`
   display: flex;
@@ -75,7 +76,7 @@ export const Nav = styled.nav`
   }
 `
 
-export const NavItem = styled.a<{
+export const NavItem = styled(Link)<{
   isActive: boolean
 }>`
   transition: border 0.2s ease-in-out;

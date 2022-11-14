@@ -45,7 +45,7 @@ export const PostsList = (props: PostsListsProps) => {
           data-aos-delay={index > 10 ? index * 10 : index * 100}
         >
           <S.Post href={`/posts/${post.slug}`}>
-            <a>
+
               <S.PostThumbnailWrapper>
                 <S.PostThumbnail
                   src={post.thumbnail.url}
@@ -109,7 +109,7 @@ export const PostsList = (props: PostsListsProps) => {
                   {post.abstract}
                 </S.PostAbstract>
               </S.PostInfos>
-            </a>
+
           </S.Post>
         </S.PostContainer>
       )
