@@ -105,3 +105,8 @@ export const NavItem = styled(Link, {
     width: "100%"
   }
 })
+
+export const Buttons = styled("div", {
+  display: "flex",
+  gap: "$4"
+})

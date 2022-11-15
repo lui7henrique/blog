@@ -3,7 +3,7 @@ export const heroContent = {
     article: {
       title: "Bem-vindo!",
       description:
-        "Aqui farei postagens sobre assuntos que acho relevantes pra mim e quem sabe até pra você também! 🤗",
+        "Fique por dentro dos meus últimos posts (juro que são interessantes)",
       buttons: [
         {
           label: "Continue lendo",
@@ -15,8 +15,7 @@ export const heroContent = {
   "en-US": {
     article: {
       title: "Welcome!",
-      description:
-        "Here I'll post about topics that I think are relevant to me and maybe even to you too! 🤗",
+      description: "Keep up with my latest posts (I swear they're interesting)",
       buttons: [
         {
           label: "Keep reading",

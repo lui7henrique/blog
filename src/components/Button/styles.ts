@@ -1,4 +1,5 @@
 import { styled } from "styles"
+import { rounded } from "styles/tokens"
 
 export const StyledButton = styled("button", {
   variants: {
@@ -17,14 +18,7 @@ export const StyledButton = styled("button", {
         borderStyle: "solid"
       }
     },
-    rounded: {
-      px: { borderRadius: "$px" },
-      xs: { borderRadius: "$xs" },
-      sm: { borderRadius: "$sm" },
-      md: { borderRadius: "$md" },
-      lg: { borderRadius: "$lg" },
-      full: { borderRadius: "$full" }
-    }
+    rounded: rounded
   },
   defaultVariants: {
     color: "zinc",

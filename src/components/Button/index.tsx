@@ -16,7 +16,6 @@ export const Button = (props: ButtonProps) => {
   return (
     <S.StyledButton {...rest}>
       {RightIcon && <RightIcon size={20} />}
-
       {label}
     </S.StyledButton>
   )

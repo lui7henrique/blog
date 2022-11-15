@@ -49,6 +49,7 @@ export default function Post(props: PostTemplate) {
           ]
         }}
       />
+
       <PostTemplate post={post} />
     </>
   )

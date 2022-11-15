@@ -41,6 +41,15 @@ export const radii = {
   full: "99999px"
 }
 
+export const rounded = {
+  px: { borderRadius: "$px" },
+  xs: { borderRadius: "$xs" },
+  sm: { borderRadius: "$sm" },
+  md: { borderRadius: "$md" },
+  lg: { borderRadius: "$lg" },
+  full: { borderRadius: "$full" }
+}
+
 export const space = {
   1: "0.25rem",
   2: "0.5rem",
