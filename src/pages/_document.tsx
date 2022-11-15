@@ -6,6 +6,7 @@ import Document, {
   NextScript
 } from "next/document"
 import { ServerStyleSheet } from "styled-components"
+import { getCssText } from "styles"
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -44,13 +45,25 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&display=swap"
             rel="stylesheet"
           />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+            rel="stylesheet"
+          />
+
           <link rel="favicon" href="/favicon.svg" />
+
           <link
             rel="canonical"
             hrefLang="pt-br"
             href="https://lui7henrique.vercel.app/"
           />
+
+          <style
+            id="stitches"
+            dangerouslySetInnerHTML={{ __html: getCssText() }}
+          />
         </Head>
+
         <body>
           <Main />
           <NextScript />

@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.15.0",
+    "@stitches/react": "^1.2.8",
     "@styled-icons/evaicons-outline": "^10.34.0",
     "@types/jest": "^26.0.24",
     "aos": "^3.0.0-beta.6",

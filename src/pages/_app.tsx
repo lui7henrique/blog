@@ -7,11 +7,13 @@ import { useRouter } from "next/router"
 import NextNProgress from "nextjs-progressbar"
 import { useEffect } from "react"
 import { ThemeProvider } from "styled-components"
-import { GlobalStyles } from "styles/global"
+import { globalStyles, GlobalStyles } from "styles/global"
 import theme from "styles/theme"
 
 import SEO from "../../next-seo.config"
 // ..
+
+globalStyles()
 
 type AppProps = BasicAppProps
 

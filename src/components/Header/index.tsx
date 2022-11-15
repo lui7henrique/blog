@@ -37,27 +37,28 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
 
   return (
     <>
-      <S.Header>
+      <S.Container>
         <S.Principal>
           <Link href="/" passHref>
             <S.Logo>lui⚡️henrique</S.Logo>
             <S.LogoMobile>⚡️</S.LogoMobile>
           </Link>
+
+          <S.Nav>
+            {content.nav.map((item) => {
+              return (
+                <NavLink
+                  key={JSON.stringify(item)}
+                  href={item.href}
+                  label={item.label}
+                />
+              )
+            })}
+          </S.Nav>
         </S.Principal>
 
-        <S.Nav>
-          {content.nav.map((item) => {
-            return (
-              <NavLink
-                key={JSON.stringify(item)}
-                href={item.href}
-                label={item.label}
-              />
-            )
-          })}
-          <ButtonLanguage isPost={isPost} postSlug={postSlug} />
-        </S.Nav>
-      </S.Header>
+        <ButtonLanguage isPost={isPost} postSlug={postSlug} />
+      </S.Container>
     </>
   )
 }

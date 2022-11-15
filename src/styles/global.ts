@@ -1,11 +1,8 @@
 import { createGlobalStyle } from "styled-components"
+import { globalCss } from "."
 
 export const GlobalStyles = createGlobalStyle`
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+
 
   html {
     @media (max-width: 1080px) {
@@ -18,29 +15,7 @@ export const GlobalStyles = createGlobalStyle`
 
   html, body, #__next {
     height: 100%;
-    scroll-behavior: smooth;
-  }
-
-  body {
-    font-family: 'Space Grotesk', serif;
-    background-color: ${({ theme }) => theme.colors.background};
-    color: ${({ theme }) => theme.colors.text};
-
-    overflow-x: hidden;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    color: ${({ theme }) => theme.colors.title};
-  }
-
-  p {
-    color: ${({ theme }) => theme.colors.text}
-  }
-
-  a {
-    text-decoration: none;
-    color: ${({ theme }) => theme.colors.text};
-
+    scroll-behavior: smooth !important;
   }
 
   body::-webkit-scrollbar {
@@ -58,3 +33,35 @@ export const GlobalStyles = createGlobalStyle`
     border: 3px solid ${({ theme }) => theme.colors.primary};
   }
 `
+
+export const globalStyles = globalCss({
+  "*": {
+    margin: 0,
+    padding: 0
+  },
+
+  body: {
+    "-webkit-font-smoothing": "antialised",
+    backgroundColor: "$black",
+    color: "$gray300",
+    overflowX: "hidden"
+  },
+
+  "body, input, textarea, button": {
+    fontFamily: "Space Grotesk",
+    fontWeight: 400
+  },
+
+  "h1, h2, h3, h4, h5, h6": {
+    color: "white"
+  },
+
+  a: {
+    textDecoration: "none",
+    color: "$gray300"
+  },
+
+  p: {
+    color: "$gray300"
+  }
+})

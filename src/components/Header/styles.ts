@@ -1,21 +1,29 @@
 import { FiMenu } from "react-icons/fi"
-import styled, { css } from "styled-components"
+import styledComponent, { css } from "styled-components"
 import Link from "next/link"
 
-export const Header = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+import { styled } from "styles"
 
-  width: 100%;
-  height: ${({ theme }) => theme.sizes.headerHeight};
-  max-width: ${({ theme }) => theme.sizes.maxWidth};
-  margin: 0 auto;
+export const Container = styled("header", {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
 
-  padding-right: ${({ theme }) => theme.space["10"]};
-  padding-left: ${({ theme }) => theme.space["10"]};
+  width: "100%",
+  height: "$30",
+  maxWidth: "$280",
+  margin: "0 auto",
+  zIndex: 99,
 
-  z-index: 99;
+  paddingRight: "$10",
+  paddingLeft: "$10"
+})
+
+export const Header = styledComponent.header`
+
+
+
+
 
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     padding-right: ${({ theme }) => theme.space["6"]};
@@ -23,7 +31,7 @@ export const Header = styled.header`
   }
 `
 
-export const Principal = styled.div`
+export const Principal = styledComponent.div`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.space["4"]};
@@ -33,7 +41,7 @@ export const Principal = styled.div`
   }
 `
 
-export const Menu = styled(FiMenu).attrs({
+export const Menu = styledComponent(FiMenu).attrs({
   size: 35
 })`
   display: none;
@@ -43,7 +51,7 @@ export const Menu = styled(FiMenu).attrs({
   }
 `
 
-export const Logo = styled.h1`
+export const Logo = styledComponent.h1`
   font-size: 1.5rem;
   display: flex;
 
@@ -52,7 +60,7 @@ export const Logo = styled.h1`
   }
 `
 
-export const LogoMobile = styled.h1`
+export const LogoMobile = styledComponent.h1`
   font-size: ${({ theme }) => theme.fontSizes["5xl"]};
   padding: ${({ theme }) => theme.space["16"]} 0;
   display: none;
@@ -64,10 +72,11 @@ export const LogoMobile = styled.h1`
   }
 `
 
-export const Nav = styled.nav`
+export const Nav = styledComponent.nav`
   display: flex;
   align-items: center;
   gap: ${({ theme }) => theme.space["8"]};
+  margin-top: ${({ theme }) => theme.space["3"]};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
     a {
@@ -76,7 +85,7 @@ export const Nav = styled.nav`
   }
 `
 
-export const NavItem = styled(Link)<{
+export const NavItem = styledComponent(Link)<{
   isActive: boolean
 }>`
   transition: border 0.2s ease-in-out;
