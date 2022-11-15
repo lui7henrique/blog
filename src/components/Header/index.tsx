@@ -27,7 +27,7 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
         asPath.split("/")[1] === href.replace("/", "")
 
       return (
-        <S.NavItem href={href} passHref isActive={isActive}>
+        <S.NavItem href={href} passHref active={isActive ? "true" : "false"}>
           {label}
         </S.NavItem>
       )
@@ -38,7 +38,7 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
   return (
     <>
       <S.Container>
-        <S.Principal>
+        <S.Content>
           <Link href="/" passHref>
             <S.Logo>lui⚡️henrique</S.Logo>
             <S.LogoMobile>⚡️</S.LogoMobile>
@@ -55,7 +55,7 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
               )
             })}
           </S.Nav>
-        </S.Principal>
+        </S.Content>
 
         <ButtonLanguage isPost={isPost} postSlug={postSlug} />
       </S.Container>

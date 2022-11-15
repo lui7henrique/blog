@@ -26,5 +26,7 @@ export const {
     fontWeights: tokens.fontWeights,
     lineHeights: tokens.lineHeights,
     space: tokens.space
-  }
+  },
+
+  media: tokens.media
 })
