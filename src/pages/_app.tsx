@@ -11,6 +11,7 @@ import { globalStyles, GlobalStyles } from "styles/global"
 import theme from "styles/theme"
 
 import SEO from "../../next-seo.config"
+import { colors } from "styles/tokens"
 // ..
 
 globalStyles()
@@ -42,13 +43,15 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <DefaultSeo {...SEO} />
+
       <ThemeProvider theme={theme}>
         <GlobalStyles />
+
         <NextNProgress
-          color="#1F26A6"
+          color={colors.zinc700}
           startPosition={0.3}
           stopDelayMs={200}
-          height={3}
+          height={4}
           showOnShallow={true}
         />
 

@@ -18,20 +18,7 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior: smooth !important;
   }
 
-  body::-webkit-scrollbar {
-    width: 5px;
-  }
 
-  body::-webkit-scrollbar-track {
-    background: ${({ theme }) => theme.colors.background};
-  }
-
-  body::-webkit-scrollbar-thumb {
-    background-color: ${({ theme }) => theme.colors.primary};
-    border-radius: 0px;
-    width: 5px;
-    border: 3px solid ${({ theme }) => theme.colors.primary};
-  }
 `
 
 export const globalStyles = globalCss({
@@ -63,5 +50,18 @@ export const globalStyles = globalCss({
 
   p: {
     color: "$gray300"
+  },
+
+  "body::-webkit-scrollbar": {
+    width: "7px"
+  },
+
+  "body::-webkit-scrollbar-track": {
+    background: "$zinc900"
+  },
+
+  "body::-webkit-scrollbar-thumb": {
+    backgroundColor: "$zinc800",
+    borderRadius: "0px"
   }
 })

@@ -16,7 +16,8 @@ export const {
     height: "space",
     width: "space",
     maxWidth: "space",
-    maxHeight: "space"
+    maxHeight: "space",
+    borderRadius: "radii"
   },
 
   theme: {
@@ -25,7 +26,8 @@ export const {
     fontSizes: tokens.fontSizes,
     fontWeights: tokens.fontWeights,
     lineHeights: tokens.lineHeights,
-    space: tokens.space
+    space: tokens.space,
+    radii: tokens.radii
   },
 
   media: tokens.media

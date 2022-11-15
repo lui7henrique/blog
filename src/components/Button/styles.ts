@@ -1,31 +1,50 @@
-import styled from "styled-components"
-import theme from "styles/theme"
+import { styled } from "styles"
 
-export const Button = styled.button<{
-  backgroundColor: string
-  textColor: string
-  fontSize: keyof typeof theme["fontSizes"]
-  borderRadius: string
-}>`
-  background-color: ${(props) => props.backgroundColor};
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
+export const StyledButton = styled("button", {
+  variants: {
+    color: {
+      emerald: {
+        background: "$emerald600"
+      },
+      gray: {
+        background: "$gray500"
+      },
+      zinc: {
+        background: "$zinc900",
 
-  color: ${(props) => props.textColor};
-  font-size: ${(props) => props.theme.fontSizes[props.fontSize]};
-  font-weight: bold;
+        borderWidth: "1px",
+        borderColor: "$zinc800",
+        borderStyle: "solid"
+      }
+    },
+    rounded: {
+      px: { borderRadius: "$px" },
+      xs: { borderRadius: "$xs" },
+      sm: { borderRadius: "$sm" },
+      md: { borderRadius: "$md" },
+      lg: { borderRadius: "$lg" },
+      full: { borderRadius: "$full" }
+    }
+  },
+  defaultVariants: {
+    color: "zinc",
+    rounded: "md"
+  },
 
-  padding: 0.5rem 1rem;
-  border: none;
+  display: "flex",
+  alignItems: "center",
+  justifycontent: "center",
+  gap: "$4",
 
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  padding: "$2 $4",
+  fontSize: "$sm",
 
-  border-radius: ${(props) => props.borderRadius};
+  transition: "all 0.2s ease-in-out",
+  cursor: "pointer",
 
-  &:hover {
-    filter: brightness(0.8);
+  color: "$gray100",
+
+  "&:hover": {
+    filter: "brightness(0.8)"
   }
-`
+})

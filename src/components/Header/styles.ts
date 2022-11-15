@@ -70,6 +70,7 @@ export const NavItem = styled(Link, {
   variants: {
     active: {
       true: {
+        color: "white",
         "&::after": {
           width: "100%"
         }
@@ -91,9 +92,13 @@ export const NavItem = styled(Link, {
     width: 0,
     height: "3px",
     transition: "width 0.2s",
-    borderRadius: "0px",
+    borderRadius: "$sm",
     marginTop: "$2",
-    background: "$emerald500"
+    background: "$zinc600"
+  },
+
+  "&:hover": {
+    color: "$white"
   },
 
   "&:hover::after": {

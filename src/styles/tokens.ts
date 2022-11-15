@@ -76,6 +76,17 @@ export const colors = {
   gray800: "#1f2937",
   gray900: "#111827",
 
+  zinc50: "#fafafa",
+  zinc100: "#f4f4f5",
+  zinc200: "#e4e4e7",
+  zinc300: "#d4d4d8",
+  zinc400: "#a1a1aa",
+  zinc500: "#71717a",
+  zinc600: "#52525b",
+  zinc700: "#3f3f46",
+  zinc800: "#27272a",
+  zinc900: "#18181b",
+
   emerald50: "#ecfdf5",
   emerald100: "#d1fae5",
   emerald200: "#a7f3d0",
