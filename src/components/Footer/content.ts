@@ -3,9 +3,7 @@ import { FaDiscord, FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa"
 export const footerContent = {
   "pt-BR": {
     title: "lui⚡️henrique",
-    description:
-      "Apenas um desenvolvedor front-end apaixonado por fazer coisas belas e úteis ",
-    subDescription: "(ás vezes nem tanto).",
+
     home: {
       title: "Início",
       links: [
@@ -51,9 +49,6 @@ export const footerContent = {
   },
   "en-US": {
     title: "lui⚡️henrique",
-    description:
-      "A Front-end developer in love with making beautiful and     useful things ",
-    subDescription: "(sometimes 🤣)!",
     home: {
       title: "Home",
       links: [

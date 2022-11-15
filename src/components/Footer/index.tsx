@@ -19,7 +19,7 @@ type SocialLink = {
 export const Footer = () => {
   const { locale } = useRouter()
 
-  const { title, description, subDescription, home, social, copyright } =
+  const { title, home, social, copyright } =
     footerContent[locale as "pt-BR" | "en-US"]
 
   const ExploreLink = useCallback((props: ExploreLinkProps) => {
@@ -50,10 +50,6 @@ export const Footer = () => {
         <S.FooterSections>
           <S.FooterBasicInfo>
             <S.FooterTitle>{title}</S.FooterTitle>
-            <S.FooterDescription>
-              {description}{" "}
-              <S.FooterSubDescription>{subDescription}</S.FooterSubDescription>
-            </S.FooterDescription>
 
             <S.FooterCopyright>{copyright}</S.FooterCopyright>
           </S.FooterBasicInfo>
