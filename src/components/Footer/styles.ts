@@ -58,17 +58,6 @@ export const FooterTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSizes["2xl"]};
 `
 
-export const FooterDescription = styled.p`
-  font-size: ${({ theme }) => theme.fontSizes.sm};
-
-  line-height: 32px;
-`
-
-export const FooterSubDescription = styled.span`
-  font-size: ${({ theme }) => theme.fontSizes.xs};
-  text-decoration: line-through;
-`
-
 export const FooterHome = styled.div`
   display: flex;
   flex-direction: column;
