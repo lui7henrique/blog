@@ -32,7 +32,7 @@ export default function Post(props: PostTemplate) {
   return (
     <>
       <NextSeo
-        title={post.heading}
+        title={`Luiz Henrique | ${post.heading}`}
         description={post.abstract!}
         canonical={postURL}
         openGraph={{
