@@ -25,11 +25,7 @@ export const Footer = () => {
   const ExploreLink = useCallback((props: ExploreLinkProps) => {
     const { href, label } = props
 
-    return (
-      <S.Link href={href}>
-        <S.LinkLabel href={href}>{label}</S.LinkLabel>
-      </S.Link>
-    )
+    return <S.LinkLabel href={href}>{label}</S.LinkLabel>
   }, [])
 
   const SocialLink = useCallback((props: SocialLink) => {

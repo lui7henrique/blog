@@ -1,4 +1,4 @@
-import NextLink from "next/link"
+import Link from "next/link"
 import styled from "styled-components"
 
 export const Footer = styled.footer`
@@ -81,9 +81,7 @@ export const FooterHomeTitle = styled.h4`
   font-size: ${({ theme }) => theme.fontSizes["2xl"]};
 `
 
-export const Link = styled(NextLink)``
-
-export const LinkLabel = styled.a`
+export const LinkLabel = styled(Link)`
   color: ${({ theme }) => theme.colors.text};
   cursor: pointer;
 
