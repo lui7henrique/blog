@@ -13,8 +13,6 @@ export type ButtonProps = {
 export const Button = (props: ButtonProps) => {
   const { label, rightIcon: RightIcon, ...rest } = props
 
-  console.log("oi")
-
   return (
     <S.StyledButton {...rest}>
       {RightIcon && <RightIcon size={20} />}
