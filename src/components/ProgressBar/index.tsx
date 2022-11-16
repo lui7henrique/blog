@@ -1,4 +1,5 @@
 import { v4 } from "uuid"
+
 import * as S from "./styles"
 
 type ProgressBarProps = {
@@ -18,10 +19,10 @@ export const ProgressBar = (props: ProgressBarProps) => {
 
   return (
     <S.Progress total={total}>
-      {completeLevels.map((_, index) => (
+      {completeLevels.map(() => (
         <S.ProgressBar key={v4()} />
       ))}
-      {incompleteLevels.map((_, index) => (
+      {incompleteLevels.map(() => (
         <S.ProgressBar key={v4()} empty />
       ))}
     </S.Progress>
