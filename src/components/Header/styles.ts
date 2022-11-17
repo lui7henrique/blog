@@ -1,7 +1,4 @@
-import { FiMenu } from "react-icons/fi"
-import styledComponent, { css } from "styled-components"
 import Link from "next/link"
-
 import { styled } from "styles"
 
 export const Container = styled("header", {

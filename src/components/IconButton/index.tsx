@@ -1,4 +1,4 @@
-import Link, { LinkProps } from "next/link"
+import { LinkProps } from "next/link"
 import { ReactElement } from "react"
 
 import { Container, LinkContainer } from "./styles"

@@ -9,10 +9,9 @@ import { useEffect } from "react"
 import { ThemeProvider } from "styled-components"
 import { globalStyles, GlobalStyles } from "styles/global"
 import theme from "styles/theme"
+import { colors } from "styles/tokens"
 
 import SEO from "../../next-seo.config"
-import { colors } from "styles/tokens"
-// ..
 
 globalStyles()
 
@@ -30,7 +29,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     const locale = localStorage.getItem("locale")
     if (locale) push(asPath, asPath, { locale: locale })
-  }, [])
+  }, [asPath, push])
 
   return (
     <>

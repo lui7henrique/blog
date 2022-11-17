@@ -1,7 +1,6 @@
 import { IconType } from "react-icons"
 
 import { StyledButton } from "./styles"
-
 import * as S from "./styles"
 
 export type ButtonProps = {
