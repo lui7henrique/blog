@@ -1,7 +1,9 @@
 import { ButtonLanguage } from "components/ButtonLanguage"
+import { IconButton } from "components/IconButton"
 import { useRouter } from "next/dist/client/router"
 import Link from "next/link"
 import { useCallback } from "react"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 import { headerContent } from "./content"
 import * as S from "./styles"
@@ -27,7 +29,7 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
         asPath.split("/")[1] === href.replace("/", "")
 
       return (
-        <S.NavItem href={href} passHref isActive={isActive}>
+        <S.NavItem href={href} passHref active={isActive ? "true" : "false"}>
           {label}
         </S.NavItem>
       )
@@ -37,27 +39,44 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
 
   return (
     <>
-      <S.Header>
-        <S.Principal>
+      <S.Container>
+        <S.Content>
           <Link href="/" passHref>
             <S.Logo>lui⚡️henrique</S.Logo>
             <S.LogoMobile>⚡️</S.LogoMobile>
           </Link>
-        </S.Principal>
 
-        <S.Nav>
-          {content.nav.map((item) => {
-            return (
-              <NavLink
-                key={JSON.stringify(item)}
-                href={item.href}
-                label={item.label}
-              />
-            )
-          })}
+          <S.Nav>
+            {content.nav.map((item) => {
+              return (
+                <NavLink
+                  key={JSON.stringify(item)}
+                  href={item.href}
+                  label={item.label}
+                />
+              )
+            })}
+          </S.Nav>
+        </S.Content>
+
+        <S.Buttons>
           <ButtonLanguage isPost={isPost} postSlug={postSlug} />
-        </S.Nav>
-      </S.Header>
+
+          <IconButton
+            variant="unstyled"
+            icon={<FaGithub size={20} color="#fff" />}
+            href="https://github.com/lui7henrique"
+            blank
+          />
+
+          <IconButton
+            variant="unstyled"
+            icon={<FaLinkedin size={20} color="#fff" />}
+            href="https://www.linkedin.com/in/luiz-henrique7/"
+            blank
+          />
+        </S.Buttons>
+      </S.Container>
     </>
   )
 }

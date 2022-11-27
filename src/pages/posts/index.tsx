@@ -24,7 +24,7 @@ export default function Home(props: PostsTemplate) {
   return (
     <>
       <NextSeo
-        title={`Posts`}
+        title={`Luiz Henrique | Posts`}
         description={content.article.description}
         canonical={url}
         openGraph={{

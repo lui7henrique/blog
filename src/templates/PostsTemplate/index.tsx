@@ -18,6 +18,7 @@ export const PostsTemplate = (props: PostsTemplateProps) => {
   return (
     <>
       <S.VideoOverlay />
+
       <S.VideoBanner disablePictureInPicture muted autoPlay loop ref={videoRef}>
         <source src="/videos/galaxy.mp4" type="video/mp4" />
       </S.VideoBanner>

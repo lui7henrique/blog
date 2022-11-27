@@ -1,10 +1,11 @@
 {
+  "root": true,
   "env": {
     "jest": true,
     "node": true
   },
   "extends": ["next", "next/core-web-vitals", "plugin:prettier/recommended"],
-  "plugins": ["react-hooks", "eslint-plugin-import-helpers"],
+  "plugins": ["eslint-plugin-import-helpers"],
   "rules": {
     "react/prop-types": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",

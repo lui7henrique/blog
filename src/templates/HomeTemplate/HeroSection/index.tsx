@@ -27,11 +27,10 @@ export const HeroSection = () => {
             data-aos="fade-right"
             data-aos-delay="400"
           />
+
           <Button
             label={content.article.buttons[1].label}
             onClick={() => handleNavigate(content.article.buttons[1].link!)}
-            backgroundColor="transparent"
-            fontSize="md"
             data-aos="fade-right"
             data-aos-delay="400"
           />

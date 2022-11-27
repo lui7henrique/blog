@@ -1,8 +1,8 @@
 import { useRouter } from "next/router"
-import { footerContent } from "./content"
-import { IconType } from "react-icons"
 import { useCallback } from "react"
+import { IconType } from "react-icons"
 
+import { footerContent } from "./content"
 import * as S from "./styles"
 
 type ExploreLinkProps = {
