@@ -24,7 +24,7 @@ export default function Home(props: HomeProps) {
   return (
     <>
       <NextSeo
-        title={locale === "pt-BR" ? "Início" : "Home"}
+        title={`Luiz Henrique | ${locale === "pt-BR" ? "Início" : "Home"}`}
         description={`${content.article.description}${content.article.subDescription}`}
         canonical={url}
         openGraph={{

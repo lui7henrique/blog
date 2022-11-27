@@ -27,7 +27,6 @@ export const ButtonLanguage = (props: ButtonLanguageProps) => {
     <Button
       label={locale! === "en-US" ? "English" : "Português"}
       onClick={() => handleChangeLocale(locale === "pt-BR" ? "en-US" : "pt-BR")}
-      fontSize="sm"
       rightIcon={FaLanguage}
       {...rest}
     />

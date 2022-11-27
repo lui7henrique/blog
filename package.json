@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "next-sitemap",
     "postinstall": "husky install",
     "start": "next start",
     "lint": "next lint",
@@ -16,6 +15,8 @@
   },
   "dependencies": {
     "@babel/preset-typescript": "^7.15.0",
+    "@radix-ui/react-slot": "^1.0.1",
+    "@stitches/react": "^1.2.8",
     "@styled-icons/evaicons-outline": "^10.34.0",
     "@types/jest": "^26.0.24",
     "aos": "^3.0.0-beta.6",

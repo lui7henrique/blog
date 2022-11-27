@@ -1,111 +1,109 @@
-import { FiMenu } from "react-icons/fi"
-import styled, { css } from "styled-components"
 import Link from "next/link"
+import { styled } from "styles"
 
-export const Header = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+export const Container = styled("header", {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
 
-  width: 100%;
-  height: ${({ theme }) => theme.sizes.headerHeight};
-  max-width: ${({ theme }) => theme.sizes.maxWidth};
-  margin: 0 auto;
+  width: "100%",
+  height: "$30",
+  maxWidth: "$280",
+  margin: "0 auto",
+  zIndex: 99,
 
-  padding-right: ${({ theme }) => theme.space["10"]};
-  padding-left: ${({ theme }) => theme.space["10"]};
+  paddingRight: "$10",
+  paddingLeft: "$10",
 
-  z-index: 99;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-    padding-right: ${({ theme }) => theme.space["6"]};
-    padding-left: ${({ theme }) => theme.space["6"]};
+  "@md": {
+    paddingRight: "$6",
+    paddingLeft: "$6"
   }
-`
+})
 
-export const Principal = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.space["4"]};
+export const Content = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  gap: "$8",
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    gap: 0;
+  "@lg": {
+    gap: 0
   }
-`
+})
 
-export const Menu = styled(FiMenu).attrs({
-  size: 35
-})`
-  display: none;
+export const Logo = styled("h1", {
+  fontSize: "$2xl",
+  display: "flex",
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    display: block;
+  "@lg": {
+    display: "none"
   }
-`
+})
 
-export const Logo = styled.h1`
-  font-size: 1.5rem;
-  display: flex;
+export const LogoMobile = styled("h1", {
+  fontSize: "$5xl",
+  padding: "$16 0",
+  display: "none",
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    display: none;
+  "@lg": {
+    display: "flex"
   }
-`
+})
 
-export const LogoMobile = styled.h1`
-  font-size: ${({ theme }) => theme.fontSizes["5xl"]};
-  padding: ${({ theme }) => theme.space["16"]} 0;
-  display: none;
+export const Nav = styled("nav", {
+  display: "flex",
+  alignItems: "center",
+  gap: "$8",
+  marginTop: "$5",
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    & {
-      display: flex;
+  "@lg": {
+    a: {
+      display: "none"
     }
   }
-`
+})
 
-export const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.space["8"]};
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.lg}) {
-    a {
-      display: none;
-    }
-  }
-`
-
-export const NavItem = styled(Link)<{
-  isActive: boolean
-}>`
-  transition: border 0.2s ease-in-out;
-  margin-top: 5px;
-
-  &::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 3px;
-    transition: width 0.2s;
-    border-radius: 0px;
-    margin-top: ${({ theme }) => theme.space["2"]};
-    background: ${({ theme }) => theme.colors.primary_dark};
-  }
-
-  &:hover::after {
-    width: 100%;
-    //transition: width .3s;
-  }
-
-  ${({ isActive }) =>
-    isActive &&
-    css`
-      &::after {
-        width: 100%;
-        background: ${({ theme }) => theme.colors.primary};
-
-        //transition: width .3s;
+export const NavItem = styled(Link, {
+  variants: {
+    active: {
+      true: {
+        color: "white",
+        "&::after": {
+          width: "100%"
+        }
+      },
+      false: {
+        "&::after": {
+          width: "0%"
+        }
       }
-    `}
-`
+    }
+  },
+
+  transition: "border 0.2s ease-in-out",
+  marginTop: "$xxs",
+
+  "&::after": {
+    content: "",
+    display: "block",
+    width: 0,
+    height: "3px",
+    transition: "width 0.2s",
+    borderRadius: "$sm",
+    marginTop: "$2",
+    background: "$zinc600"
+  },
+
+  "&:hover": {
+    color: "$white"
+  },
+
+  "&:hover::after": {
+    width: "100%"
+  }
+})
+
+export const Buttons = styled("div", {
+  display: "flex",
+  gap: "$4"
+})
