@@ -1,13 +1,8 @@
-const withPWA = require("next-pwa")
-const isProd = process.env.NODE_ENV === "production"
-
-module.exports = withPWA({
-  reactStrictMode: false,
-
-  pwa: {
-    dest: "public",
-    disable: !isProd
-  },
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
+  reactStrictMode: true,
 
   images: {
     domains: [
@@ -18,11 +13,14 @@ module.exports = withPWA({
       "media.graphassets.com"
     ]
   },
+
   i18n: {
     locales: ["en-US", "pt-BR"],
     defaultLocale: "pt-BR"
   },
+
   experimental: { esmExternals: true },
+
   async rewrites() {
     return [
       {
@@ -31,4 +29,6 @@ module.exports = withPWA({
       }
     ]
   }
-})
+}
+
+module.exports = nextConfig
