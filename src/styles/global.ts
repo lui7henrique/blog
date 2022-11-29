@@ -3,8 +3,6 @@ import { createGlobalStyle } from "styled-components"
 import { globalCss } from "."
 
 export const GlobalStyles = createGlobalStyle`
-
-
   html {
     @media (max-width: 1080px) {
       font-size: 93.75%; //15px
@@ -18,8 +16,6 @@ export const GlobalStyles = createGlobalStyle`
     height: 100%;
     scroll-behavior: smooth !important;
   }
-
-
 `
 
 export const globalStyles = globalCss({

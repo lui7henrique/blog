@@ -1,9 +1,8 @@
+import Aos from "aos"
 import "aos/dist/aos.css" // You can also use <link> for styles
-import AOS from "aos"
 import { DefaultSeo } from "next-seo"
 import { AppProps as BasicAppProps } from "next/app"
 import Head from "next/head"
-import { useRouter } from "next/router"
 import NextNProgress from "nextjs-progressbar"
 import { useEffect } from "react"
 import { ThemeProvider } from "styled-components"
@@ -18,21 +17,13 @@ globalStyles()
 type AppProps = BasicAppProps
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const { asPath, push } = useRouter()
-
   useEffect(() => {
-    AOS.init({
+    Aos.init({
       easing: "ease-out-cubic",
       once: true,
       duration: 250
     })
-
-    const locale = localStorage.getItem("locale")
-
-    if (!!locale) {
-      push(asPath, asPath, { locale: locale })
-    }
-  }, [asPath, push])
+  }, [])
 
   return (
     <>
