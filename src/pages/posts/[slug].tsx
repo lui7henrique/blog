@@ -56,12 +56,7 @@ export default function Post(props: PostTemplate) {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const env = process.env.NODE_ENV || "development"
-
-  console.log({ env })
-
-  const draftEnvs = ["development", "preview", "PREVIEW"]
-  const stage = draftEnvs.includes(env) ? "DRAFT" : "PUBLISHED"
+  const stage = process.env.POSTS_STAGE || "DRAFT"
 
   const { posts } = await localeClient("pt_BR").request<GetPostsQuery>(
     GET_POSTS,
@@ -79,17 +74,23 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
   const formattedLocale = locale!.replace("-", "_") as "pt_BR" | "en_US"
+  const otherLocale = formattedLocale === "pt_BR" ? "en_US" : "pt_BR"
+
+  const slug = params?.slug
+  const stage = process.env.POSTS_STAGE || "DRAFT"
 
   const { posts } = await localeClient(
     formattedLocale
   ).request<GetPostBySlugQuery>(GET_POST_BY_SLUG, {
-    slug: `${params?.slug}`
+    slug,
+    stage
   })
 
   const { posts: postSlugOtherLanguage } = await localeClient(
-    formattedLocale === "pt_BR" ? "en_US" : "pt_BR"
+    otherLocale
   ).request<GetPostSlugByIdQuery>(GET_POST_SLUG_BY_ID, {
-    id: posts[0]?.id
+    id: posts[0]?.id,
+    stage
   })
 
   const post = {

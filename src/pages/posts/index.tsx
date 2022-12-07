@@ -49,12 +49,7 @@ export default function Home(props: PostsTemplate) {
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const formattedLocale = locale!.replace("-", "_") as "pt_BR" | "en_US"
 
-  const env = process.env.NODE_ENV || "development"
-
-  console.log({ env })
-
-  const draftEnvs = ["development", "preview", "PREVIEW"]
-  const stage = draftEnvs.includes(env) ? "DRAFT" : "PUBLISHED"
+  const stage = process.env.POSTS_STAGE || "DRAFT"
 
   const { posts } = await localeClient(formattedLocale).request<GetPostsQuery>(
     GET_POSTS,

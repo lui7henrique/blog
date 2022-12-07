@@ -49,42 +49,9 @@ export const GET_POSTS = gql`
   }
 `
 
-export const GET_ALL_POSTS = gql`
-  query getAllPosts($stage: Stage! = DRAFT) {
-    posts(stage: $stage) {
-      id
-      heading
-      slug
-      abstract
-      thumbnail {
-        id
-        width
-        height
-        url
-      }
-      updatedAt
-      updatedBy {
-        id
-        name
-        picture
-      }
-      technologies
-    }
-  }
-`
-
-export const GET_MINIMAL_POSTS = gql`
-  query getMinimalPosts($first: Int) {
-    posts(first: $first) {
-      heading
-      slug
-    }
-  }
-`
-
 export const GET_POST_BY_SLUG = gql`
-  query getPostBySlug($slug: String!) {
-    posts(where: { slug: $slug }) {
+  query getPostBySlug($slug: String!, $stage: Stage! = DRAFT) {
+    posts(where: { slug: $slug }, stage: $stage) {
       id
       heading
       slug
@@ -116,8 +83,8 @@ export const GET_POST_BY_SLUG = gql`
 `
 
 export const GET_POST_SLUG_BY_ID = gql`
-  query getPostSlugById($id: ID!) {
-    posts(where: { id: $id }) {
+  query getPostSlugById($id: ID!, $stage: Stage! = DRAFT) {
+    posts(where: { id: $id }, stage: $stage) {
       slug
     }
   }
