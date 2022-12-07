@@ -26,8 +26,32 @@ export const GET_PROJECTS = gql`
 `
 
 export const GET_POSTS = gql`
-  query getPosts($first: Int) {
-    posts(first: $first) {
+  query getPosts($stage: Stage! = DRAFT) {
+    posts(stage: $stage) {
+      id
+      heading
+      slug
+      abstract
+      thumbnail {
+        id
+        width
+        height
+        url
+      }
+      updatedAt
+      updatedBy {
+        id
+        name
+        picture
+      }
+      technologies
+    }
+  }
+`
+
+export const GET_ALL_POSTS = gql`
+  query getAllPosts($stage: Stage! = DRAFT) {
+    posts(stage: $stage) {
       id
       heading
       slug
