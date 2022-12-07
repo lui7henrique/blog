@@ -57,7 +57,9 @@ export default function Post(props: PostTemplate) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const env = process.env.NODE_ENV || "development"
-  const stage = env === "development" ? "DRAFT" : "PUBLISHED"
+
+  const draftEnvs = ["development", "preview", "PREVIEW"]
+  const stage = draftEnvs.includes(env) ? "DRAFT" : "PUBLISHED"
 
   const { posts } = await localeClient("pt_BR").request<GetPostsQuery>(
     GET_POSTS,
