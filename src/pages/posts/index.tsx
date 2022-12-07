@@ -51,6 +51,8 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
 
   const env = process.env.NODE_ENV || "development"
 
+  console.log({ env })
+
   const draftEnvs = ["development", "preview", "PREVIEW"]
   const stage = draftEnvs.includes(env) ? "DRAFT" : "PUBLISHED"
 

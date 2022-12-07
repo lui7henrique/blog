@@ -58,6 +58,8 @@ export default function Post(props: PostTemplate) {
 export const getStaticPaths: GetStaticPaths = async () => {
   const env = process.env.NODE_ENV || "development"
 
+  console.log({ env })
+
   const draftEnvs = ["development", "preview", "PREVIEW"]
   const stage = draftEnvs.includes(env) ? "DRAFT" : "PUBLISHED"
 
