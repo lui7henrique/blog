@@ -20,7 +20,7 @@ export const GET_PROJECTS = gql`
       }
       projectUrl
       repositoryUrl
-      technologies
+      techs
     }
   }
 `
@@ -44,7 +44,8 @@ export const GET_POSTS = gql`
         name
         picture
       }
-      technologies
+      techs
+      categories
     }
   }
 `
@@ -62,7 +63,7 @@ export const GET_POST_BY_SLUG = gql`
         name
         picture
       }
-      technologies
+      techs
       banner {
         width
         height
@@ -78,6 +79,7 @@ export const GET_POST_BY_SLUG = gql`
       content {
         html
       }
+      categories
     }
   }
 `

@@ -1,14 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import { Footer } from "components/Footer"
+
 import { Header } from "components/Header"
 import { GetProjectsQuery } from "graphql/generated/graphql"
-import { useRef } from "react"
-
-import { AboutMe } from "./AboutMe"
-import { HeroSection } from "./HeroSection"
-import { Projects } from "./Projects"
-import { Skills } from "./Skills"
-import * as S from "./styles"
 
 type HomeTemplateProps = {
   projects: GetProjectsQuery["projects"]
@@ -17,11 +10,12 @@ type HomeTemplateProps = {
 export const HomeTemplate = (props: HomeTemplateProps) => {
   const { projects } = props
 
-  const videoRef = useRef<HTMLVideoElement>(null)
+  // const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
     <>
-      <S.VideoBanner muted disablePictureInPicture autoPlay loop ref={videoRef}>
+      <Header />
+      {/* <S.VideoBanner muted disablePictureInPicture autoPlay loop ref={videoRef}>
         <source src="/videos/rocket.mp4" type="video/mp4" />
       </S.VideoBanner>
 
@@ -35,7 +29,7 @@ export const HomeTemplate = (props: HomeTemplateProps) => {
 
       <Projects projects={projects} />
 
-      <Footer />
+      <Footer /> */}
     </>
   )
 }

@@ -4,7 +4,7 @@ import { StyledButton } from "./styles"
 import * as S from "./styles"
 
 export type ButtonProps = {
-  label: string
+  label: string | JSX.Element
   rightIcon?: IconType
 } & React.ButtonHTMLAttributes<HTMLButtonElement> &
   typeof StyledButton.defaultProps

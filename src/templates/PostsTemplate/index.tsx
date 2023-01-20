@@ -1,36 +1,26 @@
-import { Footer } from "components/Footer"
 import { Header } from "components/Header"
-import { GetPostsQuery } from "graphql/generated/graphql"
-import { useRef } from "react"
+import { Categories, GetPostsQuery } from "graphql/generated/graphql"
 
-import { HeroSection } from "./HeroSection"
+import { PostsCategories } from "./PostsCategories"
 import { PostsList } from "./PostsList"
 import * as S from "./styles"
 
-type PostsTemplateProps = {
+export type PostsTemplateProps = {
   posts: GetPostsQuery["posts"]
+  categories: Categories[]
 }
 
 export const PostsTemplate = (props: PostsTemplateProps) => {
-  const { posts } = props
-  const videoRef = useRef<HTMLVideoElement>(null)
+  const { posts, categories } = props
 
   return (
     <>
-      <S.VideoOverlay />
+      <Header />
 
-      <S.VideoBanner disablePictureInPicture muted autoPlay loop ref={videoRef}>
-        <source src="/videos/galaxy.mp4" type="video/mp4" />
-      </S.VideoBanner>
-
-      <S.HeroContainer>
-        <Header />
-        <HeroSection />
-      </S.HeroContainer>
-
-      <PostsList posts={posts} />
-
-      <Footer />
+      <S.Container>
+        <PostsCategories categories={categories} />
+        <PostsList posts={posts} />
+      </S.Container>
     </>
   )
 }

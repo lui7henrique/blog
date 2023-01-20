@@ -1,20 +1,18 @@
 import Aos from "aos"
 import "aos/dist/aos.css" // You can also use <link> for styles
 import { DefaultSeo } from "next-seo"
+import { ThemeProvider } from "next-themes"
 import { AppProps as BasicAppProps } from "next/app"
 import Head from "next/head"
-import NextNProgress from "nextjs-progressbar"
 import { useEffect } from "react"
-import { ThemeProvider } from "styled-components"
-import { globalStyles, GlobalStyles } from "styles/global"
-import theme from "styles/theme"
-import { colors } from "styles/tokens"
+import { darkTheme } from "styles"
+import { globalStyles } from "styles/global"
 
 import SEO from "../../next-seo.config"
 
-globalStyles()
-
 type AppProps = BasicAppProps
+
+globalStyles()
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -37,17 +35,14 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <DefaultSeo {...SEO} />
 
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-
-        <NextNProgress
-          color={colors.zinc700}
-          startPosition={0.3}
-          stopDelayMs={200}
-          height={4}
-          showOnShallow={true}
-        />
-
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        value={{
+          dark: darkTheme.className,
+          light: "light"
+        }}
+      >
         <Component {...pageProps} />
       </ThemeProvider>
     </>

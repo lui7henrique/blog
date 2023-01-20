@@ -1,28 +1,19 @@
 import { styled } from "styles"
-import { rounded } from "styles/tokens"
+import { rounded } from "styles/tokens/rounded"
 
 export const StyledButton = styled("button", {
   variants: {
     color: {
-      emerald: {
-        background: "$emerald600"
-      },
       gray: {
-        background: "$gray500"
-      },
-      zinc: {
-        background: "$zinc900",
-
-        borderWidth: "1px",
-        borderColor: "$zinc800",
-        borderStyle: "solid"
+        background: "$gray800"
       }
     },
     rounded: rounded
   },
+
   defaultVariants: {
-    color: "zinc",
-    rounded: "md"
+    color: "gray",
+    rounded: "xs"
   },
 
   display: "flex",
@@ -36,9 +27,11 @@ export const StyledButton = styled("button", {
   transition: "all 0.2s ease-in-out",
   cursor: "pointer",
 
-  color: "$gray100",
+  color: "$gray200",
+  border: "none",
+  outline: "none",
 
   "&:hover": {
-    filter: "brightness(0.8)"
+    filter: "brightness(0.9)"
   }
 })

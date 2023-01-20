@@ -1,9 +1,8 @@
 import { ButtonLanguage } from "components/ButtonLanguage"
-import { IconButton } from "components/IconButton"
+import { ButtonTheme } from "components/ButtonTheme"
 import { useRouter } from "next/dist/client/router"
 import Link from "next/link"
 import { useCallback } from "react"
-import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 import { headerContent } from "./content"
 import * as S from "./styles"
@@ -38,7 +37,7 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
   )
 
   return (
-    <>
+    <S.Wrapper>
       <S.Container>
         <S.Content>
           <Link href="/" passHref>
@@ -61,22 +60,9 @@ export const Header = ({ isPost, postSlug }: HeaderProps) => {
 
         <S.Buttons>
           <ButtonLanguage isPost={isPost} postSlug={postSlug} />
-
-          <IconButton
-            variant="unstyled"
-            icon={<FaGithub size={20} color="#fff" />}
-            href="https://github.com/lui7henrique"
-            blank
-          />
-
-          <IconButton
-            variant="unstyled"
-            icon={<FaLinkedin size={20} color="#fff" />}
-            href="https://www.linkedin.com/in/luiz-henrique7/"
-            blank
-          />
+          <ButtonTheme />
         </S.Buttons>
       </S.Container>
-    </>
+    </S.Wrapper>
   )
 }

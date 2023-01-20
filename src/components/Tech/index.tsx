@@ -42,6 +42,7 @@ export const Tech = (props: TechProps) => {
         className={tech}
         alt={tech}
       />
+
       <S.ProjectTechLabel>{tech}</S.ProjectTechLabel>
     </S.ProjectTech>
   )

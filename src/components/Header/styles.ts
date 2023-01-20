@@ -1,13 +1,22 @@
 import Link from "next/link"
 import { styled } from "styles"
 
-export const Container = styled("header", {
+export const Wrapper = styled("header", {
+  borderBottomWidth: "1px",
+  borderBottomColor: "$gray800",
+  borderBottomStyle: "solid",
+
+  height: "$20"
+})
+
+export const Container = styled("div", {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
 
   width: "100%",
-  height: "$30",
+  height: "100%",
+
   maxWidth: "$280",
   margin: "0 auto",
   zIndex: 99,
@@ -16,15 +25,17 @@ export const Container = styled("header", {
   paddingLeft: "$10",
 
   "@md": {
-    paddingRight: "$6",
-    paddingLeft: "$6"
+    paddingRight: "$4",
+    paddingLeft: "$4"
   }
 })
 
 export const Content = styled("div", {
   display: "flex",
   alignItems: "center",
-  gap: "$8",
+  gap: "$4",
+
+  height: "100%",
 
   "@lg": {
     gap: 0
@@ -32,8 +43,9 @@ export const Content = styled("div", {
 })
 
 export const Logo = styled("h1", {
-  fontSize: "$2xl",
+  fontSize: "$lg",
   display: "flex",
+  color: "$gray50",
 
   "@lg": {
     display: "none"
@@ -53,8 +65,16 @@ export const LogoMobile = styled("h1", {
 export const Nav = styled("nav", {
   display: "flex",
   alignItems: "center",
-  gap: "$8",
-  marginTop: "$5",
+  gap: "$4",
+
+  borderLeftWidth: "1px",
+  borderLeftColor: "$gray800",
+  borderLeftStyle: "solid",
+
+  paddingLeft: "$4",
+  marginTop: "4px",
+
+  height: "50%",
 
   "@lg": {
     a: {
@@ -67,35 +87,19 @@ export const NavItem = styled(Link, {
   variants: {
     active: {
       true: {
-        color: "white",
-        "&::after": {
-          width: "100%"
-        }
+        color: "$gray50"
       },
       false: {
-        "&::after": {
-          width: "0%"
-        }
+        color: "$gray400"
       }
     }
   },
 
+  fontSize: "$sm",
   transition: "border 0.2s ease-in-out",
-  marginTop: "$xxs",
-
-  "&::after": {
-    content: "",
-    display: "block",
-    width: 0,
-    height: "3px",
-    transition: "width 0.2s",
-    borderRadius: "$sm",
-    marginTop: "$2",
-    background: "$zinc600"
-  },
 
   "&:hover": {
-    color: "$white"
+    color: "$gray50"
   },
 
   "&:hover::after": {

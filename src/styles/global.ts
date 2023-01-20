@@ -26,8 +26,8 @@ export const globalStyles = globalCss({
 
   body: {
     "-webkit-font-smoothing": "antialised",
-    backgroundColor: "$black",
-    color: "$gray300",
+    backgroundColor: "var(--colors-gray900)",
+    color: "var(--colors-gray300)",
     overflowX: "hidden"
   },
 
@@ -50,15 +50,15 @@ export const globalStyles = globalCss({
   },
 
   "body::-webkit-scrollbar": {
-    width: "7px"
+    width: "4px"
   },
 
   "body::-webkit-scrollbar-track": {
-    background: "$zinc900"
+    background: "$gray900"
   },
 
   "body::-webkit-scrollbar-thumb": {
-    backgroundColor: "$zinc800",
+    backgroundColor: "$gray500",
     borderRadius: "0px"
   }
 })

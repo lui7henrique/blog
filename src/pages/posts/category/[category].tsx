@@ -1,7 +1,7 @@
 import localeClient from "graphql/client"
 import { GetPostsQuery } from "graphql/generated/graphql"
 import { GET_POSTS } from "graphql/queries"
-import { GetStaticProps } from "next"
+import { GetStaticPaths, GetStaticProps } from "next"
 import { NextSeo } from "next-seo"
 import { useRouter } from "next/router"
 import { PostsTemplate, PostsTemplateProps } from "templates/PostsTemplate"
@@ -37,6 +37,29 @@ export default function Posts(props: PostsTemplateProps) {
       <PostsTemplate {...props} />
     </>
   )
+}
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const stage = process.env.POSTS_STAGE || "DRAFT"
+
+  const { posts } = await localeClient("pt_BR").request<GetPostsQuery>(
+    GET_POSTS,
+    {
+      stage
+    }
+  )
+
+  const categories = posts
+    .map((post) => post.categories)
+    .flatMap((category) => category)
+
+  const paths = [...new Set(categories)].map((category) => ({
+    params: {
+      category
+    }
+  }))
+
+  return { paths, fallback: "blocking" }
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {

@@ -1,6 +1,13 @@
 import { createStitches, defaultThemeMap } from "@stitches/react"
 
-import * as tokens from "./tokens"
+import { darkThemeColors, lightThemeColors } from "./tokens/colors"
+import { fonts } from "./tokens/fonts"
+import { fontSizes } from "./tokens/fontSizes"
+import { fontWeights } from "./tokens/fontWeights"
+import { lineHeights } from "./tokens/lineHeights"
+import { media } from "./tokens/media"
+import { radii } from "./tokens/radii"
+import { space } from "./tokens/space"
 
 export const {
   config,
@@ -21,14 +28,19 @@ export const {
   },
 
   theme: {
-    colors: tokens.colors,
-    fonts: tokens.fonts,
-    fontSizes: tokens.fontSizes,
-    fontWeights: tokens.fontWeights,
-    lineHeights: tokens.lineHeights,
-    space: tokens.space,
-    radii: tokens.radii
+    colors: lightThemeColors,
+
+    fonts: fonts,
+    fontSizes: fontSizes,
+    fontWeights: fontWeights,
+    lineHeights: lineHeights,
+    space: space,
+    radii: radii
   },
 
-  media: tokens.media
+  media: media
+})
+
+export const darkTheme = createTheme("darkTheme", {
+  colors: darkThemeColors
 })
