@@ -5,7 +5,6 @@ import { GetStaticProps } from "next"
 import { NextSeo } from "next-seo"
 import { useRouter } from "next/router"
 import { HomeTemplate } from "templates/HomeTemplate"
-import { heroContent } from "templates/HomeTemplate/HeroSection/content"
 
 type HomeProps = {
   projects: GetProjectsQuery["projects"]
@@ -15,7 +14,6 @@ export default function Home(props: HomeProps) {
   const { projects } = props
 
   const { locale } = useRouter()
-  const content = heroContent[locale as "pt-BR" | "en-US"]
 
   const url = `https://lui7henrique.vercel.app/${
     locale === "pt-BR" ? "" : "en-US"
@@ -25,12 +23,12 @@ export default function Home(props: HomeProps) {
     <>
       <NextSeo
         title={`Luiz Henrique | ${locale === "pt-BR" ? "Início" : "Home"}`}
-        description={`${content.article.description}${content.article.subDescription}`}
+        description={""}
         canonical={url}
         openGraph={{
           url: url,
           title: locale === "pt-BR" ? "Início" : "Home",
-          description: `${content.article.description}${content.article.subDescription}`,
+          description: "",
           images: [
             {
               url: "https://lui7henrique.vercel.app/home.png",
@@ -41,6 +39,7 @@ export default function Home(props: HomeProps) {
           ]
         }}
       />
+
       <HomeTemplate projects={projects} />
     </>
   )
