@@ -24,5 +24,15 @@ export const usePostsCategories = () => {
     return title[category] || "All posts"
   }, [])
 
-  return { getIconByCategory, getTitleByCategory }
+  const translateCategory = useCallback((category: Categories) => {
+    const translate: Record<Categories, string> = {
+      Books: "Livros",
+      Career: "Carreira",
+      Coding: "Código"
+    }
+
+    return translate[category]
+  }, [])
+
+  return { getIconByCategory, getTitleByCategory, translateCategory }
 }

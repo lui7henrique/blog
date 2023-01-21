@@ -2,18 +2,16 @@ import { Comments } from "components/Comments"
 import { Footer } from "components/Footer"
 import { Header } from "components/Header"
 import { Tech } from "components/Tech"
-import { format, formatDistance } from "date-fns"
-import pt from "date-fns/locale/pt"
 import { GetPostBySlugQuery } from "graphql/generated/graphql"
 import { useRouter } from "next/router"
-import { useCallback, useEffect, useRef, useState } from "react"
-import { FaCalendar, FaClock } from "react-icons/fa"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
+import { FiChevronLeft } from "react-icons/fi"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import dracula from "react-syntax-highlighter/dist/cjs/styles/prism/dracula"
 import { v4 } from "uuid"
 
+import { Banner } from "./Banner"
 import * as S from "./styles"
-import { languages } from "./types"
 
 type PostsTemplateProps = {
   post: {
@@ -30,71 +28,71 @@ type Element = {
 type Content = Array<Element>
 
 export const PostTemplate = (props: PostsTemplateProps) => {
-  const { post } = props
+  const {
+    post: { other_slug, heading, categories, updatedAt, banner }
+  } = props
 
-  const { locale } = useRouter()
-  const [authorImage, setAuthorImage] = useState(
-    post.updatedBy?.picture as string
-  )
+  // const [authorImage, setAuthorImage] = useState(
+  //   post.updatedBy?.picture as string
+  // )
 
-  const [content, setContent] = useState([] as Content)
-  const contentRef = useRef<HTMLDivElement>(null)
+  // const [content, setContent] = useState([] as Content)
+  // const contentRef = useRef<HTMLDivElement>(null)
 
-  const formatDateByLocale = useCallback(() => {
-    if (locale === "pt-BR") {
-      return format(new Date(post.updatedAt), "dd 'de' MMMM 'de' yyyy", {
-        locale: pt
-      })
-    }
+  // useEffect(() => {
+  //   const formattedContent = () => {
+  //     const children = Array.from(contentRef.current?.children!)
 
-    return format(new Date(post.updatedAt), "MMMM dd, yyyy")
-  }, [locale, post.updatedAt])
+  //     const newChildren = children.map((c) => {
+  //       if (c.nodeName === "PRE") {
+  //         return {
+  //           element: (c as HTMLElement).innerText!,
+  //           code: true,
+  //           language: "javascript"
+  //         }
+  //       }
 
-  useEffect(() => {
-    const formattedContent = () => {
-      const children = Array.from(contentRef.current?.children!)
+  //       if (c.nodeName === "DIV" && languages.includes(c.className)) {
+  //         return {
+  //           element: (c.children[0] as HTMLElement).innerText,
+  //           code: true,
+  //           language: c.className
+  //         }
+  //       }
 
-      const newChildren = children.map((c) => {
-        if (c.nodeName === "PRE") {
-          return {
-            element: (c as HTMLElement).innerText!,
-            code: true,
-            language: "javascript"
-          }
-        }
+  //       if (c.nodeName !== "PRE") {
+  //         return {
+  //           element: c.outerHTML,
+  //           code: false
+  //         }
+  //       }
+  //     })
 
-        if (c.nodeName === "DIV" && languages.includes(c.className)) {
-          return {
-            element: (c.children[0] as HTMLElement).innerText,
-            code: true,
-            language: c.className
-          }
-        }
+  //     setContent(newChildren as Element[])
+  //   }
 
-        if (c.nodeName !== "PRE") {
-          return {
-            element: c.outerHTML,
-            code: false
-          }
-        }
-      })
-
-      setContent(newChildren as Element[])
-    }
-
-    formattedContent()
-  }, [post.content.html])
+  //   formattedContent()
+  // }, [post.content.html])
 
   return (
     <>
-      <Header isPost postSlug={post.other_slug} />
-      <S.Banner backgroundImage={post.banner.url}></S.Banner>
+      <Header isPost postSlug={other_slug} />
+
+      <Banner categories={categories} updatedAt={updatedAt} heading={heading} />
+
+      <S.PostContainer>
+        <S.PostImageWrapper>
+          <S.PostImage src={banner.url} fill alt={`${heading} banner`} />
+        </S.PostImageWrapper>
+      </S.PostContainer>
+
+      {/* <S.Banner backgroundImage={post.banner.url}></S.Banner>
 
       <S.Post>
         <S.PostInfos>
           <S.PostTechs>
-            {post.technologies.length ? (
-              post.technologies.map((tech) => (
+            {post.techs.length ? (
+              post.techs.map((tech) => (
                 <div key={v4()}>
                   <Tech tech={tech} rounded={false} />
                 </div>
@@ -171,9 +169,7 @@ export const PostTemplate = (props: PostsTemplateProps) => {
         </S.PostContentContainer>
 
         <Comments />
-      </S.Post>
-
-      <Footer />
+      </S.Post> */}
     </>
   )
 }

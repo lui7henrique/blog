@@ -10,8 +10,8 @@ type PostsCategoriesProps = {
 }
 
 export const PostsCategories = (props: PostsCategoriesProps) => {
-  const { getIconByCategory } = usePostsCategories()
-  const { asPath } = useRouter()
+  const { getIconByCategory, translateCategory } = usePostsCategories()
+  const { asPath, locale } = useRouter()
 
   const { categories } = props
 
@@ -28,12 +28,16 @@ export const PostsCategories = (props: PostsCategoriesProps) => {
             className="general"
             alt="general"
           />
-          All posts
+
+          {locale === "pt-BR" ? "Tudo" : "All"}
         </S.AsideButton>
 
         {categories.map((category) => {
           const isActive =
             asPath === `/posts/category/${category.toLowerCase()}`
+
+          const label =
+            locale === "pt-BR" ? translateCategory(category) : category
 
           return (
             <S.AsideButton
@@ -49,7 +53,7 @@ export const PostsCategories = (props: PostsCategoriesProps) => {
                 alt={category}
               />
 
-              {category}
+              {label}
             </S.AsideButton>
           )
         })}

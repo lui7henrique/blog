@@ -4,9 +4,11 @@ import { DefaultSeo } from "next-seo"
 import { ThemeProvider } from "next-themes"
 import { AppProps as BasicAppProps } from "next/app"
 import Head from "next/head"
+import NextNProgress from "nextjs-progressbar"
 import { useEffect } from "react"
 import { darkTheme } from "styles"
 import { globalStyles } from "styles/global"
+import { darkThemeColors } from "styles/tokens/colors"
 
 import SEO from "../../next-seo.config"
 
@@ -43,6 +45,14 @@ function MyApp({ Component, pageProps }: AppProps) {
           light: "light"
         }}
       >
+        <NextNProgress
+          color={darkThemeColors.gray400}
+          startPosition={0.3}
+          stopDelayMs={300}
+          height={3}
+          showOnShallow={true}
+        />
+
         <Component {...pageProps} />
       </ThemeProvider>
     </>

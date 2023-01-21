@@ -1,8 +1,10 @@
 import { formatDistance } from "date-fns"
 import { pt } from "date-fns/locale"
-import { GetPostsQuery } from "graphql/generated/graphql"
+import { Categories, GetPostsQuery } from "graphql/generated/graphql"
 import { PostURLCategory, usePostsCategories } from "hooks/usePostsCategories"
 import { useRouter } from "next/router"
+import { useMemo } from "react"
+import { capitalize } from "utils/string/capitalize"
 
 import * as S from "./styles"
 
@@ -21,14 +23,26 @@ export const PostsList = (props: PostsListProps) => {
     locale
   } = useRouter()
 
-  const { getTitleByCategory } = usePostsCategories()
+  console.log({ category })
+
+  const { getTitleByCategory, translateCategory } = usePostsCategories()
+
+  const title = useMemo(() => {
+    if (!category) {
+      return locale === "pt-BR" ? "Tudo" : "All"
+    }
+
+    if (locale === "pt-BR") {
+      return translateCategory(capitalize(category as string) as Categories)
+    }
+
+    return getTitleByCategory(category as PostURLCategory)
+  }, [category, getTitleByCategory, locale, translateCategory])
 
   return (
     <S.Main>
       <S.PostsListHeader>
-        <S.PostListTitle>
-          {getTitleByCategory(category as PostURLCategory)}
-        </S.PostListTitle>
+        <S.PostListTitle>{title}</S.PostListTitle>
       </S.PostsListHeader>
 
       <S.PostsList>

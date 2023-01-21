@@ -1,3 +1,4 @@
+import { Limiter } from "components/Limiter"
 import Link from "next/link"
 import { styled } from "styles"
 
@@ -9,25 +10,15 @@ export const Wrapper = styled("header", {
   height: "$20"
 })
 
-export const Container = styled("div", {
+export const Container = styled(Limiter, {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
 
-  width: "100%",
   height: "100%",
 
-  maxWidth: "$280",
-  margin: "0 auto",
   zIndex: 99,
-
-  paddingRight: "$10",
-  paddingLeft: "$10",
-
-  "@md": {
-    paddingRight: "$4",
-    paddingLeft: "$4"
-  }
+  width: "auto"
 })
 
 export const Content = styled("div", {
