@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { styled } from "styles"
-import { rounded } from "styles/tokens"
+import { rounded } from "styles/tokens/rounded"
 
 const styles = {
   variants: {
