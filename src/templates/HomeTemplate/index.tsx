@@ -10,6 +10,8 @@ type HomeTemplateProps = {
 export const HomeTemplate = (props: HomeTemplateProps) => {
   const { projects } = props
 
+  console.log({ projects })
+
   // const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
