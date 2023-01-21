@@ -13,7 +13,7 @@ export const AsideContent = styled("div", {
   gap: "$1",
 
   position: "sticky",
-  top: "$2"
+  top: "$4"
 })
 
 export const AsideButton = styled(Link, {

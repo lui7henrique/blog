@@ -6,5 +6,5 @@ export const Container = styled(Limiter, {
   gridTemplateColumns: "1fr 3fr",
   gap: "$4",
 
-  minHeight: "200vh"
+  minHeight: "95vh"
 })
