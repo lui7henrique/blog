@@ -1,14 +1,13 @@
 import Aos from "aos"
 import "aos/dist/aos.css" // You can also use <link> for styles
+import { AppProvider } from "context"
 import { DefaultSeo } from "next-seo"
-import { ThemeProvider } from "next-themes"
+import { ThemeProvider, useTheme } from "next-themes"
 import { AppProps as BasicAppProps } from "next/app"
 import Head from "next/head"
-import NextNProgress from "nextjs-progressbar"
 import { useEffect } from "react"
 import { darkTheme } from "styles"
 import { globalStyles } from "styles/global"
-import { darkThemeColors } from "styles/tokens/colors"
 
 import SEO from "../../next-seo.config"
 
@@ -17,6 +16,8 @@ type AppProps = BasicAppProps
 globalStyles()
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const {} = useTheme()
+
   useEffect(() => {
     Aos.init({
       easing: "ease-out-cubic",
@@ -45,15 +46,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           light: "light"
         }}
       >
-        <NextNProgress
-          color={darkThemeColors.gray400}
-          startPosition={0.3}
-          stopDelayMs={300}
-          height={3}
-          showOnShallow={true}
-        />
-
-        <Component {...pageProps} />
+        <AppProvider>
+          <Component {...pageProps} />
+        </AppProvider>
       </ThemeProvider>
     </>
   )

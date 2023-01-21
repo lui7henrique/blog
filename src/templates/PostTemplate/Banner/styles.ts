@@ -1,5 +1,4 @@
 import { Limiter } from "components/Limiter"
-import Link from "next/link"
 import { styled } from "styles"
 
 export const BannerContainer = styled("div", {
@@ -34,13 +33,14 @@ export const BannerContent = styled(Limiter, {
   }
 })
 
-export const Back = styled(Link, {
+export const Back = styled("div", {
   display: "flex",
   alignItems: "center",
   gap: "$1",
 
   fontSize: "$sm",
-  color: "$gray400"
+  color: "$gray400",
+  cursor: "pointer"
 })
 
 export const BannerInfos = styled("div", {

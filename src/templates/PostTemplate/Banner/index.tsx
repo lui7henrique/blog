@@ -17,7 +17,7 @@ type BannerProps = {
 export const Banner = (props: BannerProps) => {
   const { categories, heading, updatedAt } = props
 
-  const { locale } = useRouter()
+  const { locale, back } = useRouter()
   const { translateCategory } = usePostsCategories()
 
   const formatDateByLocale = useMemo(() => {
@@ -39,7 +39,7 @@ export const Banner = (props: BannerProps) => {
   return (
     <S.BannerContainer>
       <S.BannerContent>
-        <S.Back href="/posts">
+        <S.Back onClick={back}>
           <FiChevronLeft size={16} /> {locale === "pt-BR" ? "Voltar" : "Back"}
         </S.Back>
 

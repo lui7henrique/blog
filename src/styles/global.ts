@@ -47,18 +47,18 @@ export const globalStyles = globalCss({
 
   p: {
     color: "$gray300"
-  },
-
-  "body::-webkit-scrollbar": {
-    width: "4px"
-  },
-
-  "body::-webkit-scrollbar-track": {
-    background: "$gray900"
-  },
-
-  "body::-webkit-scrollbar-thumb": {
-    backgroundColor: "$gray500",
-    borderRadius: "0px"
   }
+
+  // "body::-webkit-scrollbar": {
+  //   width: "3px"
+  // },
+
+  // "body::-webkit-scrollbar-track": {
+  //   background: "$gray900"
+  // },
+
+  // "body::-webkit-scrollbar-thumb": {
+  //   backgroundColor: "$gray500",
+  //   borderRadius: "0px"
+  // }
 })
