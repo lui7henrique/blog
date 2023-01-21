@@ -1,6 +1,7 @@
 import localeClient from "graphql/client"
 import { GetPostsQuery } from "graphql/generated/graphql"
 import { GET_POSTS } from "graphql/queries"
+import { PostURLCategory } from "hooks/usePostsCategories"
 import { GetStaticPaths, GetStaticProps } from "next"
 import { NextSeo } from "next-seo"
 import { useRouter } from "next/router"
@@ -62,7 +63,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: "blocking" }
 }
 
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
+type Params = {
+  category: PostURLCategory
+}
+
+export const getStaticProps: GetStaticProps = async ({ locale, params }) => {
+  const { category } = params as Params
   const formattedLocale = locale!.replace("-", "_") as "pt_BR" | "en_US"
 
   const stage = process.env.POSTS_STAGE || "DRAFT"
@@ -80,9 +86,13 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
     )
   ]
 
+  const formattedPosts = posts.filter((post) =>
+    post.categories.map((category) => category.toLowerCase()).includes(category)
+  )
+
   return {
     props: {
-      posts: posts.reverse(),
+      posts: formattedPosts.reverse(),
       categories
     },
     revalidate: 60 * 60 * 24 // 1 day
