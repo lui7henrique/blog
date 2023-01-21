@@ -4,12 +4,10 @@ import { Categories, GetPostsQuery } from "graphql/generated/graphql"
 import { PostURLCategory, usePostsCategories } from "hooks/usePostsCategories"
 import { useRouter } from "next/router"
 import { useMemo } from "react"
+import { AUTHOR_IMAGE } from "utils/author/img"
 import { capitalize } from "utils/string/capitalize"
 
 import * as S from "./styles"
-
-const AUTHOR_IMAGE =
-  "https://media.graphassets.com/resize=h:600,w:600,f:crop/security=policy:eyJleHBpcnkiOjE4MzIwMjY1MjMsInBhdGgiOiIvNzBiYWVhN2EtMzA0OS00ZDM4LThhYzAtMmQ2YzBiNDNkNWMwLyIsImNvbnRhaW5lciI6ImNvbW1vbi1maWxlc3RhY2stYWU2NTM5OSIsImNhbGwiOlsicmVhZCIsImNvbnZlcnQiXSwibWF4U2l6ZSI6MTAyNDAwMDB9,signature:bb1a6e70314bd16a8da4847953bec68e8970e139589741c7a8197b3c447f10c6/D1iBcfjQfKBqIdIErwqq"
 
 type PostsListProps = {
   posts: GetPostsQuery["posts"]
@@ -22,8 +20,6 @@ export const PostsList = (props: PostsListProps) => {
     query: { category },
     locale
   } = useRouter()
-
-  console.log({ category })
 
   const { getTitleByCategory, translateCategory } = usePostsCategories()
 

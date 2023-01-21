@@ -101,7 +101,7 @@ export const PostAuthorName = styled("h5", {
 })
 
 export const PostAuthorImageWrapper = styled("figure", {
-  width: "$8",
+  width: "$10",
   aspectRatio: 1,
 
   position: "relative",

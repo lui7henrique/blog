@@ -3,7 +3,18 @@ import Image from "next/image"
 import { styled } from "styles"
 
 export const PostContainer = styled(Limiter, {
-  width: "auto"
+  width: "auto",
+
+  display: "grid",
+  gridTemplateColumns: "3fr 1fr"
+})
+
+export const PostContent = styled("main", {
+  display: "flex",
+  flexDirection: "column",
+  gap: "$8",
+
+  marginRight: "$20"
 })
 
 export const PostImageWrapper = styled("figure", {
@@ -21,181 +32,81 @@ export const PostImageWrapper = styled("figure", {
 })
 
 export const PostImage = styled(Image, {
-  objectFit: "cover"
+  objectFit: "cover",
+  pointerEvents: "none"
 })
 
-// export const Banner = styled.div<{
-//   backgroundImage: string
-// }>`
-//   background-image: linear-gradient(
-//       180deg,
-//       rgba(0, 0, 0, 0.8) 0%,
-//       rgba(0, 0, 0, 0.3) 110%
-//     ),
-//     url(${(props) => props.backgroundImage});
+export const PostArticle = styled("article", {
+  lineHeight: "1.8",
 
-//   margin-top: -${({ theme }) => theme.sizes.headerHeight};
-//   /* background-image: url(${(props) => props.backgroundImage}); */
-//   background-position: center;
-//   background-size: cover;
-//   width: 100vw;
-//   height: 80vh;
+  a: {
+    color: "$gray100"
+  },
 
-//   z-index: -1;
-// `
+  p: {
+    marginBottom: "$4"
+  },
 
-// export const Post = styled.article`
-//   display: flex;
-//   flex-direction: column;
-//   gap: 1rem;
+  code: {
+    backgroundColor: "#282a36 !important",
+    fontFamily: 'Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace'
+  },
 
-//   max-width: ${({ theme }) => theme.sizes.maxWidth};
-//   margin: 0 auto;
+  "h1, h2, h3, h4, h5, h6": {
+    color: "$gray50"
+  },
 
-//   padding-right: ${({ theme }) => theme.space["10"]};
-//   padding-left: ${({ theme }) => theme.space["10"]};
-//   padding-bottom: ${({ theme }) => theme.space["10"]};
+  h1: {
+    margin: "$2 0"
+  },
 
-//   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-//     padding-right: ${({ theme }) => theme.space["6"]};
-//     padding-left: ${({ theme }) => theme.space["6"]};
-//   }
-// `
+  h2: {
+    margin: "$2 0"
+  },
 
-// export const PostInfos = styled.div`
-//   margin-top: ${({ theme }) => theme.space["10"]};
-// `
+  ul: {
+    padding: "$4 $8"
+  },
 
-// export const PostTechs = styled.div`
-//   display: flex;
-//   flex-wrap: wrap;
-//   list-style: none;
-//   gap: ${({ theme }) => theme.space["2"]};
+  ol: {
+    padding: "$4 $8"
+  },
 
-//   margin-bottom: ${({ theme }) => theme.space["2"]};
+  "p > code, li > code, dd > code, td > code": {
+    background: "#ffeff0",
+    wordWrap: "break-word",
+    boxDecorationBreak: "clone",
+    padding: "0.1rem 0.3rem 0.2rem",
+    borderRadius: "0.2rem",
 
-//   z-index: 25px;
-// `
+    color: "white"
+  },
 
-// export const PostHeading = styled.h1`
-//   font-size: ${({ theme }) => theme.fontSizes["5xl"]};
+  blockquote: {
+    borderLeftWidth: "3px",
+    borderLeftStyle: "solid",
+    borderLeftColor: "#F26F63",
 
-//   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-//     font-size: ${({ theme }) => theme.fontSizes["3xl"]};
-//   }
-// `
+    padding: "$2 $4",
+    margin: "$4 0",
+    fontStyle: "italic"
+  }
+})
 
-// export const BasicInfos = styled.div`
-//   display: flex;
-//   margin-top: ${({ theme }) => theme.space["2"]};
-// `
+export const PostAsideContainer = styled("aside", {
+  borderLeftWidth: "1px",
+  borderLeftColor: "$gray800",
+  borderLeftStyle: "solid",
 
-// export const AuthorContainer = styled.div`
-//   display: flex;
-//   align-items: center;
-//   gap: ${({ theme }) => theme.space["2"]};
-//   border-right: 1px solid ${({ theme }) => theme.colors.shape};
-//   padding-right: ${({ theme }) => theme.space["4"]};
+  position: "relative",
+  padding: "$8"
+})
 
-//   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-//     border: none;
-//   }
-// `
+export const PostAsideContent = styled("div", {
+  position: "sticky",
+  top: "$8",
 
-// export const AuthorName = styled.h2`
-//   font-size: ${({ theme }) => theme.fontSizes["lg"]};
-// `
-
-// export const AuthorImageWrapper = styled.figure`
-//   width: ${({ theme }) => theme.space["10"]};
-//   height: ${({ theme }) => theme.space["10"]};
-
-//   border-radius: 50%;
-//   overflow: hidden;
-//   position: relative;
-// `
-
-// export const AuthorImage = styled(Image)``
-
-// export const PostDateContainer = styled.div`
-//   display: flex;
-//   align-items: center;
-//   gap: ${({ theme }) => theme.space["2"]};
-//   padding: 0 ${({ theme }) => theme.space["4"]};
-
-//   border-right: 1px solid ${({ theme }) => theme.colors.shape};
-
-//   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-//     display: none;
-//   }
-// `
-
-// export const PostDate = styled.sup``
-
-// export const PostTimeContainer = styled.div`
-//   display: flex;
-//   align-items: center;
-//   gap: ${({ theme }) => theme.space["2"]};
-//   padding: 0 ${({ theme }) => theme.space["4"]};
-
-//   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
-//     display: none;
-//   }
-// `
-
-// export const PostTime = styled.sup``
-
-// export const PostContentContainer = styled.div``
-
-// export const PostContent = styled.div`
-//   line-height: 1.8;
-
-//   a {
-//     color: ${({ theme }) => theme.colors.secondary};
-//   }
-
-//   p {
-//     margin-bottom: ${({ theme }) => theme.space["4"]};
-//   }
-
-//   code {
-//     background-color: #282a36 !important;
-//     font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-//   }
-
-//   h1,
-//   h2 {
-//     margin: ${({ theme }) => theme.space["2"]} 0;
-//   }
-
-//   ul,
-//   ol {
-//     padding: ${({ theme }) => theme.space["4"]}
-//       ${({ theme }) => theme.space["8"]};
-//   }
-
-//   code {
-//     font-family: MyFancyCustomFont, monospace;
-//     font-size: inherit;
-//   }
-
-//   p > code,
-//   li > code,
-//   dd > code,
-//   td > code {
-//     background: #ffeff0;
-//     word-wrap: break-word;
-//     box-decoration-break: clone;
-//     padding: 0.1rem 0.3rem 0.2rem;
-//     border-radius: 0.2rem;
-//   }
-
-//   blockquote {
-//     border-left: 3px solid ${({ theme }) => theme.colors.secondary};
-//     padding: ${({ theme }) => theme.space["2"]}
-//       ${({ theme }) => theme.space["4"]};
-//     margin: ${({ theme }) => theme.space["4"]} 0;
-
-//     font-style: italic;
-//   }
-// `
+  display: "flex",
+  flexDirection: "column",
+  gap: "$8"
+})
