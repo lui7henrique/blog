@@ -10,7 +10,8 @@ const nextConfig = {
       "github.com",
       "picsum.photos",
       "avatars.githubusercontent.com",
-      "media.graphassets.com"
+      "media.graphassets.com",
+      "i.scdn.co"
     ]
   },
 

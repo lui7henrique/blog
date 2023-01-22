@@ -6,7 +6,7 @@ export const PostContainer = styled(Limiter, {
   width: "auto",
 
   display: "grid",
-  gridTemplateColumns: "3fr 1fr"
+  gridTemplateColumns: "5fr 2fr"
 })
 
 export const PostContent = styled("main", {
