@@ -1,6 +1,5 @@
 import Image from "next/image"
 import { styled } from "styles"
-// import styled, { css } from "styled-components"
 
 export const ProjectTech = styled("li", {
   variants: {

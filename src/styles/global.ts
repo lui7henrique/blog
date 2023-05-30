@@ -1,27 +1,14 @@
-import { createGlobalStyle } from "styled-components"
-
 import { globalCss } from "."
-
-export const GlobalStyles = createGlobalStyle`
-  html {
-    @media (max-width: 1080px) {
-      font-size: 93.75%; //15px
-    }
-    @media (max-width: 720px) {
-      font-size: 87.5%; //14px
-    }
-  }
-
-  html, body, #__next {
-    height: 100%;
-    scroll-behavior: smooth !important;
-  }
-`
 
 export const globalStyles = globalCss({
   "*": {
     margin: 0,
     padding: 0
+  },
+
+  "html, body, #__next": {
+    height: "100%",
+    scrollBehavior: "smooth !important"
   },
 
   body: {
